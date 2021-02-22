@@ -16,6 +16,7 @@ Maintainer=minino
 Address=minino@minino-ThinkCentre-M82
 License=General Public License
 PackageName=situcarpetas-0.0.1
+PackageVersion=2
 CreateEachDirectory=1
 Packager=1
 Systems=debian

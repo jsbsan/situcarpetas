@@ -32,7 +32,14 @@ Public Sub ButtonGuardar_Click()
 
   Dim datos As String
 
+  If Not Exist(User.home & "/" & "VistaCarpetas") Then
+    Mkdir User.home & "/" & "VistaCarpetas/"
+  Endif
+
+  Dialog.Path = User.home & "/" & "VistaCarpetas/"
+
   Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
+
   If Not Dialog.SaveFile() Then
     datos = FileChooser1.Dir & gb.CrLf
     datos &= FileChooser2.Dir & gb.CrLf
@@ -54,7 +61,14 @@ Public Sub ButtonAbrir_Click()
 
   Dim datos As String[]
 
+  If Not Exist(User.home & "/" & "VistaCarpetas") Then
+    Mkdir User.home & "/" & "VistaCarpetas"
+  Endif
+
   Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
+
+  Dialog.path = User.home & "/" & "VistaCarpetas"
+
   If Not Dialog.OpenFile() Then
     datos = Split(File.Load(Dialog.Path), gb.CrLf)
     ComboBox1.Text = Dialog.Path
