@@ -1,0 +1,24 @@
+# Gambas Project File 3.0
+Title=situcarpetas
+Startup=FMain
+Icon=iconos/carpeta.png
+Version=0.0.1
+Component=gb.image
+Component=gb.gui.qt
+Component=gb.form
+Component=gb.desktop
+Component=gb.settings
+Description="Para guardar la situación de varias carpetas abiertas"
+Authors="Julio Sanchez Berro"
+TabSize=2
+Language=en_US
+Maintainer=minino
+Address=minino@minino-ThinkCentre-M82
+License=General Public License
+PackageName=situcarpetas-0.0.1
+CreateEachDirectory=1
+Packager=1
+Systems=debian
+Menus=debian:"Applications/Accessibility"
+Categories=debian:"Accessibility"
+Groups=debian:"admin"

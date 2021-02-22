@@ -1,0 +1,80 @@
+' Gambas class file
+
+Public Sub Form_Open()
+
+  FileChooser1.FileView.ShowDetailed = True
+  FileChooser2.FileView.ShowDetailed = True
+  FileChooser3.FileView.ShowDetailed = True
+  FileChooser4.FileView.ShowDetailed = True
+
+  FileChooser1.dir = settings["dir1", User.home]
+  FileChooser2.dir = settings["dir2", User.home]
+  FileChooser3.dir = settings["dir3", User.home]
+  FileChooser4.dir = settings["dir4", User.home]
+
+  Settings.Read(Me)
+
+End
+
+'
+' Public Sub FileChooser2_Change()
+'
+'   Desktop.Open(FileChooser2.value)
+'
+' End
+Public Sub grupo_Change()
+
+  Desktop.Open(Last.value)
+
+End
+
+Public Sub ButtonGuardar_Click()
+
+  Dim datos As String
+
+  Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
+  If Not Dialog.SaveFile() Then
+    datos = FileChooser1.Dir & gb.CrLf
+    datos &= FileChooser2.Dir & gb.CrLf
+    datos &= FileChooser3.Dir & gb.CrLf
+    datos &= FileChooser4.Dir & gb.CrLf
+
+    If File.Ext(Dialog.path) <> "vistacarpetas" Then
+      File.Save(Dialog.Path & ".vistacarpetas", datos)
+    Else
+      File.Save(Dialog.Path, datos)
+
+    Endif
+
+  Endif
+
+End
+
+Public Sub ButtonAbrir_Click()
+
+  Dim datos As String[]
+
+  Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
+  If Not Dialog.OpenFile() Then
+    datos = Split(File.Load(Dialog.Path), gb.CrLf)
+    ComboBox1.Text = Dialog.Path
+
+    FileChooser1.dir = datos[0]
+    FileChooser2.dir = datos[2]
+    FileChooser3.dir = datos[4]
+    FileChooser4.dir = datos[6]
+
+  Endif
+
+End
+
+Public Sub Form_Close()
+
+  settings["dir1"] = FileChooser1.dir
+  settings["dir2"] = FileChooser2.dir
+  settings["dir3"] = FileChooser3.dir
+  settings["dir4"] = FileChooser4.dir
+
+  Settings.write(Me)
+
+End

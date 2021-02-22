@@ -1,0 +1,54 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,132,74)
+  Icon = Picture["iconos/carpeta.png"]
+  Arrangement = Arrange.Vertical
+  { HBox2 HBox
+    MoveScaled(0,0,111,4)
+    { Label1 Label
+      MoveScaled(0,0,24,4)
+      Text = ("Sesión de trabajo:")
+    }
+    { ComboBox1 ComboBox
+      MoveScaled(19,0,46,4)
+    }
+    { ButtonAbrir Button
+      MoveScaled(70,0,17,4)
+      Text = ("Abrir")
+    }
+    { ButtonGuardar Button
+      MoveScaled(94,0,10,4)
+      Text = ("Guardar")
+    }
+  }
+  { VBox1 VSplit
+    MoveScaled(-1,3,125,69)
+    Expand = True
+    Spacing = True
+    { HBox1 HSplit
+      MoveScaled(1,3,122,33)
+      Expand = True
+      Spacing = True
+      { FileChooser2 FileChooser grupo
+        Name = "FileChooser2"
+        MoveScaled(1,2,58,30)
+      }
+      { FileChooser1 FileChooser grupo
+        Name = "FileChooser1"
+        MoveScaled(60,1,57,30)
+      }
+    }
+    { HSplit1 HSplit
+      MoveScaled(5,37,117,28)
+      { FileChooser3 FileChooser grupo
+        Name = "FileChooser3"
+        MoveScaled(0,0,37,31)
+      }
+      { FileChooser4 FileChooser grupo
+        Name = "FileChooser4"
+        MoveScaled(54,1,57,31)
+      }
+    }
+  }
+}
