@@ -16,15 +16,9 @@ Public Sub Form_Open()
 
 End
 
-'
-' Public Sub FileChooser2_Change()
-'
-'   Desktop.Open(FileChooser2.value)
-'
-' End
 Public Sub grupo_Change()
 
-  Desktop.Open(Last.value)
+  Try Desktop.Open(Last.value)
 
 End
 
@@ -45,6 +39,7 @@ Public Sub ButtonGuardar_Click()
     datos &= FileChooser2.Dir & gb.CrLf
     datos &= FileChooser3.Dir & gb.CrLf
     datos &= FileChooser4.Dir & gb.CrLf
+    datos &= Replace(TextArea1.text, "\n", "|")
 
     If File.Ext(Dialog.path) <> "vistacarpetas" Then
       File.Save(Dialog.Path & ".vistacarpetas", datos)
@@ -71,13 +66,13 @@ Public Sub ButtonAbrir_Click()
 
   If Not Dialog.OpenFile() Then
     datos = Split(File.Load(Dialog.Path), gb.CrLf)
-    ComboBox1.Text = Dialog.Path
+    textboxNombre.Text = File.BaseName(Dialog.Path)
 
     FileChooser1.dir = datos[0]
     FileChooser2.dir = datos[2]
     FileChooser3.dir = datos[4]
     FileChooser4.dir = datos[6]
-
+    Try TextArea1.text = Replace(datos[8], "|", "\n")
   Endif
 
 End
@@ -90,5 +85,29 @@ Public Sub Form_Close()
   settings["dir4"] = FileChooser4.dir
 
   Settings.write(Me)
+
+End
+
+Public Sub Button1_Click()
+
+  Clipboard.Copy(FileChooser2.dir)
+
+End
+
+Public Sub Button2_Click()
+
+  Clipboard.Copy(FileChooser1.dir)
+
+End
+
+Public Sub Button3_Click()
+
+  Clipboard.Copy(FileChooser3.dir)
+
+End
+
+Public Sub Button4_Click()
+
+  Clipboard.Copy(FileChooser4.dir)
 
 End
