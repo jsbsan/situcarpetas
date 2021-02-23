@@ -63,7 +63,7 @@
     Expand = True
     Spacing = True
     { HBox1 HSplit
-      MoveScaled(1,3,122,33)
+      MoveScaled(-1,3,122,33)
       Expand = True
       Spacing = True
       { FileChooser2 FileChooser grupo

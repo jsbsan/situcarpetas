@@ -16,7 +16,7 @@ Public Sub Form_Open()
 
 End
 
-Public Sub grupo_Change()
+Public Sub grupo_activate() 'hacer doble clik o boton OK
 
   Try Desktop.Open(Last.value)
 

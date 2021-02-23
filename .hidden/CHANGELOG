@@ -1,3 +1,6 @@
+* Tue Feb 23 2021 minino <minino@minino-ThinkCentre-M82> 0.0.4
+- doble click para abrir ficheros
+
 * Tue Feb 23 2021 minino <minino@minino-ThinkCentre-M82> 0.0.3
 - obtiene ruta y puede mostrar mensaje guardados en el fichero de configuracion de las vistas creadas
 
