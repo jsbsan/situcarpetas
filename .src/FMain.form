@@ -70,12 +70,10 @@
       { FileChooser2 FileChooser grupo
         Name = "FileChooser2"
         MoveScaled(2,2,58,30)
-        Multi = True
       }
       { FileChooser1 FileChooser grupo
         Name = "FileChooser1"
         MoveScaled(60,1,57,30)
-        Multi = True
       }
     }
     { HSplit1 HSplit
@@ -83,12 +81,10 @@
       { FileChooser3 FileChooser grupo
         Name = "FileChooser3"
         MoveScaled(0,0,37,31)
-        Multi = True
       }
       { FileChooser4 FileChooser grupo
         Name = "FileChooser4"
         MoveScaled(54,1,57,31)
-        Multi = True
       }
     }
   }
