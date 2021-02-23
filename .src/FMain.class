@@ -12,6 +12,8 @@ Public Sub Form_Open()
   FileChooser3.dir = settings["dir3", User.home]
   FileChooser4.dir = settings["dir4", User.home]
 
+  TextArea1.Text = Settings["texto", ""]
+  textboxNombre.text = Settings["sesion", ""]
   Settings.Read(Me)
 
 End
@@ -83,7 +85,8 @@ Public Sub Form_Close()
   settings["dir2"] = FileChooser2.dir
   settings["dir3"] = FileChooser3.dir
   settings["dir4"] = FileChooser4.dir
-
+  Settings["texto"] = TextArea1.Text
+  Settings["sesion"] = textboxNombre.Text
   Settings.write(Me)
 
 End
@@ -91,23 +94,33 @@ End
 Public Sub Button1_Click()
 
   Clipboard.Copy(FileChooser2.dir)
+  AbrirExplorador(FileChooser2.dir)
 
 End
 
 Public Sub Button2_Click()
 
   Clipboard.Copy(FileChooser1.dir)
+  AbrirExplorador(FileChooser1.dir)
 
 End
 
 Public Sub Button3_Click()
 
   Clipboard.Copy(FileChooser3.dir)
+  AbrirExplorador(FileChooser3.dir)
 
 End
 
 Public Sub Button4_Click()
 
   Clipboard.Copy(FileChooser4.dir)
+  AbrirExplorador(FileChooser4.dir)
+
+End
+
+Public Sub AbrirExplorador(ruta As String)
+
+  Exec ["caja", ruta & "/"]
 
 End
