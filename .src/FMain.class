@@ -91,28 +91,28 @@ Public Sub Form_Close()
 
 End
 
-Public Sub Button1_Click()
+Public Sub Button1fileviewCopiaryAbrir_Click()
 
   Clipboard.Copy(FileChooser2.dir)
   AbrirExplorador(FileChooser2.dir)
 
 End
 
-Public Sub Button2_Click()
+Public Sub Button2fileviewCopiaryAbrir_Click()
 
   Clipboard.Copy(FileChooser1.dir)
   AbrirExplorador(FileChooser1.dir)
 
 End
 
-Public Sub Button3_Click()
+Public Sub Button3fileviewCopiaryAbrir_Click()
 
   Clipboard.Copy(FileChooser3.dir)
   AbrirExplorador(FileChooser3.dir)
 
 End
 
-Public Sub Button4_Click()
+Public Sub Button4fileviewCopiaryAbrir_Click()
 
   Clipboard.Copy(FileChooser4.dir)
   AbrirExplorador(FileChooser4.dir)
@@ -122,5 +122,29 @@ End
 Public Sub AbrirExplorador(ruta As String)
 
   Exec ["caja", ruta & "/"]
+
+End
+
+Public Sub Button1fileviewPegar_Click()
+
+  Try FileChooser2.dir = Clipboard.Paste()
+
+End
+
+Public Sub Button2fileviewPegar_Click()
+
+  Try FileChooser1.dir = Clipboard.Paste()
+
+End
+
+Public Sub Button3fileviewPegar_Click()
+
+  Try FileChooser3.dir = Clipboard.Paste()
+
+End
+
+Public Sub Button4fileviewPegar_Click()
+
+  Try FileChooser4.dir = Clipboard.Paste()
 
 End
