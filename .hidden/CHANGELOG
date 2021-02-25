@@ -1,3 +1,6 @@
+* Thu Feb 25 2021 minino <minino@minino-ThinkCentre-M82> 0.0.7
+- oculta botones de pegar ruta en fileview
+
 * Wed Feb 24 2021 minino <minino@minino-ThinkCentre-M82> 0.0.6
 - mejora añado 4 botones mas para copiar del portapapeles una ruta y asignarla a un fileview
 

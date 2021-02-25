@@ -2,7 +2,7 @@
 Title=situcarpetas
 Startup=FMain
 Icon=iconos/carpeta.png
-Version=0.0.6
+Version=0.0.7
 Component=gb.image
 Component=gb.gui.qt
 Component=gb.form
@@ -15,7 +15,7 @@ Language=en_US
 Maintainer=minino
 Address=minino@minino-ThinkCentre-M82
 License=General Public License
-PackageName=situcarpetas-0.0.6
+PackageName=situcarpetas-0.0.7
 PackageVersion=2
 CreateEachDirectory=1
 Packager=1

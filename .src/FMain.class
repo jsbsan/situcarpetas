@@ -15,6 +15,8 @@ Public Sub Form_Open()
   TextArea1.Text = Settings["texto", ""]
   textboxNombre.text = Settings["sesion", ""]
   Settings.Read(Me)
+  ButtonOcultarPegar.tag = "1"
+  ButtonOcultarPegar_Click()
 
 End
 
@@ -146,5 +148,17 @@ End
 Public Sub Button4fileviewPegar_Click()
 
   Try FileChooser4.dir = Clipboard.Paste()
+
+End
+
+Public Sub ButtonOcultarPegar_Click()
+
+  If ButtonOcultarPegar.tag = "" Then
+    HBoxBotonesPegar.visible = True
+    ButtonOcultarPegar.tag = "1"
+  Else
+    HBoxBotonesPegar.visible = False
+    ButtonOcultarPegar.tag = ""
+  Endif
 
 End
