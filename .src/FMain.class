@@ -162,3 +162,27 @@ Public Sub ButtonOcultarPegar_Click()
   Endif
 
 End
+
+Public Sub ButtonDoble_Click()
+
+  HSplit1.visible = False
+  FileChooser4.visible = True
+
+End
+
+Public Sub ButtonTripe_Click()
+
+  FileChooser4.visible = False
+  HSplit1.visible = True
+
+End
+
+Public Sub ButtonCuatro_Click()
+
+  FileChooser4.visible = True
+  FileChooser3.visible = True
+  FileChooser2.visible = True
+  FileChooser1.visible = True
+  HSplit1.visible = True
+
+End
