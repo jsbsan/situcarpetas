@@ -1,0 +1,48 @@
+' Gambas class file
+
+Public uno As TestForm
+Public dos As TestForm
+Public tres As TestForm
+Public cuatro As TestForm
+
+Public Sub Form_Open()
+
+  uno = New TestForm(HSplit1) As "Obj"
+  uno.tag = 1
+  uno.inicia()
+
+  dos = New TestForm(hsplit1) As "Obj"
+  dos.tag = 2
+  dos.inicia()
+
+  tres = New TestForm(HSplit2) As "Obj"
+  tres.tag = 3
+  tres.inicia()
+
+  cuatro = New TestForm(hsplit2) As "Obj"
+  cuatro.tag = 4
+  cuatro.inicia()
+
+End
+
+Public Sub Obj_ConseguirFoco(tag As Variant)
+
+  uno.Background = Color.red
+  dos.Background = Color.red
+  tres.Background = Color.red
+  cuatro.Background = Color.red
+
+  Select Case tag
+    Case 1
+      uno.Background = Color.Background
+
+    Case 2
+      dos.Background = Color.Background
+    Case 3
+      tres.Background = Color.Background
+    Case 4
+      cuatro.Background = Color.Background
+
+  End Select
+
+End

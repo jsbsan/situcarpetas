@@ -1,0 +1,98 @@
+' Gambas class file
+
+Event ConseguirFoco(tag As Variant)
+
+Public Sub DirView1_Click()
+
+  FileView1.dir = DirView1.Current
+  TextBoxRuta.text = DirView1.Current
+
+End
+
+Public Sub inicia()
+
+  TextBoxRuta.text = DirView1.Current
+  MenuDir.Visible = False
+  MenuFile.visible = False
+
+End
+
+Public Sub FileView1_DblClick()
+
+  Desktop.Open(DirView1.Current & "/" & FileView1.Current)
+
+End
+
+Public Sub Button1_Click()
+
+  If Exist(TextBoxRuta.text) Then
+    DirView1.Current = TextBoxRuta.text
+    FileView1.dir = DirView1.Current
+  Else
+    Message.Info("No puedo ir a esa ruta")
+
+  Endif
+
+End
+
+Public Sub FileView1_GotFocus()
+
+  Raise ConseguirFoco(Me.tag)
+
+End
+
+Public Sub DirView1_GotFocus()
+
+  Raise ConseguirFoco(Me.tag)
+
+End
+
+Public Sub TextBoxRuta_GotFocus()
+
+  Raise ConseguirFoco(Me.tag)
+
+End
+
+'-------------------------------------------------------------------------------------------
+
+Public Sub terminalFile_Click()
+
+  Exec ["xfce4-terminal", "--working-directory=" & DirView1.current]
+
+End
+
+Public Sub terminaldir_Click()
+
+  terminalFile_Click()
+
+End
+
+Public Sub creardirectoriofile_Click()
+
+  Dim nombre As String
+
+  nombre = InputBox("Nombre de la nueva carpeta", "Nueva Carpeta")
+
+  Try Mkdir DirView1.Current & "/" & nombre
+
+End
+
+Public Sub creardirectorio_Click()
+
+  creardirectoriofile_Click()
+
+End
+
+Public Sub Form_Open()
+
+End
+
+Public Sub TextBoxRuta_KeyPress()
+
+  If Key.code = Key.enter Or Key.code = Key.return Then
+    DirView1.Current = TextBoxRuta.text
+    FileView1.dir = DirView1.Current
+
+  Endif
+
+End

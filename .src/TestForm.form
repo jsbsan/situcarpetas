@@ -1,0 +1,97 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,109,47)
+  Expand = True
+  Arrangement = Arrange.Vertical
+  Padding = 2
+  { MenuDir Menu
+    Text = ("MenuDir")
+    { renombrardir Menu
+      Text = ("Renombrar")
+      Picture = Picture["icon:/24/spell-check"]
+    }
+    { creardirectorio Menu
+      Text = ("Crear Directorio")
+      Picture = Picture["icon:/24/directory"]
+    }
+    { terminaldir Menu
+      Text = ("Abrir Terminal")
+      Picture = Picture["icon:/24/terminal"]
+    }
+    { refrescardir Menu
+      Text = ("Refrescar")
+      Picture = Picture["icon:/24/refresh"]
+    }
+  }
+  { MenuFile Menu
+    Text = ("MenuFile")
+    { renombrarfile Menu
+      Text = ("Renombrar")
+      Picture = Picture["icon:/24/spell-check"]
+    }
+    { abrirnavegador Menu
+      Text = ("Abrir navegador")
+      Picture = Picture["icon:/24/exec"]
+    }
+    { creardirectoriofile Menu
+      Text = ("Crear Directorio")
+      Picture = Picture["icon:/24/directory"]
+    }
+    { terminalFile Menu
+      Text = ("Abrir Terminal")
+      Picture = Picture["icon:/24/terminal"]
+    }
+    { Menu2 Menu
+    }
+    { copiarfichero Menu
+      Text = ("Copiar")
+      Picture = Picture["icon:/24/copy"]
+    }
+    { pegarfichero Menu
+      Text = ("Pegar")
+      Picture = Picture["icon:/24/paste"]
+    }
+    { Menu1 Menu
+    }
+    { borrarfile Menu
+      Text = ("Borrar")
+      Picture = Picture["icon:/24/delete"]
+    }
+    { Menu3 Menu
+    }
+    { refrescarfile Menu
+      Text = ("Refrescar")
+      Picture = Picture["icon:/24/refresh"]
+    }
+  }
+  { HBox1 HBox
+    MoveScaled(0,0,101,3)
+    { Button1 Button
+      MoveScaled(0,0,10,3)
+      Text = ("Ir a")
+    }
+    { Label1 Label
+      MoveScaled(10,0,7,3)
+      Text = ("Ruta:")
+      Alignment = Align.Center
+    }
+    { TextBoxRuta TextBox
+      MoveScaled(17,0,73,3)
+    }
+  }
+  { HSplit1 HSplit
+    MoveScaled(0,3,106,42)
+    Expand = True
+    Spacing = True
+    { DirView1 DirView
+      MoveScaled(-1,10,37,29)
+      PopupMenu = "MenuDir"
+    }
+    { FileView1 FileView
+      MoveScaled(36,10,73,29)
+      PopupMenu = "MenuFile"
+      ShowDetailed = True
+    }
+  }
+}
