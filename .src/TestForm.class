@@ -122,10 +122,6 @@ Public Sub creardirectorio_Click()
 
 End
 
-Public Sub Form_Open()
-
-End
-
 Public Sub ButtonDirectorioFileview_Click()
 
   If FileView1.ShowDirectory = False Then
@@ -179,5 +175,47 @@ End
 Public Sub pegarfichero_Click()
 
   Raise PegarEn(hdirectorioActual)
+
+End
+
+Public Sub reload()
+
+  FileView1.Reload()
+
+  DirView1.Reload()
+
+End
+
+Public Sub borrarfile_Click()
+
+  Dim respuesta As Integer
+  Dim f As String
+
+  respuesta = Message.Question("Borrar el fichero:\n" & FileView1.Selection.Join("\n"), "Si", "No")
+
+  If respuesta = 1 Then
+
+    For Each f In FileView1.Selection
+      Kill DirView1.Current & "/" & f
+    Next
+    reload()
+  Endif
+
+End
+
+Public Sub abrirnavegador_Click()
+
+  ''TODO: ABRIR NAVEGADOR
+
+End
+
+Public Sub renombrarfile_Click()
+
+  ''TODO: RENOMBRAR FICHERO
+
+End
+
+Public Sub renombrardir_Click()
+  ''TODO: RENOMBRAR DIRECTORIO
 
 End

@@ -1,0 +1,15 @@
+' Gambas module file
+
+Public Sub Copiar(listaficheros As String[], rutaorigen As String, rutadestino As String)
+
+  Dim f As String
+
+  For Each f In listaficheros
+    If Exist(rutadestino & "/" & f) Then
+      Message.Error("Existe un fichero del mismo nombre en el directorio destino: " & f)
+    Else
+      Copy rutaorigen & "/" & f To rutadestino & "/" & f
+    Endif
+  Next
+
+End

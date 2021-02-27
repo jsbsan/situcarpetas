@@ -53,6 +53,10 @@
     { Spring3 Spring
       MoveScaled(121,1,5,2)
     }
+    { ButtonaYUDA Button
+      MoveScaled(136,0,5,4)
+      Picture = Picture["icon:/24/question"]
+    }
   }
   { Frame1 Frame
     MoveScaled(0,5,127,11)

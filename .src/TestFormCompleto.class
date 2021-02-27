@@ -10,6 +10,8 @@ Public panelesActivos As String = "4"
 Public Acopiarlista As String[]
 Public AcopiarRuta As String
 
+Public ActualFileChooser As Testform
+
 Public Sub Form_Open()
 
   uno = New TestForm(HSplit1) As "Obj"
@@ -40,14 +42,16 @@ Public Sub Obj_ConseguirFoco(tag As Variant)
   Select Case tag
     Case 1
       uno.Background = Color.Background
-
+      ActualFileChooser = uno
     Case 2
       dos.Background = Color.Background
+      ActualFileChooser = dos
     Case 3
       tres.Background = Color.Background
+      ActualFileChooser = tres
     Case 4
       cuatro.Background = Color.Background
-
+      ActualFileChooser = cuatro
   End Select
 
 End
@@ -64,6 +68,10 @@ End
 Public Sub obj_PegarEn(destinoruta As String)
 
   Message.Info("Pegar en Directorio Destino:\n" & destinoruta)
+
+  CopiarFicheros.Copiar(Acopiarlista, AcopiarRuta, destinoruta)
+
+  ActualFileChooser.reload()
 
 End
 
@@ -146,10 +154,6 @@ Public Sub LeerVersionAntigua(ruta As String)
   tres.DirectorioActual = datos[4]
   cuatro.DirectorioActual = datos[6]
   Try TextAreaLargo.text = Replace(datos[8], "|", "\n")
-
-End
-
-Public Sub Button1fileviewCopiaryAbrir_Click()
 
 End
 
