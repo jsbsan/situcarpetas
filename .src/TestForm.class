@@ -2,16 +2,41 @@
 
 Event ConseguirFoco(tag As Variant)
 
+Event Copia(lista As String[], directorio As String)
+
+Event PegarEn(Rutadestino As String)
+
+Property DirectorioActual As String
+Private hdirectorioActual As String
+
+Function DirectorioActual_read() As String
+
+  Return hdirectorioActual
+
+End
+
+Function DirectorioActual_write(valor As String)
+
+  hdirectorioActual = valor
+  FileView1.dir = valor
+  DirView1.current = valor
+  TextBoxRuta.text = valor
+
+End
+
 Public Sub DirView1_Click()
 
   FileView1.dir = DirView1.Current
   TextBoxRuta.text = DirView1.Current
+  hDirectorioActual = DirView1.Current
 
 End
 
 Public Sub inicia()
 
   TextBoxRuta.text = DirView1.Current
+  hDirectorioActual = DirView1.Current
+
   MenuDir.Visible = False
   MenuFile.visible = False
 
@@ -23,11 +48,13 @@ Public Sub FileView1_DblClick()
 
 End
 
-Public Sub Button1_Click()
+Public Sub ButtonIrA_Click()
 
   If Exist(TextBoxRuta.text) Then
     DirView1.Current = TextBoxRuta.text
     FileView1.dir = DirView1.Current
+    hDirectorioActual = DirView1.Current
+
   Else
     Message.Info("No puedo ir a esa ruta")
 
@@ -53,11 +80,23 @@ Public Sub TextBoxRuta_GotFocus()
 
 End
 
-'-------------------------------------------------------------------------------------------
+Public Sub TextBoxRuta_KeyPress()
+
+  If Key.code = Key.enter Or Key.code = Key.return Then
+    DirView1.Current = TextBoxRuta.text
+    FileView1.dir = DirView1.Current
+    hdirectorioActual = DirView1.Current
+  Endif
+
+End
+
+''-----------------------------------------------------
+''-------  AREA DE LAS FUNCIONES DE LOS MENUS ---------
+''-----------------------------------------------------
 
 Public Sub terminalFile_Click()
 
-  Exec ["xfce4-terminal", "--working-directory=" & DirView1.current]
+  Exec ["xfce4-terminal", "--working-directory=" & TextBoxRuta.text]
 
 End
 
@@ -87,12 +126,58 @@ Public Sub Form_Open()
 
 End
 
-Public Sub TextBoxRuta_KeyPress()
+Public Sub ButtonDirectorioFileview_Click()
 
-  If Key.code = Key.enter Or Key.code = Key.return Then
-    DirView1.Current = TextBoxRuta.text
-    FileView1.dir = DirView1.Current
-
+  If FileView1.ShowDirectory = False Then
+    FileView1.ShowDirectory = True
+  Else
+    FileView1.ShowDirectory = False
   Endif
+
+End
+
+Public Sub ButtonDetalles_Click()
+
+  If FileView1.ShowDetailed = False Then
+    FileView1.ShowDetailed = True
+  Else
+    FileView1.ShowDetailed = False
+  Endif
+
+End
+
+Public Sub ButtonOcultos_Click()
+
+  If FileView1.ShowHidden = False Then
+    FileView1.ShowHidden = True
+  Else
+    FileView1.ShowHidden = False
+  Endif
+
+End
+
+Public Sub refrescarfile_Click()
+
+  FileView1.Reload()
+
+End
+
+Public Sub refrescardir_Click()
+
+  DirView1.Reload()
+
+End
+
+Public Sub copiarfichero_Click()
+
+  Print FileView1.Selection
+
+  Raise copia(FileView1.Selection, hDirectorioActual)
+
+End
+
+Public Sub pegarfichero_Click()
+
+  Raise PegarEn(hdirectorioActual)
 
 End

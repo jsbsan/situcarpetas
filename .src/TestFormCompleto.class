@@ -5,6 +5,11 @@ Public dos As TestForm
 Public tres As TestForm
 Public cuatro As TestForm
 
+Public panelesActivos As String = "4"
+
+Public Acopiarlista As String[]
+Public AcopiarRuta As String
+
 Public Sub Form_Open()
 
   uno = New TestForm(HSplit1) As "Obj"
@@ -43,6 +48,147 @@ Public Sub Obj_ConseguirFoco(tag As Variant)
     Case 4
       cuatro.Background = Color.Background
 
+  End Select
+
+End
+
+Public Sub obj_Copia(lista As String[], directorio As String)
+
+  Message.Info("copiando:\n" & lista.join("\n") & "\nDirecorio Origen: " & directorio)
+
+  Acopiarlista = lista
+  AcopiarRuta = directorio
+
+End
+
+Public Sub obj_PegarEn(destinoruta As String)
+
+  Message.Info("Pegar en Directorio Destino:\n" & destinoruta)
+
+End
+
+Public Sub ButtonGuardar_Click()
+
+  If Not Exist(User.home & "/" & "VistaCarpetas") Then
+    Mkdir User.home & "/" & "VistaCarpetas/"
+  Endif
+
+  Dialog.Path = User.home & "/" & "VistaCarpetas/"
+
+  Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
+
+  If Not Dialog.SaveFile() Then
+    FicheroDatos.contenido = "" 'limpio el contenido
+    FicheroDatos.agregar("version", "1.01")
+    FicheroDatos.agregar("dir1", uno.DirectorioActual)
+    FicheroDatos.agregar("dir2", dos.DirectorioActual)
+    FicheroDatos.agregar("dir3", tres.DirectorioActual)
+    FicheroDatos.agregar("dir4", cuatro.DirectorioActual)
+    FicheroDatos.agregar("TextoCorto", textboxCorto.text)
+    FicheroDatos.agregar("TextoLargo", Replace(TextAreaLargo.text, gb.NewLine, "|"))
+    FicheroDatos.agregar("panelesActivos", panelesActivos)
+
+    If File.Ext(Dialog.path) <> "vistacarpetas" Then
+      Dialog.path = Dialog.Path & ".vistacarpetas" 'para guardar por defecto esta extension
+    Endif
+
+    FicheroDatos.save(Dialog.path)
+
+  Endif
+
+End
+
+Public Sub ButtonAbrir_Click()
+
+  If Not Exist(User.home & "/" & "VistaCarpetas") Then
+    Mkdir User.home & "/" & "VistaCarpetas"
+  Endif
+
+  Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
+
+  Dialog.path = User.home & "/" & "VistaCarpetas"
+
+  If Not Dialog.OpenFile() Then
+    FicheroDatos.load(Dialog.path)
+
+    If IsNull(FicheroDatos.buscar("version")) Then
+      'version no colocida cargo como fichero antiguos..
+      LeerVersionAntigua(Dialog.path)
+    Else
+      Select Case FicheroDatos.buscar("version")
+        Case "1.01"
+          uno.DirectorioActual = FicheroDatos.buscar("dir1")
+          dos.DirectorioActual = FicheroDatos.buscar("dir2")
+          tres.DirectorioActual = FicheroDatos.buscar("dir3")
+          cuatro.DirectorioActual = FicheroDatos.buscar("dir4")
+
+          textboxCorto.text = FicheroDatos.buscar("TextoCorto")
+          TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+
+          panelesActivos = FicheroDatos.buscar("panelesActivos", "4")
+          activarPaneles()
+      End Select
+
+    Endif
+  Endif
+
+End
+
+Public Sub LeerVersionAntigua(ruta As String)
+
+  Dim datos As String[]
+
+  datos = Split(File.Load(Dialog.Path), gb.CrLf)
+  textboxCorto.Text = File.BaseName(Dialog.Path)
+
+  uno.DirectorioActual = datos[0]
+  dos.DirectorioActual = datos[2]
+  tres.DirectorioActual = datos[4]
+  cuatro.DirectorioActual = datos[6]
+  Try TextAreaLargo.text = Replace(datos[8], "|", "\n")
+
+End
+
+Public Sub Button1fileviewCopiaryAbrir_Click()
+
+End
+
+Public Sub ButtonDoble_Click()
+
+  tres.visible = False
+  cuatro.visible = False
+  HSplit2.visible = False
+  panelesActivos = "2"
+
+End
+
+Public Sub ButtonTripe_Click()
+
+  tres.visible = True
+  cuatro.visible = False
+  HSplit2.visible = True
+  panelesActivos = "3"
+
+End
+
+Public Sub ButtonCuatro_Click()
+
+  tres.visible = True
+  cuatro.visible = True
+  HSplit2.visible = True
+  panelesActivos = "4"
+
+End
+
+Public Sub activarPaneles()
+
+  Select Case panelesActivos
+    Case "2"
+      ButtonDoble_Click()
+    Case "3"
+      ButtonTripe_Click()
+    Case "4"
+      ButtonCuatro_Click()
   End Select
 
 End

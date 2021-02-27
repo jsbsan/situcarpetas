@@ -67,7 +67,7 @@
   }
   { HBox1 HBox
     MoveScaled(0,0,101,3)
-    { Button1 Button
+    { ButtonIrA Button
       MoveScaled(0,0,10,3)
       Text = ("Ir a")
     }
@@ -88,10 +88,39 @@
       MoveScaled(-1,10,37,29)
       PopupMenu = "MenuDir"
     }
-    { FileView1 FileView
-      MoveScaled(36,10,73,29)
-      PopupMenu = "MenuFile"
-      ShowDetailed = True
+    { VPanel1 VBox
+      MoveScaled(41,4,64,33)
+      { HBox2 HBox
+        MoveScaled(7,2,55,3)
+        { Spring2 Spring
+          MoveScaled(0,0,18,2)
+        }
+        { ButtonOcultos Button
+          MoveScaled(19,0,6,3)
+          ToolTip = ("veer ocultos")
+          Picture = Picture["icon:/24/watch"]
+        }
+        { ButtonDirectorioFileview Button
+          MoveScaled(26,0,6,3)
+          ToolTip = ("ver directorios")
+          Picture = Picture["icon:/24/directory"]
+        }
+        { ButtonDetalles Button
+          MoveScaled(32,0,7,3)
+          ToolTip = ("ver detalles")
+          Picture = Picture["icon:/24/view-detail"]
+        }
+        { Spring1 Spring
+          MoveScaled(41,0,18,2)
+        }
+      }
+      { FileView1 FileView
+        MoveScaled(5,9,51,22)
+        Expand = True
+        PopupMenu = "MenuFile"
+        Mode = Select.Multiple
+        ShowDetailed = True
+      }
     }
   }
 }
