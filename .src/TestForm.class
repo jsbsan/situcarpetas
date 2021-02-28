@@ -205,17 +205,33 @@ End
 
 Public Sub abrirnavegador_Click()
 
-  ''TODO: ABRIR NAVEGADOR
+  Exec ["caja", hDirectorioActual & "/"]
 
 End
 
 Public Sub renombrarfile_Click()
 
-  ''TODO: RENOMBRAR FICHERO
+  Dim resp As String
+
+  resp = InputBox("Fichero:", "Renombrar", FileView1.Current)
+
+  If resp = "" Then
+    'ha cancelado el usuario
+    Return
+  Else
+    Move hdirectorioActual &/ FileView1.current To hdirectorioActual &/ resp
+    reload()
+  Endif
 
 End
 
-Public Sub renombrardir_Click()
-  ''TODO: RENOMBRAR DIRECTORIO
+Public Sub MenuUnirPDF_Click()
+
+  Dim comando As String
+
+  'pdftk *.pdf cat output archivo_final.pdf
+  comando = "cd " & hDirectorioActual & " && pdftk *.pdf cat output 00_Archivo_final.pdf"
+  Shell comando Wait
+  reload()
 
 End

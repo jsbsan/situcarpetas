@@ -1,6 +1,6 @@
 # Gambas Project File 3.0
 Title=situcarpetas
-Startup=FMain
+Startup=TestFormCompleto
 Icon=iconos/carpeta.png
 Version=0.0.8
 Component=gb.image

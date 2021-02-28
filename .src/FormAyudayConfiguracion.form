@@ -1,0 +1,24 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,33)
+  { PictureBox1 PictureBox
+    MoveScaled(7,1,14,15)
+    Picture = Picture["iconos/carpeta.png"]
+    Stretch = True
+  }
+  { TextLabel1 TextLabel
+    MoveScaled(6,17,51,11)
+    Text = ("Sistema para guardar situacion de carpetas de trabajo.\nAutor: Julio Sánchez Berro\nLicencia: GPL 3.0\nRealizado en Gambas3 para linux mint xfce\n2021\n")
+    Alignment = Align.Center
+  }
+  { Labelversion Label
+    MoveScaled(26,10,30,5)
+    Alignment = Align.Center
+  }
+  { LabelNombre Label
+    MoveScaled(26,2,29,6)
+    Font = Font["Bold,Italic"]
+    Alignment = Align.Center
+  }
+}

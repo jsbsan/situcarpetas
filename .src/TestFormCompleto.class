@@ -29,6 +29,17 @@ Public Sub Form_Open()
   cuatro = New TestForm(hsplit2) As "Obj"
   cuatro.tag = 4
   cuatro.inicia()
+  Settings.Read(Me)
+
+  uno.DirectorioActual = settings["dir1"]
+  dos.DirectorioActual = settings["dir2"]
+  tres.DirectorioActual = settings["dir3"]
+  cuatro.DirectorioActual = settings["dir4"]
+  TextAreaLargo.text = Settings["texto"]
+  textboxCorto.Text = Settings["sesion"]
+  HSplit1.Layout = Settings["HSplit1"]
+  HSplit2.Layout = Settings["HSplit2"]
+  panelesActivos = Settings["PanalesActivos"]
 
 End
 
@@ -70,7 +81,7 @@ Public Sub obj_PegarEn(destinoruta As String)
   Message.Info("Pegar en Directorio Destino:\n" & destinoruta)
 
   CopiarFicheros.Copiar(Acopiarlista, AcopiarRuta, destinoruta)
-
+  Wait 0.1
   ActualFileChooser.reload()
 
 End
@@ -95,6 +106,8 @@ Public Sub ButtonGuardar_Click()
     FicheroDatos.agregar("TextoCorto", textboxCorto.text)
     FicheroDatos.agregar("TextoLargo", Replace(TextAreaLargo.text, gb.NewLine, "|"))
     FicheroDatos.agregar("panelesActivos", panelesActivos)
+    FicheroDatos.agregar("HSplit1", convertirAcadenaArray(HSplit1.Layout))
+    FicheroDatos.agregar("HSplit2", convertirAcadenaArray(HSplit2.Layout))
 
     If File.Ext(Dialog.path) <> "vistacarpetas" Then
       Dialog.path = Dialog.Path & ".vistacarpetas" 'para guardar por defecto esta extension
@@ -134,6 +147,11 @@ Public Sub ButtonAbrir_Click()
           TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
 
           panelesActivos = FicheroDatos.buscar("panelesActivos", "4")
+
+          HSplit1.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit1", "1|1"))
+
+          HSplit2.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit2", "1|1"))
+
           activarPaneles()
       End Select
 
@@ -194,5 +212,57 @@ Public Sub activarPaneles()
     Case "4"
       ButtonCuatro_Click()
   End Select
+
+End
+
+Public Sub ButtonaYUDA_Click()
+
+  FormAyudayConfiguracion.Show()
+
+End
+
+Public Sub Form_Close()
+
+  settings["dir1"] = uno.DirectorioActual
+  settings["dir2"] = dos.DirectorioActual
+  settings["dir3"] = tres.DirectorioActual
+  settings["dir4"] = cuatro.DirectorioActual
+  Settings["texto"] = TextAreaLargo.text
+  Settings["sesion"] = textboxCorto.Text
+  Settings["HSplit1"] = HSplit1.Layout
+  Settings["HSplit2"] = HSplit2.Layout
+  Settings["PanalesActivos"] = panelesActivos
+  Settings.write(Me)
+
+End
+
+Public Function convertirAcadenaArray(lista As Integer[]) As String
+
+  Dim n As Float
+  Dim cadena As String
+
+  For Each n In lista
+    cadena &= Str$(n) & "|"
+
+  Next
+
+  Return cadena
+
+End
+
+Public Function convertirAintergerArray(texto As String) As Integer[]
+
+  Dim arrayinteger As New Integer[]
+  Dim lista As String[]
+  Dim token As String
+
+  lista = Split(texto, "|")
+
+  For Each token In lista
+    If token = "" Then Continue
+    arrayinteger.Add(Val(token))
+  Next
+
+  Return arrayinteger
 
 End

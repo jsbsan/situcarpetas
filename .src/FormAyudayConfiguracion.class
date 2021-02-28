@@ -1,0 +1,9 @@
+' Gambas class file
+
+Public Sub Form_Open()
+
+  Me.Center
+  Labelversion.text = "Versión " & Application.Version
+  LabelNombre.text = Application.Title
+
+End

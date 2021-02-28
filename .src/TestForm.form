@@ -7,10 +7,6 @@
   Padding = 2
   { MenuDir Menu
     Text = ("MenuDir")
-    { renombrardir Menu
-      Text = ("Renombrar")
-      Picture = Picture["icon:/24/spell-check"]
-    }
     { creardirectorio Menu
       Text = ("Crear Directorio")
       Picture = Picture["icon:/24/directory"]
@@ -41,6 +37,10 @@
     { terminalFile Menu
       Text = ("Abrir Terminal")
       Picture = Picture["icon:/24/terminal"]
+    }
+    { MenuUnirPDF Menu
+      Text = ("Unir PDFs")
+      Picture = Picture["icon:/24/pdf"]
     }
     { Menu2 Menu
     }
