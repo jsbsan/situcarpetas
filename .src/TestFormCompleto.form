@@ -21,7 +21,7 @@
       Picture = Picture["icon:/24/open"]
     }
     { ButtonGuardar Button
-      MoveScaled(61,0,10,4)
+      MoveScaled(60,0,10,4)
       Text = ("Guardar")
       Picture = Picture["icon:/24/save"]
     }

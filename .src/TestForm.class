@@ -19,8 +19,9 @@ Function DirectorioActual_write(valor As String)
 
   hdirectorioActual = valor
   FileView1.dir = valor
-  DirView1.current = valor
+
   TextBoxRuta.text = valor
+  DirView1.current = valor
 
 End
 
@@ -44,17 +45,19 @@ End
 
 Public Sub FileView1_DblClick()
 
-  Desktop.Open(DirView1.Current & "/" & FileView1.Current)
+  If Not IsDir(Me.DirectorioActual & "/" & FileView1.Current) Then
+    Desktop.Open(Me.DirectorioActual & "/" & FileView1.Current)
+  Else
+    Me.DirectorioActual = Me.DirectorioActual & "/" & FileView1.Current
+  Endif
 
 End
 
 Public Sub ButtonIrA_Click()
 
   If Exist(TextBoxRuta.text) Then
-    DirView1.Current = TextBoxRuta.text
-    FileView1.dir = DirView1.Current
-    hDirectorioActual = DirView1.Current
-
+    Me.DirectorioActual = TextBoxRuta.text
+    reload()
   Else
     Message.Info("No puedo ir a esa ruta")
 
@@ -83,6 +86,8 @@ End
 Public Sub TextBoxRuta_KeyPress()
 
   If Key.code = Key.enter Or Key.code = Key.return Then
+    '  Me.DirectorioActual = TextBoxRuta.text
+
     DirView1.Current = TextBoxRuta.text
     FileView1.dir = DirView1.Current
     hdirectorioActual = DirView1.Current
@@ -250,5 +255,28 @@ Public Sub MenuMarcarFichero_Click()
   FormMarcar.fichero = [FileView1.Current]
   FormMarcar.Showmodal()
   reload()
+
+End
+
+Public Sub ButtonAbrirCarpetaContenedora_Click()
+
+  Dim lista As String[]
+  'subo una ruta
+  lista = Split(TextBoxRuta.text, "/")
+  lista.Delete(lista.count - 1)
+
+  FileView1.dir = lista.Join("/")
+  TextBoxRuta.text = lista.Join("/")
+  hdirectorioActual = lista.Join("/")
+
+End
+
+Public Sub ButtonArbolDirectorio_Click()
+
+  If DirView1.Visible Then
+    DirView1.Visible = False
+  Else
+    DirView1.Visible = True
+  Endif
 
 End

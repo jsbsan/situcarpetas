@@ -45,23 +45,23 @@ End
 
 Public Sub Obj_ConseguirFoco(tag As Variant)
 
-  uno.Background = Color.red
-  dos.Background = Color.red
-  tres.Background = Color.red
-  cuatro.Background = Color.red
+  uno.Background = Color.Background
+  dos.Background = Color.Background
+  tres.Background = Color.Background
+  cuatro.Background = Color.Background
 
   Select Case tag
     Case 1
-      uno.Background = Color.Background
+      uno.Background = Color.cyan
       ActualFileChooser = uno
     Case 2
-      dos.Background = Color.Background
+      dos.Background = Color.cyan
       ActualFileChooser = dos
     Case 3
-      tres.Background = Color.Background
+      tres.Background = Color.cyan
       ActualFileChooser = tres
     Case 4
-      cuatro.Background = Color.Background
+      cuatro.Background = Color.cyan
       ActualFileChooser = cuatro
   End Select
 
@@ -164,8 +164,8 @@ Public Sub LeerVersionAntigua(ruta As String)
 
   Dim datos As String[]
 
-  datos = Split(File.Load(Dialog.Path), gb.CrLf)
-  textboxCorto.Text = File.BaseName(Dialog.Path)
+  datos = Split(File.Load(RUTA), gb.CrLf)
+  textboxCorto.Text = File.BaseName(RUTA)
 
   uno.DirectorioActual = datos[0]
   dos.DirectorioActual = datos[2]

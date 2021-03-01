@@ -98,7 +98,6 @@ Public Function borrar(NombreVariable As String) ''elimina una variable
 
   Dim lineas As String[]
   Dim l As String
-  Dim valor As String
   Dim token As String[]
   Dim nuevocontenido As String
 
