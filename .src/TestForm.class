@@ -119,6 +119,8 @@ Public Sub creardirectoriofile_Click()
 
   Try Mkdir DirView1.Current & "/" & nombre
 
+  reload()
+
 End
 
 Public Sub creardirectorio_Click()
@@ -201,7 +203,12 @@ Public Sub borrarfile_Click()
   If respuesta = 1 Then
 
     For Each f In FileView1.Selection
-      Kill DirView1.Current & "/" & f
+
+      If IsDir(DirView1.current & "/" & f) Then
+        Rmdir DirView1.current & "/" & f
+      Else
+        Kill DirView1.Current & "/" & f
+      Endif
     Next
     reload()
   Endif
