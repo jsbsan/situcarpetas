@@ -96,7 +96,7 @@ End
 
 Public Sub terminalFile_Click()
 
-  Exec ["xfce4-terminal", "--working-directory=" & TextBoxRuta.text]
+  Exec [Settings["terminal", "xfce4-terminal"], Settings["paraexplorador", "--working-directory="] & TextBoxRuta.text]
 
 End
 
@@ -205,7 +205,7 @@ End
 
 Public Sub abrirnavegador_Click()
 
-  Exec ["caja", hDirectorioActual & "/"]
+  Exec [Settings["explorador", "caja"], hDirectorioActual & "/"]
 
 End
 
@@ -232,6 +232,23 @@ Public Sub MenuUnirPDF_Click()
   'pdftk *.pdf cat output archivo_final.pdf
   comando = "cd " & hDirectorioActual & " && pdftk *.pdf cat output 00_Archivo_final.pdf"
   Shell comando Wait
+  reload()
+
+End
+
+Public Sub ButtonFiltrar_Click()
+
+  FileView1.Filter = [TextBoxFiltro.TEXT]
+  reload()
+
+End
+
+Public Sub MenuMarcarFichero_Click()
+
+  ''TODO: MARCAR/DESMARCAR FICHEROS
+  FormMarcar.ruta = hdirectorioActual
+  FormMarcar.fichero = [FileView1.Current]
+  FormMarcar.Showmodal()
   reload()
 
 End

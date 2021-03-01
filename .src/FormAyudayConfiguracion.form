@@ -1,7 +1,12 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,64,33)
+  MoveScaled(0,0,64,61)
+  { ButtonACEPTAR Button
+    MoveScaled(47,55,13,4)
+    Text = ("Aceptar")
+    Picture = Picture["icon:/24/apply"]
+  }
   { PictureBox1 PictureBox
     MoveScaled(7,1,14,15)
     Picture = Picture["iconos/carpeta.png"]
@@ -20,5 +25,39 @@
     MoveScaled(26,2,29,6)
     Font = Font["Bold,Italic"]
     Alignment = Align.Center
+  }
+  { Label1 Label
+    MoveScaled(4,33,20,5)
+    Text = ("Explorador de ficheros:")
+  }
+  { Label2 Label
+    MoveScaled(4,46,20,5)
+    Text = ("Terminal:")
+    Alignment = Align.Right
+  }
+  { TextBoxEXP TextBox
+    MoveScaled(25,33,28,4)
+  }
+  { TextBoxTERM TextBox
+    MoveScaled(25,47,28,4)
+  }
+  { Label3 Label
+    MoveScaled(4,38,20,5)
+    Text = ("Parámetro Explorador:")
+  }
+  { TextBoxPARAEXP TextBox
+    MoveScaled(25,38,28,4)
+  }
+  { ButtonTdefecto Button
+    MoveScaled(55,47,7,4)
+    Text = ("Default")
+  }
+  { ButtonExpDefecto Button
+    MoveScaled(55,33,7,4)
+    Text = ("Default")
+  }
+  { ButtonParaExpDefecto Button
+    MoveScaled(55,38,7,4)
+    Text = ("Default")
   }
 }

@@ -1,0 +1,69 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,65,33)
+  { Label1 Label
+    MoveScaled(1,17,8,4)
+    Text = ("Fichero:")
+    Alignment = Align.Right
+  }
+  { RadioButtonAdelante RadioButton
+    MoveScaled(40,4,14,4)
+    Text = ("Adelante")
+  }
+  { RadioButtonAtras RadioButton
+    MoveScaled(40,8,14,4)
+    Text = ("Atras")
+    Value = True
+  }
+  { LabelNombrefichero Label
+    MoveScaled(7,21,56,4)
+    Border = Border.Plain
+  }
+  { ButtonAceptar Button
+    MoveScaled(14,27,16,5)
+    Text = ("Aceptar")
+    Picture = Picture["icon:/24/apply"]
+  }
+  { ButtonCancelar Button
+    MoveScaled(42,27,14,5)
+    Text = ("Cancelar")
+    Picture = Picture["icon:/24/cancel"]
+  }
+  { TextLabel1 TextLabel
+    MoveScaled(37,1,20,3)
+    Text = ("Situación")
+  }
+  { TextLabel2 TextLabel
+    MoveScaled(4,1,20,3)
+    Text = ("Marcas")
+  }
+  { button6 Button
+    MoveScaled(16,13,8,3)
+    Text = ("⏹")
+  }
+  { button4 Button
+    MoveScaled(16,4,8,3)
+    Text = ("🔃")
+  }
+  { button5 Button
+    MoveScaled(16,8,8,3)
+    Text = ("🔥")
+  }
+  { button2 Button
+    MoveScaled(6,13,8,3)
+    Text = ("🔴")
+  }
+  { button1 Button
+    MoveScaled(6,8,8,3)
+    Text = ("🔵")
+  }
+  { Button3 Button
+    MoveScaled(6,4,8,3)
+    Text = ("🚩")
+  }
+  { ButtonEliminarMarcas Button
+    MoveScaled(37,13,17,4)
+    Text = ("Quitar Marcas")
+  }
+}
