@@ -83,6 +83,7 @@
         MoveScaled(0,0,101,3)
         { ButtonIrA Button
           MoveScaled(0,0,10,3)
+          Visible = False
           Text = ("Ir a")
         }
         { Label1 Label
@@ -92,6 +93,7 @@
         }
         { TextBoxRuta TextBox
           MoveScaled(17,0,73,3)
+          ReadOnly = True
         }
       }
       { HBox2 HBox

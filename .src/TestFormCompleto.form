@@ -50,8 +50,16 @@
         Picture = Picture["iconos/cuatro.png"]
       }
     }
+    { Spring2 Spring
+      MoveScaled(103,1,10,3)
+    }
+    { ButtonIra Button
+      MoveScaled(115,0,10,4)
+      Text = ("Ir a")
+      Picture = Picture["icon:/24/directory"]
+    }
     { Spring3 Spring
-      MoveScaled(121,1,5,2)
+      MoveScaled(126,1,5,2)
     }
     { ButtonaYUDA Button
       MoveScaled(136,0,5,4)

@@ -53,17 +53,19 @@ Public Sub FileView1_DblClick()
 
 End
 
-Public Sub ButtonIrA_Click()
-
-  If Exist(TextBoxRuta.text) Then
-    Me.DirectorioActual = TextBoxRuta.text
-    reload()
-  Else
-    Message.Info("No puedo ir a esa ruta")
-
-  Endif
-
-End
+' Public Sub ButtonIrA_Click()
+'
+'   If Exist(TextBoxRuta.text) Then
+'
+'     Me.DirectorioActual = TextBoxRuta.text
+'
+'     reload()
+'   Else
+'     Message.Info("No puedo ir a esa ruta")
+'
+'   Endif
+'
+' End
 
 Public Sub FileView1_GotFocus()
 
