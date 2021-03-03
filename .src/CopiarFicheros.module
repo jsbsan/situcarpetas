@@ -11,8 +11,44 @@ Public Sub Copiar(listaficheros As String[], rutaorigen As String, rutadestino A
       fnuevo = File.BaseName(f) & " (copia)" & "." & File.Ext(f)
       Copy rutaorigen & "/" & f To rutadestino & "/" & fnuevo
     Else
-      Copy rutaorigen & "/" & f To rutadestino & "/" & f
+      If Exist(rutadestino & "/" & f) Then
+        fnuevo = File.BaseName(f) & " (nueva version)" & "." & File.Ext(f)
 
+        Copy rutaorigen & "/" & f To rutadestino & "/" & fnuevo
+      Else
+
+        Copy rutaorigen & "/" & f To rutadestino & "/" & f
+      Endif
+    Endif
+
+  Next
+
+End
+
+Public Sub Mover(listaficheros As String[], rutaorigen As String, rutadestino As String)
+
+  Dim f As String
+  Dim fnuevo As String
+
+  For Each f In listaficheros
+    If rutaorigen & "/" & f = rutadestino & "/" & f Then
+      'es un fichero que ya exite
+      fnuevo = File.BaseName(f) & " (copia)" & "." & File.Ext(f)
+      Copy rutaorigen & "/" & f To rutadestino & "/" & fnuevo
+      Wait 1
+      Kill rutaorigen & "/" & f
+
+    Else
+      If Exist(rutadestino & "/" & f) Then
+        fnuevo = File.BaseName(f) & " (nueva version)" & "." & File.Ext(f)
+        Copy rutaorigen & "/" & f To rutadestino & "/" & fnuevo
+        Wait 1
+        Kill rutaorigen & "/" & f
+      Else
+        Copy rutaorigen & "/" & f To rutadestino & "/" & f
+        Wait 1
+        Kill rutaorigen & "/" & f
+      Endif
     Endif
 
   Next

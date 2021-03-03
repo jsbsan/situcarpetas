@@ -46,11 +46,19 @@
       Text = ("Marcar/Desmarcar Fichero")
       Picture = Picture["icon:/24/flag"]
     }
+    { MenuDividePdf Menu
+      Text = ("Dividir Pdf")
+      Picture = Picture["iconos/cortarPDF.png"]
+    }
     { Menu2 Menu
     }
     { copiarfichero Menu
       Text = ("Copiar")
       Picture = Picture["icon:/24/copy"]
+    }
+    { MenuMover Menu
+      Text = ("Mover")
+      Picture = Picture["icon:/24/cut"]
     }
     { pegarfichero Menu
       Text = ("Pegar")
@@ -145,6 +153,7 @@
       }
       { FileView1 FileView
         MoveScaled(5,9,51,22)
+        Drop = True
         Expand = True
         PopupMenu = "MenuFile"
         Mode = Select.Multiple

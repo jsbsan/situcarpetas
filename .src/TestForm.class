@@ -6,6 +6,10 @@ Event Copia(lista As String[], directorio As String)
 
 Event PegarEn(Rutadestino As String)
 
+Event mover(lista As String[], directorio As String)
+
+Event actualizarInformacionDirectorios()
+
 Property DirectorioActual As String
 Private hdirectorioActual As String
 
@@ -175,7 +179,7 @@ End
 
 Public Sub copiarfichero_Click()
 
-  Print FileView1.Selection
+  ' Print FileView1.Selection
 
   Raise copia(FileView1.Selection, hDirectorioActual)
 
@@ -212,7 +216,8 @@ Public Sub borrarfile_Click()
         Kill DirView1.Current & "/" & f
       Endif
     Next
-    reload()
+
+    Raise actualizarInformacionDirectorios()
   Endif
 
 End
@@ -287,5 +292,17 @@ Public Sub ButtonArbolDirectorio_Click()
   Else
     DirView1.Visible = True
   Endif
+
+End
+
+Public Sub MenuDividePdf_Click()
+
+  Try Exec ["dividemultiplepdf", FileView1.Selection[0]]
+
+End
+
+Public Sub MenuMover_Click()
+
+  Raise mover(FileView1.Selection, hDirectorioActual)
 
 End

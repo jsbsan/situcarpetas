@@ -7,10 +7,14 @@ Public cuatro As TestForm
 
 Public panelesActivos As String = "4"
 
-Public Acopiarlista As String[]
+Public Acopiarlista As New String[]
 Public AcopiarRuta As String
 
+Public Amoverlista As New String[]
+Public AmoverRuta As String
+
 Public ActualFileChooser As Testform
+Public InicialFilechooser As Testform 'inicial filechooser donde elege lista ficheros a mover
 
 Public Sub Form_Open()
 
@@ -40,6 +44,8 @@ Public Sub Form_Open()
   HSplit1.Layout = Settings["HSplit1"]
   HSplit2.Layout = Settings["HSplit2"]
   panelesActivos = Settings["PanalesActivos"]
+  AmoverLista.Add("NadaQueMover")
+  Acopiarlista.Add("NadaQueCopiar")
 
 End
 
@@ -76,13 +82,46 @@ Public Sub obj_Copia(lista As String[], directorio As String)
 
 End
 
+Public Sub obj_mover(lista As String[], directorio As String)
+
+  AmoverLista = lista
+  AmoverRuta = directorio
+  InicialFilechooser = ActualFileChooser
+
+End
+
 Public Sub obj_PegarEn(destinoruta As String)
 
   'Message.Info("Pegar en Directorio Destino:\n" & destinoruta)
+  If Not (Acopiarlista[0] = "NadaQueCopiar") Then
+    CopiarFicheros.Copiar(Acopiarlista, AcopiarRuta, destinoruta)
+    Wait 0.1
+    ActualFileChooser.reload()
+    Acopiarlista[0] = "NadaQueCopiar"
+  Endif
 
-  CopiarFicheros.Copiar(Acopiarlista, AcopiarRuta, destinoruta)
-  Wait 0.1
-  ActualFileChooser.reload()
+  If Not (AmoverLista[0] = "NadaQueMover") Then
+    CopiarFicheros.Mover(AmoverLista, AmoverRuta, destinoruta)
+    Wait 0.1
+    ActualFileChooser.reload()
+    InicialFilechooser.reload()
+
+    AmoverLista[0] = "NadaQueMover"
+  Endif
+  'actualizar todos los directorios:
+  uno.RELOAD()
+  dos.RELOAD()
+  tres.RELOAD()
+  cuatro.RELOAD()
+
+End
+
+Public Sub obj_actualizarInformacionDirectorios()
+
+  uno.RELOAD()
+  dos.RELOAD()
+  tres.RELOAD()
+  cuatro.RELOAD()
 
 End
 
