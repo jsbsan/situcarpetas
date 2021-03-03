@@ -55,7 +55,7 @@ End
 
 Public Sub Button3_Click()
 
-  LabelNombrefichero.text = agrega("🚩", LabelNombrefichero.text)
+  LabelNombrefichero.text = agrega("📌", LabelNombrefichero.text)
 
 End
 

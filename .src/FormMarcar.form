@@ -60,7 +60,7 @@
   }
   { Button3 Button
     MoveScaled(6,4,8,3)
-    Text = ("🚩")
+    Text = ("📌")
   }
   { ButtonEliminarMarcas Button
     MoveScaled(37,13,17,4)
