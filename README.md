@@ -1,4 +1,4 @@
-# SITUCARPE
+# situcarpetas
 
 Explorador de ficheros con 4 paneles y capacidad de guardar y leer distintas configuraciones de ruta de cada panel. La idea es que cuando este trabajando en varios directorios a la vez [secciones de trabajo], poder recuperar en posteriores días y/o poder recuperar estas secciones de trabajo de forma sencilla y rápida.
 
