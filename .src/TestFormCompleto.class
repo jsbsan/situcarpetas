@@ -69,7 +69,7 @@ End
 
 Public Sub obj_Copia(lista As String[], directorio As String)
 
-  Message.Info("copiando:\n" & lista.join("\n") & "\nDirecorio Origen: " & directorio)
+  'Message.Info("copiando:\n" & lista.join("\n") & "\nDirecorio Origen: " & directorio)
 
   Acopiarlista = lista
   AcopiarRuta = directorio
@@ -78,7 +78,7 @@ End
 
 Public Sub obj_PegarEn(destinoruta As String)
 
-  Message.Info("Pegar en Directorio Destino:\n" & destinoruta)
+  'Message.Info("Pegar en Directorio Destino:\n" & destinoruta)
 
   CopiarFicheros.Copiar(Acopiarlista, AcopiarRuta, destinoruta)
   Wait 0.1
@@ -175,8 +175,19 @@ Public Sub LeerVersionAntigua(ruta As String)
 
 End
 
+Public Sub ButtonDobleH_Click()
+
+  dos.visible = False
+  cuatro.visible = False
+  tres.visible = True
+  HSplit2.Visible = True
+  panelesActivos = "1"
+
+End
+
 Public Sub ButtonDoble_Click()
 
+  dos.visible = True
   tres.visible = False
   cuatro.visible = False
   HSplit2.visible = False
@@ -186,6 +197,7 @@ End
 
 Public Sub ButtonTripe_Click()
 
+  dos.visible = True
   tres.visible = True
   cuatro.visible = False
   HSplit2.visible = True
@@ -195,6 +207,7 @@ End
 
 Public Sub ButtonCuatro_Click()
 
+  dos.visible = True
   tres.visible = True
   cuatro.visible = True
   HSplit2.visible = True
@@ -205,12 +218,20 @@ End
 Public Sub activarPaneles()
 
   Select Case panelesActivos
+    Case "1"
+      ButtonDobleH_Click()
     Case "2"
+
       ButtonDoble_Click()
+
     Case "3"
-      ButtonTripe_Click()
+
+      buttonTripe_Click()
+
     Case "4"
+
       ButtonCuatro_Click()
+
   End Select
 
 End

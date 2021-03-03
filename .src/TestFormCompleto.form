@@ -29,29 +29,35 @@
       MoveScaled(72,0,3,4)
     }
     { HBox1 HBox
-      MoveScaled(80,0,21,4)
+      MoveScaled(77,1,30,4)
       Spacing = True
       Padding = 2
+      { ButtonDobleH Button
+        MoveScaled(2,0,4,4)
+        Tag = "1"
+        ToolTip = ("doble panel")
+        Picture = Picture["iconos/dobleH.png"]
+      }
       { ButtonDoble Button
-        MoveScaled(0,0,5,4)
+        MoveScaled(7,0,5,4)
         Tag = "1"
         ToolTip = ("doble panel")
         Picture = Picture["iconos/doble.png"]
       }
       { ButtonTripe Button
-        MoveScaled(6,0,5,4)
+        MoveScaled(13,0,5,4)
         Tag = "1"
         ToolTip = ("triple panel")
         Picture = Picture["iconos/triple.png"]
       }
       { ButtonCuatro Button
-        MoveScaled(12,0,5,4)
+        MoveScaled(19,0,5,4)
         ToolTip = ("cuatros paneles")
         Picture = Picture["iconos/cuatro.png"]
       }
     }
     { Spring2 Spring
-      MoveScaled(103,1,10,3)
+      MoveScaled(109,1,4,3)
     }
     { ButtonIra Button
       MoveScaled(115,0,10,4)
