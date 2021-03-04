@@ -4,6 +4,15 @@ Explorador de ficheros con 4 paneles y capacidad de guardar y leer distintas con
 
 ![Ejemplo de carga!](situcarpetas.jpeg "ejemplo uso")
 
+Tenemos un menu popup en el fileview con las siguiente opciones
+
+![Menu Popup filewiew!](MenuFileview.jpeg "menu popup")
+
+Podemos poner marcas (y quitarlas) con emojiconos a los ficheros. Una forma sencilla de ver rápidamente ficheros que tenemos que revisar, modificar, etc..
+
+![Poner marcar!](marcas.jpeg "marcar/desmarcar ficheros")
+
+
 ### Pre-requisitos 📋
 
 Debes de tener instalado gambas3.15.
