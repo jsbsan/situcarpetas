@@ -297,12 +297,18 @@ End
 
 Public Sub MenuDividePdf_Click()
 
-  Try Exec ["dividemultiplepdf", FileView1.Selection[0]]
+  Try Exec ["dividemultiplepdf", FileView1.DIR &/ FileView1.Selection[0]]
 
 End
 
 Public Sub MenuMover_Click()
 
   Raise mover(FileView1.Selection, hDirectorioActual)
+
+End
+
+Public Sub MenuEditarPedf_Click()
+
+  Try Exec ["libreoffice", FileView1.DIR &/ FileView1.Selection[0]]
 
 End

@@ -38,19 +38,27 @@
       Text = ("Abrir Terminal")
       Picture = Picture["icon:/24/terminal"]
     }
-    { MenuUnirPDF Menu
-      Text = ("Unir PDFs")
-      Picture = Picture["icon:/24/pdf"]
+    { Menu2 Menu
     }
     { MenuMarcarFichero Menu
       Text = ("Marcar/Desmarcar Fichero")
       Picture = Picture["icon:/24/flag"]
     }
+    { Menu5 Menu
+    }
+    { MenuUnirPDF Menu
+      Text = ("Unir PDFs")
+      Picture = Picture["icon:/24/pdf"]
+    }
     { MenuDividePdf Menu
       Text = ("Dividir Pdf")
       Picture = Picture["iconos/cortarPDF.png"]
     }
-    { Menu2 Menu
+    { MenuEditarPedf Menu
+      Text = ("Editar Pdf con LibreOffice Draw")
+      Picture = Picture["iconos/EDITAR PDF.png"]
+    }
+    { Menu4 Menu
     }
     { copiarfichero Menu
       Text = ("Copiar")
