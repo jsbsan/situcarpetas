@@ -40,3 +40,9 @@ Public Sub ButtonACEPTAR_Click()
   Me.Close()
 
 End
+
+Public Sub ButtonComprobarVersionGithub_Click()
+
+  ComprobarVersionGit.TestComprobacion("https://raw.githubusercontent.com/jsbsan/situcarpetas/master/.project")
+
+End

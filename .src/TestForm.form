@@ -8,80 +8,80 @@
   { MenuDir Menu
     Text = ("MenuDir")
     { creardirectorio Menu
-      Text = ("Crear Directorio")
+      Text = ("Create directory")
       Picture = Picture["icon:/24/directory"]
     }
     { terminaldir Menu
-      Text = ("Abrir Terminal")
+      Text = ("Open Terminal")
       Picture = Picture["icon:/24/terminal"]
     }
     { refrescardir Menu
-      Text = ("Refrescar")
+      Text = ("Refresh")
       Picture = Picture["icon:/24/refresh"]
     }
   }
   { MenuFile Menu
     Text = ("MenuFile")
     { renombrarfile Menu
-      Text = ("Renombrar")
+      Text = ("Rename")
       Picture = Picture["icon:/24/spell-check"]
     }
     { abrirnavegador Menu
-      Text = ("Abrir navegador")
+      Text = ("Open file explorer")
       Picture = Picture["icon:/24/exec"]
     }
     { creardirectoriofile Menu
-      Text = ("Crear Directorio")
+      Text = ("Create directory")
       Picture = Picture["icon:/24/directory"]
     }
     { terminalFile Menu
-      Text = ("Abrir Terminal")
+      Text = ("Open Terminal")
       Picture = Picture["icon:/24/terminal"]
     }
     { Menu2 Menu
     }
     { MenuMarcarFichero Menu
-      Text = ("Marcar/Desmarcar Fichero")
+      Text = ("Mark file")
       Picture = Picture["icon:/24/flag"]
     }
     { Menu5 Menu
     }
     { MenuUnirPDF Menu
-      Text = ("Unir PDFs")
+      Text = ("Join PDFs")
       Picture = Picture["icon:/24/pdf"]
     }
     { MenuDividePdf Menu
-      Text = ("Dividir Pdf")
+      Text = ("Split Pdf")
       Picture = Picture["iconos/cortarPDF.png"]
     }
     { MenuEditarPedf Menu
-      Text = ("Editar Pdf con LibreOffice Draw")
+      Text = ("Edit Pdf with LibreOffice Draw")
       Picture = Picture["iconos/EDITAR PDF.png"]
     }
     { Menu4 Menu
     }
     { copiarfichero Menu
-      Text = ("Copiar")
+      Text = ("Copy")
       Picture = Picture["icon:/24/copy"]
     }
     { MenuMover Menu
-      Text = ("Mover")
+      Text = ("Move")
       Picture = Picture["icon:/24/cut"]
     }
     { pegarfichero Menu
-      Text = ("Pegar")
+      Text = ("Paste")
       Picture = Picture["icon:/24/paste"]
     }
     { Menu1 Menu
     }
     { borrarfile Menu
-      Text = ("Borrar")
+      Text = ("Delete file")
       Picture = Picture["icon:/24/delete"]
     }
     { Menu3 Menu
     }
     { refrescarfile Menu
-      Text = ("Refrescar")
+      Text = ("Refresh")
       Picture = Picture["icon:/24/refresh"]
     }
   }
@@ -100,11 +100,11 @@
         { ButtonIrA Button
           MoveScaled(0,0,10,3)
           Visible = False
-          Text = ("Ir a")
+          Text = ("Go to..")
         }
         { Label1 Label
           MoveScaled(10,0,7,3)
-          Text = ("Ruta:")
+          Text = ("Path:")
           Alignment = Align.Center
         }
         { TextBoxRuta TextBox
@@ -123,7 +123,7 @@
         }
         { Label2 Label
           MoveScaled(5,0,8,4)
-          Text = ("Filtro:")
+          Text = ("Filter:")
           Alignment = Align.Center
         }
         { TextBoxFiltro TextBox
@@ -142,17 +142,17 @@
         }
         { ButtonOcultos Button
           MoveScaled(34,0,6,4)
-          ToolTip = ("veer ocultos")
+          ToolTip = ("view hidden")
           Picture = Picture["icon:/24/watch"]
         }
         { ButtonDirectorioFileview Button
           MoveScaled(40,0,6,4)
-          ToolTip = ("ver directorios")
+          ToolTip = ("view directory")
           Picture = Picture["icon:/24/directory"]
         }
         { ButtonDetalles Button
           MoveScaled(46,0,7,4)
-          ToolTip = ("ver detalles")
+          ToolTip = ("view details")
           Picture = Picture["icon:/24/view-detail"]
         }
         { Spring1 Spring
