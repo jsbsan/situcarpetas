@@ -1,0 +1,15 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,47)
+  Arrangement = Arrange.Row
+  { Button1 Button
+    MoveScaled(4,0,14,4)
+    Text = ("Elegir fichero")
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(1,1,62,45)
+    Border = Border.Plain
+    Stretch = True
+  }
+}

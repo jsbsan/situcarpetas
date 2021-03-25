@@ -277,11 +277,27 @@ Public Sub ButtonAbrirCarpetaContenedora_Click()
   Dim lista As String[]
   'subo una ruta
   lista = Split(TextBoxRuta.text, "/")
-  lista.Delete(lista.count - 1)
+If lista.count > 1 Then 
 
+Try lista.Delete(lista.count - 1)
+If Error Then 
+  'no puedo borrar nada
+  Return
+Endif
+  If lista.Join("/") = "" Then  
+    FileView1.dir = "/"
+  
+  TextBoxRuta.text = "/"
+  hdirectorioActual = "/"
+    
+    Else
   FileView1.dir = lista.Join("/")
+  
   TextBoxRuta.text = lista.Join("/")
-  hdirectorioActual = lista.Join("/")
+  hdirectorioActual = lista.Join("/")    
+  Endif
+  
+Endif
 
 End
 
@@ -310,5 +326,36 @@ End
 Public Sub MenuEditarPedf_Click()
 
   Try Exec ["libreoffice", FileView1.DIR &/ FileView1.Selection[0]]
+
+End
+
+Public Sub FileView1_Click()
+' Dim nombre As String
+' Dim fvi As FormVisualizador
+' 
+' nombre = FileView1.dir & "/" & FileView1.Selection[0]
+' 
+' 
+' 
+' Select Case File.Ext(nombre)
+'   Case "png", "jpg", "jpeg"
+'  
+'   fvi = New FormVisualizador
+'   fvi.nombrefichero = nombre
+'   fvi.Show()
+' 
+' Case Else
+'   fvi.Delete
+' End Select
+
+  
+
+End
+
+
+
+Public Sub HSplit1_Resize()
+
+  
 
 End
