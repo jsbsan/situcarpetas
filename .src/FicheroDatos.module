@@ -4,34 +4,34 @@ Public contenido As String = ""
 Public rutainicial As String = ""
 
 Public Sub load(ruta As String) '' leer el fichero de la ruta determina y lo asigna a la variable contenido
-
+  
   contenido = File.Load(ruta)
   rutainicial = ruta
-
+  
 End
 
 Public Sub save(Optional ruta As String) ''guarda el contenido en la ruta determinada
-
+  
   If IsNull(ruta) Then
     ruta = rutainicial
   Endif
-
+  
   File.Save(ruta, contenido)
-
+  
 End
 
 Public Function buscar(NombreVariable As String, Optional ValorDefecto As String) As String ''busca y devuelve valor variable
-
+  
   Dim lineas As String[]
   Dim l As String
   Dim valor As String
   Dim token As String[]
-
+  
   lineas = Split(contenido, gb.NewLine)
-
+  
   For Each l In lineas
     token = Split(l, "=")
-
+    
     If token.count = 0 Then
       If IsNull(ValorDefecto) Then
         Return Null 'fin de fichero
@@ -39,70 +39,70 @@ Public Function buscar(NombreVariable As String, Optional ValorDefecto As String
         Return ValorDefecto
       Endif
     Endif
-
+    
     If InStr(Upper$(token[0]), Upper$(NombreVariable)) > 0 Then
       valor = token[1]
       Return valor
     Endif
   Next
-
+  
   If IsNull(ValorDefecto) Then
     Return Null 'fin de fichero
   Else
     Return ValorDefecto
   Endif
-
+  
 End
 
 Public Function editar(NombreVariable As String, valor As String) ''edita una variable
-
+  
   Dim lineas As String[]
   Dim l As String
-
+  
   Dim token As String[]
   Dim nuevocontenido As String
-
+  
   lineas = Split(contenido, gb.NewLine)
-
+  
   For Each l In lineas
     token = Split(l, "=")
     If token.Count = 0 Then
       l = NombreVariable & "=" & valor
-
+      
     Else
-
+      
       If InStr(Upper$(token[0]), Upper$(NombreVariable)) > 0 Then
         l = token[0] & "=" & valor
-
+        
       Endif
     Endif
     nuevocontenido &= l & gb.NewLine
   Next
-
+  
   contenido = nuevocontenido
-
+  
 End
 
 Public Function agregar(variable As String, valor As String) ''agrega nueva variable y le asigna valor
   ''Comprobar que si existe la variable entonces es una edicion de variable
-
+  
   If IsNull(buscar(variable)) Then
     contenido &= variable & "=" & valor & gb.NewLine
   Else
     editar(variable, valor)
   Endif
-
+  
 End
 
 Public Function borrar(NombreVariable As String) ''elimina una variable
-
+  
   Dim lineas As String[]
   Dim l As String
   Dim token As String[]
   Dim nuevocontenido As String
-
+  
   lineas = Split(contenido, gb.NewLine)
-
+  
   For Each l In lineas
     token = Split(l, "=")
     If InStr(Upper$(token[0]), Upper$(NombreVariable)) > 0 Then
@@ -110,9 +110,9 @@ Public Function borrar(NombreVariable As String) ''elimina una variable
     Else
       nuevocontenido &= l & gb.NewLine 'como no contiene la variable , añado la linea
     Endif
-
+    
   Next
-
+  
   contenido = nuevocontenido
-
+  
 End

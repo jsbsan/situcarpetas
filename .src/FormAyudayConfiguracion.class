@@ -1,48 +1,48 @@
 ' Gambas class file
 
 Public Sub Form_Open()
-
+  
   Me.Center
   Labelversion.text = "Versión " & Application.Version
   LabelNombre.text = Application.Title
-
+  
   TextBoxEXP.Text = Settings["explorador", "caja"]
   TextBoxPARAEXP.Text = Settings["paraexplorador", "--working-directory="]
   TextBoxTERM.Text = Settings["terminal", "xfce4-terminal"]
-
+  
 End
 
 Public Sub ButtonTdefecto_Click()
-
+  
   TextBoxTERM.text = "xfce4-terminal"
-
+  
 End
 
 Public Sub ButtonExpDefecto_Click()
   '"xfce4-terminal", "--working-directory="
-
+  
   TextBoxEXP.text = "caja"
-
+  
 End
 
 Public Sub ButtonParaExpDefecto_Click()
-
+  
   TextBoxPARAEXP.text = "--working-directory="
-
+  
 End
 
 Public Sub ButtonACEPTAR_Click()
-
+  
   Settings["explorador"] = TextBoxEXP.Text
   Settings["paraexplorador"] = TextBoxPARAEXP.Text
   Settings["terminal"] = TextBoxTERM.Text
-
+  
   Me.Close()
-
+  
 End
 
 Public Sub ButtonComprobarVersionGithub_Click()
-
+  
   ComprobarVersionGit.TestComprobacion("https://raw.githubusercontent.com/jsbsan/situcarpetas/master/.project")
-
+  
 End

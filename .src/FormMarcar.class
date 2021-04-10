@@ -4,87 +4,87 @@ Public fichero As String[]
 Public ruta As String
 
 Public Sub Form_Open()
-
+  
   LabelNombrefichero.text = fichero[0]
-
+  
 End
 
 Public Sub ButtonCancelar_Click()
-
+  
   Me.Close()
-
+  
 End
 
 Public Sub ButtonAceptar_Click()
-
+  
   'renombrar fichero
   Move ruta &/ fichero[0] To ruta &/ LabelNombrefichero.text
   Me.Close()
-
+  
 End
 
 Public Sub button6_Click()
-
+  
   LabelNombrefichero.text = agrega("⏹", LabelNombrefichero.text)
-
+  
 End
 
 Public Sub button2_Click()
-
+  
   LabelNombrefichero.text = agrega("🔴", LabelNombrefichero.text)
-
+  
 End
 
 Public Sub button1_Click()
-
+  
   LabelNombrefichero.text = agrega("🔵", LabelNombrefichero.text)
-
+  
 End
 
 Public Sub button4_Click()
-
+  
   LabelNombrefichero.text = agrega("🔃", LabelNombrefichero.text)
-
+  
 End
 
 Public Sub button5_Click()
-
+  
   LabelNombrefichero.text = agrega("🔥", LabelNombrefichero.text)
-
+  
 End
 
 Public Sub Button3_Click()
-
+  
   LabelNombrefichero.text = agrega("📌", LabelNombrefichero.text)
-
+  
 End
 
 Public Sub agrega(marca As String, nombre As String) As String
-
+  
   If RadioButtonAdelante.Value = True Then
     Return marca & nombre
   Endif
-
+  
   If RadioButtonAtras.Value = True Then
     Return File.BaseName(nombre) & marca & "." & File.Ext(nombre)
   Endif
-
+  
 End
 
 Public Sub ButtonEliminarMarcas_Click()
-
+  
   Dim marcas As New String[]
   Dim m As String
-
+  
   marcas.Add(button1.text)
   marcas.Add(button2.text)
   marcas.Add(button3.text)
   marcas.Add(button4.text)
   marcas.Add(button5.text)
   marcas.Add(button6.text)
-
+  
   For Each m In marcas
     LabelNombrefichero.text = Replace$(LabelNombrefichero.text, m, "")
   Next
-
+  
 End
