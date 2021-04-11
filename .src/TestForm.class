@@ -350,6 +350,29 @@ Public Sub FileView1_Click()
   
 End
 
-Public Sub HSplit1_Resize()
+Public Sub FileView1_KeyPress()
+  
+  If (Key.code = Key["c"] Or Key.code = Key["C"]) And If Key.Control Then 
+    Message.info("CTRL+C: COPIO FICHEROS SELECCIONADOS" & GB.NewLine & FileView1.Selection.Join(GB.NewLine))
+    Raise copia(FileView1.Selection, hDirectorioActual)
+  Endif
+  
+  If (Key.code = Key["v"] Or Key.code = Key["V"]) And If Key.Control Then 
+    Message.info("CTRL+V: PEGO FICHEROS SELECCIONADOS")
+    Raise PegarEn(hdirectorioActual)
+  Endif
+  
+  If (Key.code = Key["X"] Or Key.code = Key["x"]) And If Key.Control Then 
+    Message.info("CTRL+X: MOVER FICHEROS SELECCIONADOS" & GB.NewLine & FileView1.Selection.Join(GB.NewLine))
+    
+    Raise mover(FileView1.Selection, hDirectorioActual)
+    
+  Endif
+  
+End
+
+Public Sub ButtonRefrestcar_Click()
+  
+  refrescarfile_Click()
   
 End

@@ -344,3 +344,19 @@ Public Sub ButtonIra_Click()
   Endif
   
 End
+
+Public Sub Form_KeyPress()
+  
+  Select Case Key.Code
+    Case Key.F5
+      Obj_ConseguirFoco(1)
+    Case Key.F6
+      Obj_ConseguirFoco(2)
+    Case Key.F7
+      Obj_ConseguirFoco(3)
+    Case Key.F8
+      Obj_ConseguirFoco(4)
+      
+  End Select
+  
+End

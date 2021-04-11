@@ -155,8 +155,13 @@
           ToolTip = ("view details")
           Picture = Picture["icon:/24/view-detail"]
         }
+        { ButtonRefrestcar Button
+          MoveScaled(53,0,7,4)
+          ToolTip = ("refresh files/dir")
+          Picture = Picture["icon:/24/refresh"]
+        }
         { Spring1 Spring
-          MoveScaled(56,0,3,4)
+          MoveScaled(58,0,3,4)
         }
       }
       { FileView1 FileView
