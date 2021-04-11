@@ -5,7 +5,7 @@
   Arrangement = Arrange.Row
   { Button1 Button
     MoveScaled(4,0,14,4)
-    Text = ("Elegir fichero")
+    Text = ("Select file")
   }
   { PictureBox1 PictureBox
     MoveScaled(1,1,62,45)

@@ -12,6 +12,9 @@ Podemos poner marcas (y quitarlas) con emojiconos a los ficheros. Una forma senc
 
 ![Poner marcar!](marcas.jpeg "marcar/desmarcar ficheros")
 
+En el boton de ayuda podemos configurar los programas externos que se usan:
+![Ayuda!](ayuda.png "ayuda")
+
 
 ### Pre-requisitos 📋
 

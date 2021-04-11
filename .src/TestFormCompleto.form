@@ -68,8 +68,10 @@
       MoveScaled(126,1,5,2)
     }
     { ButtonaYUDA Button
-      MoveScaled(136,0,5,4)
-      Picture = Picture["icon:/24/question"]
+      MoveScaled(132,0,11,4)
+      ToolTip = ("Help")
+      Text = ("Help")
+      Picture = Picture["icon:/24/help"]
     }
   }
   { Frame1 Frame

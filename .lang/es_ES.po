@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: situcarpetas 3.15.2\n"
-"PO-Revision-Date: 2021-03-07 10:51 UTC\n"
-"Last-Translator: Julio Sanchez Berro <jusabejusabe@gmail.com>\n"
+"PO-Revision-Date: 2021-04-11 18:37 UTC\n"
+"Last-Translator: minino <minino@minino-ThinkCentre-M82>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,33 +25,37 @@ msgstr "Nueva version encontrada alojada en github"
 msgid "You have the same version as the one hosted on Github"
 msgstr "Tienes la misma version que la alojada en Github"
 
-#: FormAyudayConfiguracion.form:25 FormMarcar.form:47
+#: FormAyudayConfiguracion.form:27 FormMarcar.form:47
 msgid "Apply"
 msgstr "Aceptar"
 
-#: FormAyudayConfiguracion.form:37
+#: FormAyudayConfiguracion.form:39
 msgid "System to save the situation of work folders.<br>\nAuthor: Julio Sánchez Berro<br>\nLicense: GPL 3.0<br>\nMade in Gambas3 for linux mint xfce<br>\n2021"
 msgstr "Sistema para guadar rutas de directorios de trabajo.<br>\nAuthor: Julio Sánchez Berro<br>\nLicense: GPL 3.0<br>\nMade in Gambas3 for linux mint xfce<br>\n2021"
 
-#: FormAyudayConfiguracion.form:54
+#: FormAyudayConfiguracion.form:56
 msgid "File Explorer:"
 msgstr "Explorador de Ficheros:"
 
-#: FormAyudayConfiguracion.form:60
+#: FormAyudayConfiguracion.form:62
 msgid "Terminal:"
 msgstr "Terminal:"
 
-#: FormAyudayConfiguracion.form:74
+#: FormAyudayConfiguracion.form:76
 msgid "File Explorer parameters:"
 msgstr "Parametros Explorador:"
 
-#: FormAyudayConfiguracion.form:83
+#: FormAyudayConfiguracion.form:85
 msgid "Default"
 msgstr "Por defecto"
 
-#: FormAyudayConfiguracion.form:98
+#: FormAyudayConfiguracion.form:100
 msgid "Version Github"
-msgstr ""
+msgstr "Versión Github"
+
+#: FormAyudayConfiguracion.form:106
+msgid "<u>Quick Keys:</u><br>\nf5: switch to panel 1<br>\nf6: switch to panel 2<br>\nf7: switch to panel 3<br>\nf8: switch to panel 4<br>\n\nCtrl + C: copy selected files<br>\nCtrl + X: move selected files<br>\nCtrl + V: paste files<br>"
+msgstr "<u>Teclas Rapidas:</u><br>\nf5: cambiar a panel 1<br>\nf6: cambiar a panel 2<br>\nf7: cambiar a panel 3<br>\nf8: cambiar a panel 4<br>\n\nCtrl+C: copia ficheros seleccionados<br>\nCtrl+X: mover ficheros seleccionados<br>\nCtrl+V: pega ficheros<br>"
 
 #: FormMarcar.form:25
 msgid "Name File:"
@@ -79,115 +83,123 @@ msgstr "Marcas"
 
 #: FormMarcar.form:69
 msgid "⏹"
-msgstr ""
+msgstr "⏹"
 
 #: FormMarcar.form:74
 msgid "🔃"
-msgstr ""
+msgstr "🔃"
 
 #: FormMarcar.form:79
 msgid "🔥"
-msgstr ""
+msgstr "🔥"
 
 #: FormMarcar.form:84
 msgid "🔴"
-msgstr ""
+msgstr "🔴"
 
 #: FormMarcar.form:89
 msgid "🔵"
-msgstr ""
+msgstr "🔵"
 
 #: FormMarcar.form:94
 msgid "📌"
-msgstr ""
+msgstr "📌"
 
 #: FormMarcar.form:99
 msgid "remove marks"
 msgstr "Borrar Marcas"
 
-#: TestForm.form:55
+#: FormVisualizador.form:13
+msgid "Select file"
+msgstr "Elegir fichero"
+
+#: TestForm.form:56
 msgid "MenuDir"
 msgstr "MenuDir"
 
-#: TestForm.form:58
+#: TestForm.form:59
 msgid "Create directory"
 msgstr "Crear Directorio"
 
-#: TestForm.form:63
+#: TestForm.form:64
 msgid "Open Terminal"
 msgstr "Abrir Terminal"
 
-#: TestForm.form:68
+#: TestForm.form:69
 msgid "Refresh"
 msgstr "Refrescar"
 
-#: TestForm.form:74
+#: TestForm.form:75
 msgid "MenuFile"
 msgstr "MenuFile"
 
-#: TestForm.form:77
+#: TestForm.form:78
 msgid "Rename"
 msgstr "Renombrar"
 
-#: TestForm.form:82
+#: TestForm.form:83
 msgid "Open file explorer"
 msgstr "Abrir explorador de ficheros"
 
-#: TestForm.form:100
+#: TestForm.form:101
 msgid "Mark file"
 msgstr "Marcar Ficheros"
 
-#: TestForm.form:108
+#: TestForm.form:109
 msgid "Join PDFs"
 msgstr "Unir PDFs"
 
-#: TestForm.form:113
+#: TestForm.form:114
 msgid "Split Pdf"
 msgstr "Dividir Pdf"
 
-#: TestForm.form:118
+#: TestForm.form:119
 msgid "Edit Pdf with LibreOffice Draw"
 msgstr "Editar Pdf con LibreOffice Draw"
 
-#: TestForm.form:126
+#: TestForm.form:127
 msgid "Copy"
 msgstr "Copiar"
 
-#: TestForm.form:131
+#: TestForm.form:132
 msgid "Move"
 msgstr "Mover"
 
-#: TestForm.form:136
+#: TestForm.form:137
 msgid "Paste"
 msgstr "Pegar"
 
-#: TestForm.form:144
+#: TestForm.form:145
 msgid "Delete file"
 msgstr "Borrar"
 
-#: TestForm.form:176 TestFormCompleto.form:99
+#: TestForm.form:177 TestFormCompleto.form:99
 msgid "Go to.."
 msgstr "Ir a.."
 
-#: TestForm.form:181
+#: TestForm.form:182
 msgid "Path:"
 msgstr "Ruta:"
 
-#: TestForm.form:205
+#: TestForm.form:206
 msgid "Filter:"
 msgstr "Filtro:"
 
-#: TestForm.form:229
+#: TestForm.form:230
 msgid "view hidden"
 msgstr "ver ocultos"
 
-#: TestForm.form:235
+#: TestForm.form:236
 msgid "view directory"
 msgstr "ver directorios"
 
-#: TestForm.form:241
+#: TestForm.form:242
 msgid "view details"
 msgstr "ver detalles"
+
+#: TestForm.form:248
+msgid "refresh files/dir"
+msgstr "refrescar ficheros/directorios"
 
 #: TestFormCompleto.form:36
 msgid "Work Session:"
@@ -213,7 +225,11 @@ msgstr "Triple Panel"
 msgid "cuatros paneles"
 msgstr "Cuatro Paneles"
 
-#: TestFormCompleto.form:117
+#: TestFormCompleto.form:109
+msgid "Help"
+msgstr "Ayuda"
+
+#: TestFormCompleto.form:119
 msgid "Note:"
 msgstr "Notas:"
 
