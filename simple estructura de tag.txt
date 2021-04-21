@@ -1,0 +1,34 @@
+tagREF|| [.....]
+Cololr|| [.....]
+ficheros
+ruta||tagREF {,,,,}
+
+--------------------- clase fichero
+
+nombre fichero
+array de tags
+fecha fichero -> para crear timeline de un tag concreto
+
+funciones
+'eliminar en array tag
+'añadir en array tag
+'buscar en array tag
+
+'Funcion para: generar linea de informacion de la clase fichero:
+retornar nombre del fichero || lista de tag
+
+--------------------------clase tag
+tag is string
+color is isnteger 
+
+-------------------------gestor tag y fichero
+
+Array de claseFichero -> crear un gestor de clases ficheros
+Array de clase TAG -> crear un gestor de clases TAG
+
+funcion: leerfichero de datos devuelve array de clase fichero y array de clase tag
+
+Funcion: Guardar: guarda fichero txt con lista de tag y lista fichero
+
+buscarFicheros(tag as string,listafichero[]) as string [] 'para busqueda opcional en una lista dada (si no hay lista, se supone que son todos los fichero)
+

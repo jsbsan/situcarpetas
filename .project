@@ -2,7 +2,7 @@
 Title=situcarpetas
 Startup=TestFormCompleto
 Icon=iconos/carpeta.png
-Version=0.0.22
+Version=0.0.24
 Component=gb.image
 Component=gb.gui.qt
 Component=gb.form

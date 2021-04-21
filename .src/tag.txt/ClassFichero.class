@@ -1,0 +1,56 @@
+' Gambas class file
+
+Public ListaTag As New String[] 'tag que contiene ese archivo
+
+Public FechaArchivo As String '' aaaammdd
+
+Property Nombrefichero As String 'nombre completo del fichero
+Private hnombrefichero As String
+
+Property Ruta As String ''solo la ruta del fichero
+Private hruta As String
+
+Private Function Nombrefichero_Read() As String
+
+  Return hnombrefichero
+
+End
+
+Private Sub Nombrefichero_Write(Value As String)
+
+  hnombrefichero = Value
+  hruta = File.Dir(value)
+
+End
+
+Private Function Ruta_Read() As String
+
+  Return hruta
+
+End
+
+Private Sub Ruta_Write(Value As String)
+
+  hruta = value
+
+End
+
+
+Public Function EliminarTag(t As String)
+
+ListaTag.Extract(t)
+
+End
+
+Public Function AgregaTag(t As String)
+  
+  ListaTag.Add(t)
+  
+  End 
+  
+ Public Function BuscaTag(t As String) As Boolean
+   Return ListaTag.Exist(t)
+  
+End
+
+
