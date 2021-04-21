@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 21 Apr 2021 12:00:00 +0000
+Source: situcarpetas-qt4
+Binary: situcarpetas-qt4
+Architecture: source all
+Version: 0.0.24-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-qt4 - qt4 package for situcarpetas
+Changes:
+ situcarpetas-qt4 (0.0.24-2) unstable; urgency=low
+ .
+   * error corregido de split por defecto
+Checksums-Sha1:
+ 503e4e5570b8ec88ad6965242f4b6cf70a198800 577 situcarpetas-qt4_0.0.24-2.dsc
+ f11c3763651bf26b47a0f4ec6cd823fa7a625e3f 1565 situcarpetas-qt4_0.0.24-2.tar.gz
+ 5e0c89c1b375bb2637eb03a9e17eeb91c3fdf7ff 2064 situcarpetas-qt4_0.0.24-2_all.deb
+ 308fdfa4ced4c475fa5992ec4c333c505e457f31 13452 situcarpetas-qt4_0.0.24-2_amd64.buildinfo
+Checksums-Sha256:
+ 6800d100521b17bba7fe8fea13e1bfcebddd96ef83fbdf97bae06036cb675b69 577 situcarpetas-qt4_0.0.24-2.dsc
+ 53e47c314c9589da2346144120482d389bab7942dacd0c2857d250dc1dd755a7 1565 situcarpetas-qt4_0.0.24-2.tar.gz
+ bdb122487d36daa8ea44e18c9a7640ac2f5851f16854f57bb7a5ca05dc00de69 2064 situcarpetas-qt4_0.0.24-2_all.deb
+ 3e49bcb0d3b4f8e7ae388384c7abe920c42abf810bb11daa14fe864e19ac928d 13452 situcarpetas-qt4_0.0.24-2_amd64.buildinfo
+Files:
+ f93498b19d85cb76afa93ade90c2c4ed 577 contrib/admin optional situcarpetas-qt4_0.0.24-2.dsc
+ 1dff81a40cdb6b110b66f6938abed92b 1565 contrib/admin optional situcarpetas-qt4_0.0.24-2.tar.gz
+ c7734ce475cfd62bd149a1e150c29538 2064 contrib/admin optional situcarpetas-qt4_0.0.24-2_all.deb
+ 6290ad4b85c5d42372999670f9e55e35 13452 contrib/admin optional situcarpetas-qt4_0.0.24-2_amd64.buildinfo

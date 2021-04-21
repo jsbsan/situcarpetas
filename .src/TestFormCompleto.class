@@ -41,8 +41,8 @@ Public Sub Form_Open()
   cuatro.DirectorioActual = settings["dir4"]
   TextAreaLargo.text = Settings["texto"]
   textboxCorto.Text = Settings["sesion"]
-  HSplit1.Layout = Settings["HSplit1"]
-  HSplit2.Layout = Settings["HSplit2"]
+  HSplit1.Layout = Settings["HSplit1", [1, 1]]
+  HSplit2.Layout = Settings["HSplit2", [1, 1]]
   panelesActivos = Settings["PanalesActivos"]
   AmoverLista.Add("NadaQueMover")
   Acopiarlista.Add("NadaQueCopiar")

@@ -2,19 +2,19 @@ Format: 1.0
 Source: situcarpetas-qt4
 Binary: situcarpetas-qt4
 Architecture: all source
-Version: 0.0.22-2
+Version: 0.0.24-2
 Checksums-Md5:
- 57d939bdc23ff9f39ba2af52a1dd779b 577 situcarpetas-qt4_0.0.22-2.dsc
- 6687b257a8c5907e755041ea3c4b3ff4 2052 situcarpetas-qt4_0.0.22-2_all.deb
+ f93498b19d85cb76afa93ade90c2c4ed 577 situcarpetas-qt4_0.0.24-2.dsc
+ c7734ce475cfd62bd149a1e150c29538 2064 situcarpetas-qt4_0.0.24-2_all.deb
 Checksums-Sha1:
- 3fda71fa70e9062481471000fb6c6f6936e67aba 577 situcarpetas-qt4_0.0.22-2.dsc
- 8f75cf49580d37ccd37bccb576b66951d7dd8433 2052 situcarpetas-qt4_0.0.22-2_all.deb
+ 503e4e5570b8ec88ad6965242f4b6cf70a198800 577 situcarpetas-qt4_0.0.24-2.dsc
+ 5e0c89c1b375bb2637eb03a9e17eeb91c3fdf7ff 2064 situcarpetas-qt4_0.0.24-2_all.deb
 Checksums-Sha256:
- a74a87085111c5fa8a3b1e1063aac36472b281db986630742419a3827c4d1713 577 situcarpetas-qt4_0.0.22-2.dsc
- 534ab519fe43873d854f666de84c6bb7cb457cd94480aa8aa1886017b3802d71 2052 situcarpetas-qt4_0.0.22-2_all.deb
+ 6800d100521b17bba7fe8fea13e1bfcebddd96ef83fbdf97bae06036cb675b69 577 situcarpetas-qt4_0.0.24-2.dsc
+ bdb122487d36daa8ea44e18c9a7640ac2f5851f16854f57bb7a5ca05dc00de69 2064 situcarpetas-qt4_0.0.24-2_all.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Wed, 21 Apr 2021 08:31:19 +0200
+Build-Date: Wed, 21 Apr 2021 09:05:35 +0200
 Installed-Build-Depends:
  adduser (= 3.116ubuntu1),
  adwaita-icon-theme (= 3.28.0-1ubuntu1),
