@@ -93,6 +93,7 @@
     { DirView1 DirView
       MoveScaled(3,7,37,29)
       PopupMenu = "MenuDir"
+      Border = False
       Root = "/"
     }
     { VPanel1 VBox
@@ -106,8 +107,8 @@
         }
         { Label1 Label
           MoveScaled(10,0,7,3)
-          Alignment = Align.Center
           Text = ("Path:")
+          Alignment = Align.Center
         }
         { TextBoxRuta TextBox
           MoveScaled(17,0,73,3)
@@ -126,8 +127,8 @@
         }
         { Label2 Label
           MoveScaled(5,0,8,4)
-          Alignment = Align.Center
           Text = ("Filter:")
+          Alignment = Align.Center
         }
         { TextBoxFiltro TextBox
           MoveScaled(11,0,10,4)
@@ -174,6 +175,7 @@
         Drop = True
         Expand = True
         PopupMenu = "MenuFile"
+        Border = False
         Mode = Select.Multiple
         ShowDetailed = True
       }

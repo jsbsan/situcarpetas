@@ -17,24 +17,24 @@ Public ActualFileChooser As Testform
 Public InicialFilechooser As Testform 'inicial filechooser donde elege lista ficheros a mover
 
 Public Sub Form_Open()
-  
+
   uno = New TestForm(HSplit1) As "Obj"
   uno.tag = 1
   uno.inicia()
-  
+
   dos = New TestForm(hsplit1) As "Obj"
   dos.tag = 2
   dos.inicia()
-  
+
   tres = New TestForm(HSplit2) As "Obj"
   tres.tag = 3
   tres.inicia()
-  
+
   cuatro = New TestForm(hsplit2) As "Obj"
   cuatro.tag = 4
   cuatro.inicia()
   Settings.Read(Me)
-  
+
   uno.DirectorioActual = settings["dir1"]
   dos.DirectorioActual = settings["dir2"]
   tres.DirectorioActual = settings["dir3"]
@@ -46,16 +46,16 @@ Public Sub Form_Open()
   panelesActivos = Settings["PanalesActivos"]
   AmoverLista.Add("NadaQueMover")
   Acopiarlista.Add("NadaQueCopiar")
-  
+
 End
 
 Public Sub Obj_ConseguirFoco(tag As Variant)
-  
+
   uno.Background = Color.Background
   dos.Background = Color.Background
   tres.Background = Color.Background
   cuatro.Background = Color.Background
-  
+
   Select Case tag
     Case 1
       uno.Background = Settings["ColorFondo", Color.cyan]
@@ -70,28 +70,28 @@ Public Sub Obj_ConseguirFoco(tag As Variant)
       cuatro.Background = Settings["ColorFondo", Color.cyan]
       ActualFileChooser = cuatro
   End Select
-  
+
 End
 
 Public Sub obj_Copia(lista As String[], directorio As String)
-  
+
   'Message.Info("copiando:\n" & lista.join("\n") & "\nDirecorio Origen: " & directorio)
-  
+
   Acopiarlista = lista
   AcopiarRuta = directorio
-  
+
 End
 
 Public Sub obj_mover(lista As String[], directorio As String)
-  
+
   AmoverLista = lista
   AmoverRuta = directorio
   InicialFilechooser = ActualFileChooser
-  
+
 End
 
 Public Sub obj_PegarEn(destinoruta As String)
-  
+
   'Message.Info("Pegar en Directorio Destino:\n" & destinoruta)
   If Not (Acopiarlista[0] = "NadaQueCopiar") Then
     CopiarFicheros.Copiar(Acopiarlista, AcopiarRuta, destinoruta)
@@ -99,13 +99,13 @@ Public Sub obj_PegarEn(destinoruta As String)
     ActualFileChooser.reload()
     Acopiarlista[0] = "NadaQueCopiar"
   Endif
-  
+
   If Not (AmoverLista[0] = "NadaQueMover") Then
     CopiarFicheros.Mover(AmoverLista, AmoverRuta, destinoruta)
     Wait 0.1
     ActualFileChooser.reload()
     InicialFilechooser.reload()
-    
+
     AmoverLista[0] = "NadaQueMover"
   Endif
   'actualizar todos los directorios:
@@ -113,28 +113,28 @@ Public Sub obj_PegarEn(destinoruta As String)
   dos.RELOAD()
   tres.RELOAD()
   cuatro.RELOAD()
-  
+
 End
 
 Public Sub obj_actualizarInformacionDirectorios()
-  
+
   uno.RELOAD()
   dos.RELOAD()
   tres.RELOAD()
   cuatro.RELOAD()
-  
+
 End
 
 Public Sub ButtonGuardar_Click()
-  
+
   If Not Exist(User.home & "/" & "VistaCarpetas") Then
     Mkdir User.home & "/" & "VistaCarpetas/"
   Endif
-  
+
   Dialog.Path = User.home & "/" & "VistaCarpetas/"
-  
+
   Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
-  
+
   If Not Dialog.SaveFile() Then
     FicheroDatos.contenido = "" 'limpio el contenido
     FicheroDatos.agregar("version", "1.01")
@@ -147,30 +147,30 @@ Public Sub ButtonGuardar_Click()
     FicheroDatos.agregar("panelesActivos", panelesActivos)
     FicheroDatos.agregar("HSplit1", convertirAcadenaArray(HSplit1.Layout))
     FicheroDatos.agregar("HSplit2", convertirAcadenaArray(HSplit2.Layout))
-    
+
     If File.Ext(Dialog.path) <> "vistacarpetas" Then
       Dialog.path = Dialog.Path & ".vistacarpetas" 'para guardar por defecto esta extension
     Endif
-    
+
     FicheroDatos.save(Dialog.path)
-    
+
   Endif
-  
+
 End
 
 Public Sub ButtonAbrir_Click()
-  
+
   If Not Exist(User.home & "/" & "VistaCarpetas") Then
     Mkdir User.home & "/" & "VistaCarpetas"
   Endif
-  
+
   Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
-  
+
   Dialog.path = User.home & "/" & "VistaCarpetas"
-  
+
   If Not Dialog.OpenFile() Then
     FicheroDatos.load(Dialog.path)
-    
+
     If IsNull(FicheroDatos.buscar("version")) Then
       'version no colocida cargo como fichero antiguos..
       LeerVersionAntigua(Dialog.path)
@@ -181,108 +181,108 @@ Public Sub ButtonAbrir_Click()
           dos.DirectorioActual = FicheroDatos.buscar("dir2")
           tres.DirectorioActual = FicheroDatos.buscar("dir3")
           cuatro.DirectorioActual = FicheroDatos.buscar("dir4")
-          
+
           textboxCorto.text = FicheroDatos.buscar("TextoCorto")
           TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
-          
+
           panelesActivos = FicheroDatos.buscar("panelesActivos", "4")
-          
+
           HSplit1.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit1", "1|1"))
-          
+
           HSplit2.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit2", "1|1"))
-          
+
           activarPaneles()
       End Select
-      
+
     Endif
   Endif
-  
+
 End
 
 Public Sub LeerVersionAntigua(ruta As String)
-  
+
   Dim datos As String[]
-  
+
   datos = Split(File.Load(RUTA), gb.CrLf)
   textboxCorto.Text = File.BaseName(RUTA)
-  
+
   uno.DirectorioActual = datos[0]
   dos.DirectorioActual = datos[2]
   tres.DirectorioActual = datos[4]
   cuatro.DirectorioActual = datos[6]
   Try TextAreaLargo.text = Replace(datos[8], "|", "\n")
-  
+
 End
 
 Public Sub ButtonDobleH_Click()
-  
+
   dos.visible = False
   cuatro.visible = False
   tres.visible = True
   HSplit2.Visible = True
   panelesActivos = "1"
-  
+
 End
 
 Public Sub ButtonDoble_Click()
-  
+
   dos.visible = True
   tres.visible = False
   cuatro.visible = False
   HSplit2.visible = False
   panelesActivos = "2"
-  
+
 End
 
 Public Sub ButtonTripe_Click()
-  
+
   dos.visible = True
   tres.visible = True
   cuatro.visible = False
   HSplit2.visible = True
   panelesActivos = "3"
-  
+
 End
 
 Public Sub ButtonCuatro_Click()
-  
+
   dos.visible = True
   tres.visible = True
   cuatro.visible = True
   HSplit2.visible = True
   panelesActivos = "4"
-  
+
 End
 
 Public Sub activarPaneles()
-  
+
   Select Case panelesActivos
     Case "1"
       ButtonDobleH_Click()
     Case "2"
-      
+
       ButtonDoble_Click()
-      
+
     Case "3"
-      
+
       buttonTripe_Click()
-      
+
     Case "4"
-      
+
       ButtonCuatro_Click()
-      
+
   End Select
-  
+
 End
 
 Public Sub ButtonaYUDA_Click()
-  
+
   FormAyudayConfiguracion.Show()
-  
+
 End
 
 Public Sub Form_Close()
-  
+
   settings["dir1"] = uno.DirectorioActual
   settings["dir2"] = dos.DirectorioActual
   settings["dir3"] = tres.DirectorioActual
@@ -293,65 +293,64 @@ Public Sub Form_Close()
   Settings["HSplit2"] = HSplit2.Layout
   Settings["PanalesActivos"] = panelesActivos
   Settings.write(Me)
-  
+
 End
 
 Public Function convertirAcadenaArray(lista As Integer[]) As String
-  
+
   Dim n As Float
   Dim cadena As String
-  
+
   For Each n In lista
     cadena &= Str$(n) & "|"
-    
+
   Next
-  
+
   Return cadena
-  
+
 End
 
 Public Function convertirAintergerArray(texto As String) As Integer[]
-  
+
   Dim arrayinteger As New Integer[]
   Dim lista As String[]
   Dim token As String
-  
+
   lista = Split(texto, "|")
-  
+
   For Each token In lista
     If token = "" Then Continue
     arrayinteger.Add(Val(token))
   Next
-  
+
   Return arrayinteger
-  
+
 End
 
 Public Sub ButtonIra_Click()
-  
+
   Dim ruta As String
-  
-   If IsNull(ActualFileChooser) Then
-      Message.Info("Debe seleccionar un panel")
-      Else 
-  
-  ruta = InputBox("Directorio:", "Ir a un directorio", "")
-  If ruta = "" Then Return
-  ' If IsDir(ruta) Then
-   
-   
-      ActualFileChooser.DirectorioActual = ruta
-         ActualFileChooser.refrescar()
-    Endif 
-    
+
+  If IsNull(ActualFileChooser) Then
+    Message.Info("Debe seleccionar un panel")
+  Else
+
+    ruta = InputBox("Directorio:", "Ir a un directorio", "")
+    If ruta = "" Then Return
+    ' If IsDir(ruta) Then
+
+    ActualFileChooser.DirectorioActual = ruta
+    ActualFileChooser.refrescar()
+  Endif
+
   ' Else
   '   Message.Error("No puedo ir a esa ruta")
   ' Endif
-  
+
 End
 
 Public Sub Form_KeyPress()
-  
+
   Select Case Key.Code
     Case Key.F5
       Obj_ConseguirFoco(1)
@@ -361,7 +360,7 @@ Public Sub Form_KeyPress()
       Obj_ConseguirFoco(3)
     Case Key.F8
       Obj_ConseguirFoco(4)
-      
+
   End Select
-  
+
 End
