@@ -1,8 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: situcarpetas 3.15.2\n"
-"PO-Revision-Date: 2021-04-11 18:37 UTC\n"
+"Project-Id-Version: situcarpetas 3.16.0\n"
+"PO-Revision-Date: 2021-04-23 06:07 UTC\n"
 "Last-Translator: minino <minino@minino-ThinkCentre-M82>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
@@ -113,95 +113,107 @@ msgstr "Borrar Marcas"
 msgid "Select file"
 msgstr "Elegir fichero"
 
-#: TestForm.form:56
+#: TestForm.form:51
+msgid "Top directory"
+msgstr "subir en el directorio"
+
+#: TestForm.form:57
 msgid "MenuDir"
 msgstr "MenuDir"
 
-#: TestForm.form:59
+#: TestForm.form:60
 msgid "Create directory"
 msgstr "Crear Directorio"
 
-#: TestForm.form:64
+#: TestForm.form:65
 msgid "Open Terminal"
 msgstr "Abrir Terminal"
 
-#: TestForm.form:69
+#: TestForm.form:70
 msgid "Refresh"
 msgstr "Refrescar"
 
-#: TestForm.form:75
+#: TestForm.form:76
 msgid "MenuFile"
 msgstr "MenuFile"
 
-#: TestForm.form:78
+#: TestForm.form:79
 msgid "Rename"
 msgstr "Renombrar"
 
-#: TestForm.form:83
+#: TestForm.form:84
 msgid "Open file explorer"
 msgstr "Abrir explorador de ficheros"
 
-#: TestForm.form:101
+#: TestForm.form:102
 msgid "Mark file"
 msgstr "Marcar Ficheros"
 
-#: TestForm.form:109
+#: TestForm.form:110
 msgid "Join PDFs"
 msgstr "Unir PDFs"
 
-#: TestForm.form:114
+#: TestForm.form:115
 msgid "Split Pdf"
 msgstr "Dividir Pdf"
 
-#: TestForm.form:119
+#: TestForm.form:120
 msgid "Edit Pdf with LibreOffice Draw"
 msgstr "Editar Pdf con LibreOffice Draw"
 
-#: TestForm.form:127
+#: TestForm.form:128
 msgid "Copy"
 msgstr "Copiar"
 
-#: TestForm.form:132
+#: TestForm.form:133
 msgid "Move"
 msgstr "Mover"
 
-#: TestForm.form:137
+#: TestForm.form:138
 msgid "Paste"
 msgstr "Pegar"
 
-#: TestForm.form:145
+#: TestForm.form:146
 msgid "Delete file"
 msgstr "Borrar"
 
-#: TestForm.form:177 TestFormCompleto.form:99
+#: TestForm.form:178 TestFormCompleto.form:99
 msgid "Go to.."
 msgstr "Ir a.."
 
-#: TestForm.form:182
+#: TestForm.form:184
 msgid "Path:"
 msgstr "Ruta:"
 
-#: TestForm.form:206
+#: TestForm.form:198
+msgid "show directories"
+msgstr "mostrar alborl de directorios"
+
+#: TestForm.form:209
 msgid "Filter:"
 msgstr "Filtro:"
 
-#: TestForm.form:230
+#: TestForm.form:218
+msgid "Apply filter"
+msgstr "Aplicar filtro"
+
+#: TestForm.form:234
 msgid "view hidden"
 msgstr "ver ocultos"
 
-#: TestForm.form:236
+#: TestForm.form:240
 msgid "view directory"
 msgstr "ver directorios"
 
-#: TestForm.form:242
+#: TestForm.form:246
 msgid "view details"
 msgstr "ver detalles"
 
-#: TestForm.form:248
+#: TestForm.form:252
 msgid "refresh files/dir"
 msgstr "refrescar ficheros/directorios"
 
-#: TestFormCompleto.form:36
+#: TestFormCompleto.form:37
 msgid "Work Session:"
 msgstr "Sesión de trabajo:"
 
@@ -214,16 +226,20 @@ msgid "Save"
 msgstr "Guadar"
 
 #: TestFormCompleto.form:68
-msgid "doble panel"
-msgstr "Doble Panel"
+msgid "double panel horizontal"
+msgstr "doble panel horizontal"
+
+#: TestFormCompleto.form:75
+msgid "double panel vertical"
+msgstr "doble panel vertical"
 
 #: TestFormCompleto.form:82
-msgid "triple panel"
-msgstr "Triple Panel"
+msgid "three panel"
+msgstr "tres paneles"
 
 #: TestFormCompleto.form:88
-msgid "cuatros paneles"
-msgstr "Cuatro Paneles"
+msgid "four panels"
+msgstr "cuatro paneles"
 
 #: TestFormCompleto.form:109
 msgid "Help"

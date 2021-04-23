@@ -177,6 +177,8 @@ Public Sub refrescardir_Click()
   
 End
 
+
+
 Public Sub copiarfichero_Click()
   
   ' Print FileView1.Selection
@@ -289,12 +291,13 @@ Public Sub ButtonAbrirCarpetaContenedora_Click()
       
       TextBoxRuta.text = "/"
       hdirectorioActual = "/"
-      
+       DirView1.current = "/"
     Else
       FileView1.dir = lista.Join("/")
       
       TextBoxRuta.text = lista.Join("/")
       hdirectorioActual = lista.Join("/")    
+          DirView1.current = lista.Join("/")    
     Endif
     
   Endif
@@ -371,8 +374,22 @@ Public Sub FileView1_KeyPress()
   
 End
 
+Public Sub refrescar()
+   refrescarfile_Click()
+  
+  
+End
+
+
+
 Public Sub ButtonRefrestcar_Click()
   
   refrescarfile_Click()
   
+End
+
+Public Sub Form_Open()
+
+  
+
 End

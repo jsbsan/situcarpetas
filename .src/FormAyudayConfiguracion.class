@@ -9,7 +9,7 @@ Public Sub Form_Open()
   TextBoxEXP.Text = Settings["explorador", "caja"]
   TextBoxPARAEXP.Text = Settings["paraexplorador", "--working-directory="]
   TextBoxTERM.Text = Settings["terminal", "xfce4-terminal"]
-  
+  ColorButton1.Value = Settings["ColorFondo", Color.cyan]
 End
 
 Public Sub ButtonTdefecto_Click()
@@ -36,7 +36,7 @@ Public Sub ButtonACEPTAR_Click()
   Settings["explorador"] = TextBoxEXP.Text
   Settings["paraexplorador"] = TextBoxPARAEXP.Text
   Settings["terminal"] = TextBoxTERM.Text
-  
+ Settings["ColorFondo"] = ColorButton1.value
   Me.Close()
   
 End
@@ -45,4 +45,10 @@ Public Sub ButtonComprobarVersionGithub_Click()
   
   ComprobarVersionGit.TestComprobacion("https://raw.githubusercontent.com/jsbsan/situcarpetas/master/.project")
   
+End
+
+Public Sub ButtonColorSeleccionPanel_Click()
+
+   Settings["ColorFondo"] = Color.cyan
+
 End

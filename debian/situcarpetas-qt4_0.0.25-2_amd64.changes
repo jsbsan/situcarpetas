@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 23 Apr 2021 12:00:00 +0000
+Source: situcarpetas-qt4
+Binary: situcarpetas-qt4
+Architecture: source all
+Version: 0.0.25-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-qt4 - qt4 package for situcarpetas
+Changes:
+ situcarpetas-qt4 (0.0.25-2) unstable; urgency=low
+ .
+   * definible el color del panel seleccionado
+Checksums-Sha1:
+ a38587434ffaa88d54813e40c50db7681b320933 577 situcarpetas-qt4_0.0.25-2.dsc
+ 185582fb565c161efdc685c58d21ea6e4be99464 1584 situcarpetas-qt4_0.0.25-2.tar.gz
+ 7d921adebd6c0d1b5c7121411b5f2217347c72ba 2092 situcarpetas-qt4_0.0.25-2_all.deb
+ 650032a94c94ecd03c11ffb4e166eb68e78500af 13452 situcarpetas-qt4_0.0.25-2_amd64.buildinfo
+Checksums-Sha256:
+ ebca9c352690cb6c43007afb6dec8d26222cb934e445b6decccc711111275709 577 situcarpetas-qt4_0.0.25-2.dsc
+ 1f63a82cfc72e3da2683cc06953715a72911248abf40aa0348172afe80399fb6 1584 situcarpetas-qt4_0.0.25-2.tar.gz
+ 0963ac792842d8f811a4b1b3bdb2a90aff4ce2df7b324d7c70d99abc4b0a2f5a 2092 situcarpetas-qt4_0.0.25-2_all.deb
+ 1d4e03058e69f702ce9d52f139718c1f190de40dd2ab3ea4e2f8a4d146694013 13452 situcarpetas-qt4_0.0.25-2_amd64.buildinfo
+Files:
+ 1a5786685eaac89acfc1c4275378aada 577 contrib/admin optional situcarpetas-qt4_0.0.25-2.dsc
+ 1bf3df1593f6ca4c3e4dc3a19e9958cf 1584 contrib/admin optional situcarpetas-qt4_0.0.25-2.tar.gz
+ 9dfd0e28884f9330921ef24e1f68612a 2092 contrib/admin optional situcarpetas-qt4_0.0.25-2_all.deb
+ c709e13e8934c1ee7e8ffb77371d8cc0 13452 contrib/admin optional situcarpetas-qt4_0.0.25-2_amd64.buildinfo

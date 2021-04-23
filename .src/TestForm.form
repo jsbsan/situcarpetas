@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,141,47)
+  ToolTip = ("Top directory")
   Expand = True
   Arrangement = Arrange.Vertical
   Padding = 2
@@ -104,8 +105,8 @@
         }
         { Label1 Label
           MoveScaled(10,0,7,3)
-          Text = ("Path:")
           Alignment = Align.Center
+          Text = ("Path:")
         }
         { TextBoxRuta TextBox
           MoveScaled(17,0,73,3)
@@ -116,6 +117,7 @@
         MoveScaled(2,5,62,4)
         { ButtonArbolDirectorio Button
           MoveScaled(0,0,4,4)
+          ToolTip = ("show directories")
           Picture = Picture["arboldirectorio.png"]
         }
         { Spring2 Spring
@@ -123,14 +125,15 @@
         }
         { Label2 Label
           MoveScaled(5,0,8,4)
-          Text = ("Filter:")
           Alignment = Align.Center
+          Text = ("Filter:")
         }
         { TextBoxFiltro TextBox
           MoveScaled(11,0,10,4)
         }
         { ButtonFiltrar Button
           MoveScaled(22,0,3,4)
+          ToolTip = ("Apply filter")
           Picture = Picture["icon:/24/filter"]
         }
         { Spring3 Spring
@@ -138,6 +141,7 @@
         }
         { ButtonAbrirCarpetaContenedora Button
           MoveScaled(30,0,4,4)
+          ToolTip = ("Top directory")
           Picture = Picture["icon:/24/text-top"]
         }
         { ButtonOcultos Button

@@ -9,8 +9,8 @@
     Padding = 2
     { Label1 Label
       MoveScaled(1,0,18,4)
-      Text = ("Work Session:")
       Alignment = Align.Center
+      Text = ("Work Session:")
     }
     { textboxCorto TextBox
       MoveScaled(19,0,29,4)
@@ -35,24 +35,24 @@
       { ButtonDobleH Button
         MoveScaled(2,0,4,4)
         Tag = "1"
-        ToolTip = ("doble panel")
+        ToolTip = ("double panel horizontal")
         Picture = Picture["iconos/dobleH.png"]
       }
       { ButtonDoble Button
         MoveScaled(7,0,5,4)
         Tag = "1"
-        ToolTip = ("doble panel")
+        ToolTip = ("double panel vertical")
         Picture = Picture["iconos/doble.png"]
       }
       { ButtonTripe Button
         MoveScaled(13,0,5,4)
         Tag = "1"
-        ToolTip = ("triple panel")
+        ToolTip = ("three panel")
         Picture = Picture["iconos/triple.png"]
       }
       { ButtonCuatro Button
         MoveScaled(19,0,5,4)
-        ToolTip = ("cuatros paneles")
+        ToolTip = ("four panels")
         Picture = Picture["iconos/cuatro.png"]
       }
     }

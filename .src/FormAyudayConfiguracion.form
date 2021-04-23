@@ -29,19 +29,19 @@
   }
   { Label1 Label
     MoveScaled(2,33,21,5)
-    Text = ("File Explorer:")
     Alignment = Align.Right
+    Text = ("File Explorer:")
   }
   { Label2 Label
-    MoveScaled(4,46,20,5)
-    Text = ("Terminal:")
+    MoveScaled(4,43,20,3)
     Alignment = Align.Right
+    Text = ("Terminal:")
   }
   { TextBoxEXP TextBox
     MoveScaled(25,33,28,4)
   }
   { TextBoxTERM TextBox
-    MoveScaled(25,47,28,4)
+    MoveScaled(25,43,28,4)
   }
   { Label3 Label
     MoveScaled(2,38,22,5)
@@ -51,15 +51,18 @@
     MoveScaled(25,38,28,4)
   }
   { ButtonTdefecto Button
-    MoveScaled(54,47,9,4)
+    MoveScaled(53,43,10,4)
+    Font = Font["-1"]
     Text = ("Default")
   }
   { ButtonExpDefecto Button
-    MoveScaled(54,33,9,4)
+    MoveScaled(53,33,10,4)
+    Font = Font["-1"]
     Text = ("Default")
   }
   { ButtonParaExpDefecto Button
-    MoveScaled(54,38,9,4)
+    MoveScaled(53,38,10,4)
+    Font = Font["-1"]
     Text = ("Default")
   }
   { ButtonComprobarVersionGithub Button
@@ -70,5 +73,18 @@
   { TextLabel2 TextLabel
     MoveScaled(4,62,54,19)
     Text = ("<u>Quick Keys:</u><br>\nf5: switch to panel 1<br>\nf6: switch to panel 2<br>\nf7: switch to panel 3<br>\nf8: switch to panel 4<br>\n\nCtrl + C: copy selected files<br>\nCtrl + X: move selected files<br>\nCtrl + V: paste files<br>")
+  }
+  { Label4 Label
+    MoveScaled(3,48,21,4)
+    Alignment = Align.Right
+    Text = ("Selected panel color:")
+  }
+  { ColorButton1 ColorButton
+    MoveScaled(25,48,28,4)
+  }
+  { ButtonColorSeleccionPanel Button
+    MoveScaled(53,48,10,4)
+    Font = Font["-1"]
+    Text = ("Default")
   }
 }

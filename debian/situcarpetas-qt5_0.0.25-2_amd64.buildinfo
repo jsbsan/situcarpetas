@@ -2,19 +2,19 @@ Format: 1.0
 Source: situcarpetas-qt5
 Binary: situcarpetas-qt5
 Architecture: all source
-Version: 0.0.24-2
+Version: 0.0.25-2
 Checksums-Md5:
- b0e6ceb7b84748a28d6af68e948d9301 577 situcarpetas-qt5_0.0.24-2.dsc
- 4772345c788e138e40a48c595aec938b 2072 situcarpetas-qt5_0.0.24-2_all.deb
+ a701e21f7cc53859fe54a195455691b0 577 situcarpetas-qt5_0.0.25-2.dsc
+ 8df0487ddd94a51644ece2a50f9822c0 2096 situcarpetas-qt5_0.0.25-2_all.deb
 Checksums-Sha1:
- a0b09ee045febd2e0521643a6ce068cce2719cb6 577 situcarpetas-qt5_0.0.24-2.dsc
- 49e1f5021c47250d03ccf1efe3edf1b05196282d 2072 situcarpetas-qt5_0.0.24-2_all.deb
+ 80c2e7a503647071b479d0573d3aac44fee202ba 577 situcarpetas-qt5_0.0.25-2.dsc
+ 936decc590bca27f19b11a8429a0f832ec2cbdda 2096 situcarpetas-qt5_0.0.25-2_all.deb
 Checksums-Sha256:
- a193361d7087c743f50bbb7146d4d701e75d51823b8147d5a92d72400806157a 577 situcarpetas-qt5_0.0.24-2.dsc
- 3dff97a736d64f73f645a4982c868e6ef3516a7795278377b501577f5a9f1331 2072 situcarpetas-qt5_0.0.24-2_all.deb
+ 8b4a6d02355aa8f2f1742551967d43fbbb018c525b4d9bd9627706cf707ef58a 577 situcarpetas-qt5_0.0.25-2.dsc
+ d22304116503a4e7bd97ecb992b1178e20fa9f78a5d4c2a75115df0c67544df1 2096 situcarpetas-qt5_0.0.25-2_all.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Wed, 21 Apr 2021 09:05:37 +0200
+Build-Date: Fri, 23 Apr 2021 09:02:35 +0200
 Installed-Build-Depends:
  adduser (= 3.116ubuntu1),
  adwaita-icon-theme (= 3.28.0-1ubuntu1),
@@ -380,4 +380,4 @@ Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="es_ES.UTF-8"
  LC_ALL="es_ES.UTF-8"
- SOURCE_DATE_EPOCH="1619006400"
+ SOURCE_DATE_EPOCH="1619179200"

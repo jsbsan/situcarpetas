@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 23 Apr 2021 12:00:00 +0000
+Source: situcarpetas
+Binary: situcarpetas
+Architecture: source all
+Version: 0.0.25-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas - Para guardar la situación de varias carpetas abiertas
+Changes:
+ situcarpetas (0.0.25-2) unstable; urgency=low
+ .
+   * definible el color del panel seleccionado
+Checksums-Sha1:
+ 889609b4d700ef75e414f38fb4961a4f122bcd4e 1128 situcarpetas_0.0.25-2.dsc
+ 945d5a7396c189f43f3063e9daa4f97f58ab8e30 2071 situcarpetas_0.0.25-2.diff.gz
+ dd12b448913b909866a612486686a88d0bf0c7ca 2332632 situcarpetas_0.0.25-2_all.deb
+ 4d17f02ee296034f19a05c409df835381965da94 17078 situcarpetas_0.0.25-2_amd64.buildinfo
+Checksums-Sha256:
+ b307ebde2878b38a83f249b17fc1877d5bf1f7aeb67a38c112505e0ff045ee93 1128 situcarpetas_0.0.25-2.dsc
+ 7090b9d7fa0c9b803ca42dcb5652b30d653241321356596d485d49f5a36e37db 2071 situcarpetas_0.0.25-2.diff.gz
+ b9346885f4f5ebcd19fbaa535664d8fca635bd56adf18c7efe8723eeac2c5033 2332632 situcarpetas_0.0.25-2_all.deb
+ 6fcea192680e12b5d459486076f61d597dc1e281e7006b2496f766d19511f0e2 17078 situcarpetas_0.0.25-2_amd64.buildinfo
+Files:
+ 67143f66492cd5fd8bc003610a6d3128 1128 contrib/admin optional situcarpetas_0.0.25-2.dsc
+ 67ea24fefa77b71acb404e6ebd741aee 2071 contrib/admin optional situcarpetas_0.0.25-2.diff.gz
+ 7287f949b8146c3c520ca2fcac34a8c5 2332632 contrib/admin optional situcarpetas_0.0.25-2_all.deb
+ a31b3fc19e6afd5107de006022ff12c3 17078 contrib/admin optional situcarpetas_0.0.25-2_amd64.buildinfo
