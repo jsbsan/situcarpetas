@@ -1,20 +1,20 @@
 Format: 1.0
-Source: situcarpetas-gtk3
-Binary: situcarpetas-gtk3
+Source: situcarpetas-gtk
+Binary: situcarpetas-gtk
 Architecture: all source
-Version: 0.0.25-2
+Version: 0.0.30-2
 Checksums-Md5:
- 5877cbc54453f17bdce0e40181840274 583 situcarpetas-gtk3_0.0.25-2.dsc
- 8b493733ea405e14a41047cd57d35679 2084 situcarpetas-gtk3_0.0.25-2_all.deb
+ 8aa84ae247ba237095f73e17252f62cf 577 situcarpetas-gtk_0.0.30-2.dsc
+ eca74ce1dbe3ad8d21f73c89b3da652a 2128 situcarpetas-gtk_0.0.30-2_all.deb
 Checksums-Sha1:
- 103ee1598ef05e56777a9d9af2fa00440b75e1fd 583 situcarpetas-gtk3_0.0.25-2.dsc
- 4e6348f17abf2e9f2eeb76610982532d91406d9c 2084 situcarpetas-gtk3_0.0.25-2_all.deb
+ 80f9fc5b3861238a9f8d418b7cc6c0742311efdb 577 situcarpetas-gtk_0.0.30-2.dsc
+ 8aa0c616ccfbf808e4dc43cc1186d966105eb64f 2128 situcarpetas-gtk_0.0.30-2_all.deb
 Checksums-Sha256:
- 87d92c8c471956f41ed7f75598c26c26b4eab3fbb7af3e223b65168e94f8a27c 583 situcarpetas-gtk3_0.0.25-2.dsc
- 37105c028bbdf8e37bbeba445e0b8244eaf81ab11e43ff4a0dd7166f02b645d3 2084 situcarpetas-gtk3_0.0.25-2_all.deb
+ b4647fb96e2789cc13d64b7fee50fbf5d2ffa009b5b213f98f247d141b093bf3 577 situcarpetas-gtk_0.0.30-2.dsc
+ 17a8c052a95279f5df281c37080cfde4959f34dcd63b4d351d124c98601a7012 2128 situcarpetas-gtk_0.0.30-2_all.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Fri, 23 Apr 2021 09:02:32 +0200
+Build-Date: Fri, 23 Apr 2021 13:33:08 +0200
 Installed-Build-Depends:
  adduser (= 3.116ubuntu1),
  adwaita-icon-theme (= 3.28.0-1ubuntu1),
@@ -47,7 +47,7 @@ Installed-Build-Depends:
  dh-autoreconf (= 17),
  dh-strip-nondeterminism (= 0.040-1.1~build1),
  diffutils (= 1:3.6-1),
- distro-info-data (= 0.37ubuntu0.9),
+ distro-info-data (= 0.37ubuntu0.10),
  dpkg (= 1.19.0.5ubuntu2.3),
  dpkg-dev (= 1.19.0.5ubuntu2.3),
  e2fsprogs (= 1.44.1-1ubuntu1.3),

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 23 Apr 2021 12:00:00 +0000
+Source: situcarpetas
+Binary: situcarpetas
+Architecture: source all
+Version: 0.0.30-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas - Para guardar la situación de varias carpetas abiertas
+Changes:
+ situcarpetas (0.0.30-2) unstable; urgency=low
+ .
+   * mejora tincho: ahora se puede ir a directorios por debajo de /home/usuario
+Checksums-Sha1:
+ cb03a02d83761074d43c3f8bbd25cd4647dac290 1125 situcarpetas_0.0.30-2.dsc
+ d6af663d99dee9fab463dedf5364d0483e9b9eca 2108 situcarpetas_0.0.30-2.diff.gz
+ 9aff673b03daaf5b5b5ddc76113b54980e6d455a 416932 situcarpetas_0.0.30-2_all.deb
+ 2371faec7f515844356c1d2dad9d0293ef4765a6 17076 situcarpetas_0.0.30-2_amd64.buildinfo
+Checksums-Sha256:
+ fa9830d57460e2ba81a843668004e839318d827b452dc7d1d350493d3185d4e8 1125 situcarpetas_0.0.30-2.dsc
+ 9ca4b14a80cf85665e299526de86bfb06d6c9afb88cd95beed3e139b94779206 2108 situcarpetas_0.0.30-2.diff.gz
+ 8a5adb4c88cba53d97622d462498f6cf080170642febc43e8ab676552f5ee168 416932 situcarpetas_0.0.30-2_all.deb
+ 2fe81b93b6d129844828e3d72ca2bda09d5408b13cbd3da0491d64c3d8ff7db6 17076 situcarpetas_0.0.30-2_amd64.buildinfo
+Files:
+ a66c04cf886c3dd5df4be844ca75c88c 1125 contrib/admin optional situcarpetas_0.0.30-2.dsc
+ 7d4fa1d87294abe357f102fda51a6b44 2108 contrib/admin optional situcarpetas_0.0.30-2.diff.gz
+ 935f0131ef7c61ef52a6ed6878e7fee9 416932 contrib/admin optional situcarpetas_0.0.30-2_all.deb
+ 97b8774eb358837b8bdb1a24ec802857 17076 contrib/admin optional situcarpetas_0.0.30-2_amd64.buildinfo

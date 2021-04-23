@@ -93,6 +93,7 @@
     { DirView1 DirView
       MoveScaled(3,7,37,29)
       PopupMenu = "MenuDir"
+      Root = "/"
     }
     { VPanel1 VBox
       MoveScaled(41,4,64,33)

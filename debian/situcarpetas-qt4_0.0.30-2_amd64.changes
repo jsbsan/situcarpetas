@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 23 Apr 2021 12:00:00 +0000
+Source: situcarpetas-qt4
+Binary: situcarpetas-qt4
+Architecture: source all
+Version: 0.0.30-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-qt4 - qt4 package for situcarpetas
+Changes:
+ situcarpetas-qt4 (0.0.30-2) unstable; urgency=low
+ .
+   * mejora tincho: ahora se puede ir a directorios por debajo de /home/usuario
+Checksums-Sha1:
+ 48e62056a821f14698ff846375569984f0a05456 577 situcarpetas-qt4_0.0.30-2.dsc
+ 959db67f1e9f5395acb1a30811c92ecfff3ad91d 1625 situcarpetas-qt4_0.0.30-2.tar.gz
+ 33fef318fb9cad405b7d53953811bd9d2c3a410e 2128 situcarpetas-qt4_0.0.30-2_all.deb
+ 121f5ed209642cf4e4237f4a75a502e1ed1f9e89 13453 situcarpetas-qt4_0.0.30-2_amd64.buildinfo
+Checksums-Sha256:
+ cdd411bd5ac275b5deef6b4dbd620a70334c7c477cfc4e48640bfe6554853ebf 577 situcarpetas-qt4_0.0.30-2.dsc
+ f7e25e0582d91b5e695c796209d85816726e21f737aa8df239e70b53d469a9f6 1625 situcarpetas-qt4_0.0.30-2.tar.gz
+ b4548e6411031b40b67ecd06c1db8b6566dbb3c31a259a842a120a21f692137a 2128 situcarpetas-qt4_0.0.30-2_all.deb
+ 72551496f15a903e53335c913dea082fa9f72935d02b1f11266fec3f4bbe18bf 13453 situcarpetas-qt4_0.0.30-2_amd64.buildinfo
+Files:
+ 578945e39b84b63ed9f0954fdb188a16 577 contrib/admin optional situcarpetas-qt4_0.0.30-2.dsc
+ 0a3e02b06764e1daec7ec4a165b5b3e4 1625 contrib/admin optional situcarpetas-qt4_0.0.30-2.tar.gz
+ 679a1891ea64b37c6ea9c5fdc2f7c8d1 2128 contrib/admin optional situcarpetas-qt4_0.0.30-2_all.deb
+ 9bb5dd3f4dcef99dc433837f4b081f94 13453 contrib/admin optional situcarpetas-qt4_0.0.30-2_amd64.buildinfo

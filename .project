@@ -2,7 +2,7 @@
 Title=situcarpetas
 Startup=TestFormCompleto
 Icon=iconos/carpeta.png
-Version=0.0.27
+Version=0.0.30
 Component=gb.image
 Component=gb.gui
 Component=gb.form
@@ -17,7 +17,7 @@ Maintainer=JULIO SANCHEZ BERRO
 Address=jusabejusabe@gmail.com
 Url=https://jsbsan.blogspot.com/
 License=General Public License
-PackageName=situcarpetas-0.0.25
+PackageName=situcarpetas-0.0.30
 PackageVersion=2
 CreateEachDirectory=1
 Packager=1

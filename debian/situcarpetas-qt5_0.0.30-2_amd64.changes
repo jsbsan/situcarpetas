@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 23 Apr 2021 12:00:00 +0000
+Source: situcarpetas-qt5
+Binary: situcarpetas-qt5
+Architecture: source all
+Version: 0.0.30-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-qt5 - qt5 package for situcarpetas
+Changes:
+ situcarpetas-qt5 (0.0.30-2) unstable; urgency=low
+ .
+   * mejora tincho: ahora se puede ir a directorios por debajo de /home/usuario
+Checksums-Sha1:
+ e900b47f4d70a7ca82bdf005c5902507e1c3c9c7 577 situcarpetas-qt5_0.0.30-2.dsc
+ 336356ba9ccc8674c924a7f046a7b1ec65ce7702 1625 situcarpetas-qt5_0.0.30-2.tar.gz
+ 48431326aa47cc3cf10d6d40002ce4614ca5f804 2128 situcarpetas-qt5_0.0.30-2_all.deb
+ 576adead348e0c581c4797c057452a50540fdc00 13453 situcarpetas-qt5_0.0.30-2_amd64.buildinfo
+Checksums-Sha256:
+ 7a79760dde78a5fe2edead8f139a425bca88dc397e889ff4aae7a0e00b9df814 577 situcarpetas-qt5_0.0.30-2.dsc
+ bf15f9780daab974192840244d2776b5fe27d705a48dd02b4f90cc49731c403a 1625 situcarpetas-qt5_0.0.30-2.tar.gz
+ 2379dce0a62fd036a0004ad3aa8fabffc635f7dcafce5ab68080e617a8718eab 2128 situcarpetas-qt5_0.0.30-2_all.deb
+ 8c3dfa7435c42b9f99d9f789101651b620447330ad23218c4052dc731d6c178c 13453 situcarpetas-qt5_0.0.30-2_amd64.buildinfo
+Files:
+ f8a700250d1b12ad8ddc2cf13fe4bc70 577 contrib/admin optional situcarpetas-qt5_0.0.30-2.dsc
+ 429a50fca377f290fdcec0db34fcd8df 1625 contrib/admin optional situcarpetas-qt5_0.0.30-2.tar.gz
+ 1e4b71a1245597a5af384df3f73ee9e0 2128 contrib/admin optional situcarpetas-qt5_0.0.30-2_all.deb
+ 399453a62132cfe60fd0f7ee5079bf26 13453 contrib/admin optional situcarpetas-qt5_0.0.30-2_amd64.buildinfo

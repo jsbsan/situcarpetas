@@ -2,15 +2,15 @@ Format: 1.0
 Source: situcarpetas-qt4
 Binary: situcarpetas-qt4
 Architecture: all
-Version: 0.0.25-2
+Version: 0.0.30-2
 Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
 Standards-Version: 3.9.6
 Build-Depends: debhelper (>= 9)
 Package-List:
  situcarpetas-qt4 deb contrib/admin optional arch=all
 Checksums-Sha1:
- 185582fb565c161efdc685c58d21ea6e4be99464 1584 situcarpetas-qt4_0.0.25-2.tar.gz
+ 959db67f1e9f5395acb1a30811c92ecfff3ad91d 1625 situcarpetas-qt4_0.0.30-2.tar.gz
 Checksums-Sha256:
- 1f63a82cfc72e3da2683cc06953715a72911248abf40aa0348172afe80399fb6 1584 situcarpetas-qt4_0.0.25-2.tar.gz
+ f7e25e0582d91b5e695c796209d85816726e21f737aa8df239e70b53d469a9f6 1625 situcarpetas-qt4_0.0.30-2.tar.gz
 Files:
- 1bf3df1593f6ca4c3e4dc3a19e9958cf 1584 situcarpetas-qt4_0.0.25-2.tar.gz
+ 0a3e02b06764e1daec7ec4a165b5b3e4 1625 situcarpetas-qt4_0.0.30-2.tar.gz
