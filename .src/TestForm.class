@@ -14,47 +14,47 @@ Property DirectorioActual As String
 Private hdirectorioActual As String
 
 Function DirectorioActual_read() As String
-  
+
   Return hdirectorioActual
-  
+
 End
 
 Function DirectorioActual_write(valor As String)
-  
+
   hdirectorioActual = valor
   FileView1.dir = valor
-  
+
   TextBoxRuta.text = valor
   DirView1.current = valor
-  
+
 End
 
 Public Sub DirView1_Click()
-  
+
   FileView1.dir = DirView1.Current
   TextBoxRuta.text = DirView1.Current
   hDirectorioActual = DirView1.Current
-  
+
 End
 
 Public Sub inicia()
-  
+
   TextBoxRuta.text = DirView1.Current
   hDirectorioActual = DirView1.Current
-  
+
   MenuDir.Visible = False
   MenuFile.visible = False
-  
+
 End
 
 Public Sub FileView1_DblClick()
-  
+
   If Not IsDir(Me.DirectorioActual & "/" & FileView1.Current) Then
     Desktop.Open(Me.DirectorioActual & "/" & FileView1.Current)
   Else
     Me.DirectorioActual = Me.DirectorioActual & "/" & FileView1.Current
   Endif
-  
+
 End
 
 ' Public Sub ButtonIrA_Click()
@@ -72,33 +72,33 @@ End
 ' End
 
 Public Sub FileView1_GotFocus()
-  
+
   Raise ConseguirFoco(Me.tag)
-  
+
 End
 
 Public Sub DirView1_GotFocus()
-  
+
   Raise ConseguirFoco(Me.tag)
-  
+
 End
 
 Public Sub TextBoxRuta_GotFocus()
-  
+
   Raise ConseguirFoco(Me.tag)
-  
+
 End
 
 Public Sub TextBoxRuta_KeyPress()
-  
+
   If Key.code = Key.enter Or Key.code = Key.return Then
     '  Me.DirectorioActual = TextBoxRuta.text
-    
+
     DirView1.Current = TextBoxRuta.text
     FileView1.dir = DirView1.Current
     hdirectorioActual = DirView1.Current
   Endif
-  
+
 End
 
 ''-----------------------------------------------------
@@ -106,136 +106,134 @@ End
 ''-----------------------------------------------------
 
 Public Sub terminalFile_Click()
-  
+
   Exec [Settings["terminal", "xfce4-terminal"], Settings["paraexplorador", "--working-directory="] & TextBoxRuta.text]
-  
+
 End
 
 Public Sub terminaldir_Click()
-  
+
   terminalFile_Click()
-  
+
 End
 
 Public Sub creardirectoriofile_Click()
-  
+
   Dim nombre As String
-  
+
   nombre = InputBox("Nombre de la nueva carpeta", "Nueva Carpeta")
-  
+
   Try Mkdir DirView1.Current & "/" & nombre
-  
+
   reload()
-  
+
 End
 
 Public Sub creardirectorio_Click()
-  
+
   creardirectoriofile_Click()
-  
+
 End
 
 Public Sub ButtonDirectorioFileview_Click()
-  
+
   If FileView1.ShowDirectory = False Then
     FileView1.ShowDirectory = True
   Else
     FileView1.ShowDirectory = False
   Endif
-  
+
 End
 
 Public Sub ButtonDetalles_Click()
-  
+
   If FileView1.ShowDetailed = False Then
     FileView1.ShowDetailed = True
   Else
     FileView1.ShowDetailed = False
   Endif
-  
+
 End
 
 Public Sub ButtonOcultos_Click()
-  
+
   If FileView1.ShowHidden = False Then
     FileView1.ShowHidden = True
   Else
     FileView1.ShowHidden = False
   Endif
-  
+
 End
 
 Public Sub refrescarfile_Click()
-  
+
   FileView1.Reload()
-  
+
 End
 
 Public Sub refrescardir_Click()
-  
+
   DirView1.Reload()
-  
+
 End
 
-
-
 Public Sub copiarfichero_Click()
-  
+
   ' Print FileView1.Selection
-  
+
   Raise copia(FileView1.Selection, hDirectorioActual)
-  
+
 End
 
 Public Sub pegarfichero_Click()
-  
+
   Raise PegarEn(hdirectorioActual)
-  
+
 End
 
 Public Sub reload()
-  
+
   FileView1.Reload()
-  
+
   DirView1.Reload()
-  
+
 End
 
 Public Sub borrarfile_Click()
-  
+
   Dim respuesta As Integer
   Dim f As String
-  
+
   respuesta = Message.Question("Borrar el fichero:\n" & FileView1.Selection.Join("\n"), "Si", "No")
-  
+
   If respuesta = 1 Then
-    
+
     For Each f In FileView1.Selection
-      
+
       If IsDir(DirView1.current & "/" & f) Then
         Rmdir DirView1.current & "/" & f
       Else
         Kill DirView1.Current & "/" & f
       Endif
     Next
-    
+
     Raise actualizarInformacionDirectorios()
   Endif
-  
+
 End
 
 Public Sub abrirnavegador_Click()
-  
+
   Exec [Settings["explorador", "caja"], hDirectorioActual & "/"]
-  
+
 End
 
 Public Sub renombrarfile_Click()
-  
+
   Dim resp As String
-  
+
   resp = InputBox("Fichero:", "Renombrar", FileView1.Current)
-  
+
   If resp = "" Then
     'ha cancelado el usuario
     Return
@@ -243,153 +241,150 @@ Public Sub renombrarfile_Click()
     Move hdirectorioActual &/ FileView1.current To hdirectorioActual &/ resp
     reload()
   Endif
-  
+
 End
 
 Public Sub MenuUnirPDF_Click()
-  
+
   Dim comando As String
-  
+
   'pdftk *.pdf cat output archivo_final.pdf
   comando = "cd \"" & hDirectorioActual & "\"" & " && pdftk *.pdf cat output 00_Archivo_final.pdf"
   Shell comando Wait
   reload()
-  
+
 End
 
 Public Sub ButtonFiltrar_Click()
-  
+
   FileView1.Filter = [TextBoxFiltro.TEXT]
   reload()
-  
+
 End
 
 Public Sub MenuMarcarFichero_Click()
-  
+
   ''TODO: MARCAR/DESMARCAR FICHEROS
   FormMarcar.ruta = hdirectorioActual
   FormMarcar.fichero = [FileView1.Current]
   FormMarcar.Showmodal()
   reload()
-  
+
 End
 
 Public Sub ButtonAbrirCarpetaContenedora_Click()
-  
+
   Dim lista As String[]
   'subo una ruta
   lista = Split(TextBoxRuta.text, "/")
-  If lista.count > 1 Then 
-    
+  If lista.count > 1 Then
+
     Try lista.Delete(lista.count - 1)
-    If Error Then 
+    If Error Then
       'no puedo borrar nada
       Return
     Endif
-    If lista.Join("/") = "" Then  
+    If lista.Join("/") = "" Then
       FileView1.dir = "/"
-      
+
       TextBoxRuta.text = "/"
       hdirectorioActual = "/"
-       DirView1.current = "/"
+      'DirView1.current = "/"
+      DirView1.Root = "/"
     Else
       FileView1.dir = lista.Join("/")
-      
       TextBoxRuta.text = lista.Join("/")
-      hdirectorioActual = lista.Join("/")    
-          DirView1.current = lista.Join("/")    
+      hdirectorioActual = lista.Join("/")
+      'DirView1.current = lista.Join("/")
+      DirView1.Root = lista.Join("/")
     Endif
-    
+
   Endif
-  
+
 End
 
 Public Sub ButtonArbolDirectorio_Click()
-  
+
   If DirView1.Visible Then
     DirView1.Visible = False
   Else
     DirView1.Visible = True
   Endif
-  
+
 End
 
 Public Sub MenuDividePdf_Click()
-  
+
   Try Exec ["dividemultiplepdf", FileView1.DIR &/ FileView1.Selection[0]]
-  
+
 End
 
 Public Sub MenuMover_Click()
-  
+
   Raise mover(FileView1.Selection, hDirectorioActual)
-  
+
 End
 
 Public Sub MenuEditarPedf_Click()
-  
+
   Try Exec ["libreoffice", FileView1.DIR &/ FileView1.Selection[0]]
-  
+
 End
 
 Public Sub FileView1_Click()
   ' Dim nombre As String
   ' Dim fvi As FormVisualizador
-  ' 
+  '
   ' nombre = FileView1.dir & "/" & FileView1.Selection[0]
-  ' 
-  ' 
-  ' 
+  '
+  '
+  '
   ' Select Case File.Ext(nombre)
   '   Case "png", "jpg", "jpeg"
-  '  
+  '
   '   fvi = New FormVisualizador
   '   fvi.nombrefichero = nombre
   '   fvi.Show()
-  ' 
+  '
   ' Case Else
   '   fvi.Delete
   ' End Select
-  
+
 End
 
 Public Sub FileView1_KeyPress()
-  
-  If (Key.code = Key["c"] Or Key.code = Key["C"]) And If Key.Control Then 
+
+  If (Key.code = Key["c"] Or Key.code = Key["C"]) And If Key.Control Then
     Message.info("CTRL+C: COPIO FICHEROS SELECCIONADOS" & GB.NewLine & FileView1.Selection.Join(GB.NewLine))
     Raise copia(FileView1.Selection, hDirectorioActual)
   Endif
-  
-  If (Key.code = Key["v"] Or Key.code = Key["V"]) And If Key.Control Then 
+
+  If (Key.code = Key["v"] Or Key.code = Key["V"]) And If Key.Control Then
     Message.info("CTRL+V: PEGO FICHEROS SELECCIONADOS")
     Raise PegarEn(hdirectorioActual)
   Endif
-  
-  If (Key.code = Key["X"] Or Key.code = Key["x"]) And If Key.Control Then 
+
+  If (Key.code = Key["X"] Or Key.code = Key["x"]) And If Key.Control Then
     Message.info("CTRL+X: MOVER FICHEROS SELECCIONADOS" & GB.NewLine & FileView1.Selection.Join(GB.NewLine))
-    
+
     Raise mover(FileView1.Selection, hDirectorioActual)
-    
+
   Endif
-  
+
 End
 
 Public Sub refrescar()
-   refrescarfile_Click()
-  
-  
+
+  refrescarfile_Click()
+
 End
 
-
-
 Public Sub ButtonRefrestcar_Click()
-  
+
   refrescarfile_Click()
-  
+
 End
 
 Public Sub Form_Open()
-
-  
 
 End
