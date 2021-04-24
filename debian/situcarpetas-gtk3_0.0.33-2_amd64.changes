@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sat, 24 Apr 2021 12:00:00 +0000
+Source: situcarpetas-gtk3
+Binary: situcarpetas-gtk3
+Architecture: source all
+Version: 0.0.33-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-gtk3 - gtk3 package for situcarpetas
+Changes:
+ situcarpetas-gtk3 (0.0.33-2) unstable; urgency=low
+ .
+   * New release version
+Checksums-Sha1:
+ 0d6b98f92dea0c261205eb341b2f70141a487124 583 situcarpetas-gtk3_0.0.33-2.dsc
+ 9d884c9e18acedc049d2c9d1d8f55543becb71c6 1665 situcarpetas-gtk3_0.0.33-2.tar.gz
+ 6b4ab2a5a3318da55e65e39a0c4d62ac6c905ef9 2164 situcarpetas-gtk3_0.0.33-2_all.deb
+ 21caee01d4c317427edf0040fec0dae1e3855da2 13461 situcarpetas-gtk3_0.0.33-2_amd64.buildinfo
+Checksums-Sha256:
+ a25b3d550ab3458cb15680157800dd6f83221b0c3153daecbd578487386c20f7 583 situcarpetas-gtk3_0.0.33-2.dsc
+ 3960908b84700e97f16e080fb123511e40f922cc43ba8095668985c470ccfd6d 1665 situcarpetas-gtk3_0.0.33-2.tar.gz
+ 937d0ce1fd19fd09bcdaf338e1d71a8875af068bf52569597b341647c51aed5a 2164 situcarpetas-gtk3_0.0.33-2_all.deb
+ 83b736f5b31312f559046c53f2343a883725edd5c4a5e3961e69fb947019fe60 13461 situcarpetas-gtk3_0.0.33-2_amd64.buildinfo
+Files:
+ 7c813585cb286b09c4099c8addffba54 583 contrib/admin optional situcarpetas-gtk3_0.0.33-2.dsc
+ 05feb89016c86a99a0d2dd5ffac4f3a7 1665 contrib/admin optional situcarpetas-gtk3_0.0.33-2.tar.gz
+ 3639b6a936a787a0e58ac4e055bc48cc 2164 contrib/admin optional situcarpetas-gtk3_0.0.33-2_all.deb
+ c2794f2e2a5649b1e1845fc76da7d470 13461 contrib/admin optional situcarpetas-gtk3_0.0.33-2_amd64.buildinfo

@@ -159,8 +159,10 @@ Public Sub ButtonOcultos_Click()
 
   If FileView1.ShowHidden = False Then
     FileView1.ShowHidden = True
+    DirView1.ShowHidden = True
   Else
     FileView1.ShowHidden = False
+    DirView1.ShowHidden = False
   Endif
 
 End
