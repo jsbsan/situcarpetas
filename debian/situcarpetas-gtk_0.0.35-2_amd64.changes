@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sun, 25 Apr 2021 12:00:00 +0000
+Source: situcarpetas-gtk
+Binary: situcarpetas-gtk
+Architecture: source all
+Version: 0.0.35-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-gtk - gtk package for situcarpetas
+Changes:
+ situcarpetas-gtk (0.0.35-2) unstable; urgency=low
+ .
+   * color de nota configurable y posicion de nota vertical o horizontal
+Checksums-Sha1:
+ dac1e6c4ffb43c2876cae46a22ac62704c90ccc2 577 situcarpetas-gtk_0.0.35-2.dsc
+ 4819c32ec1a57cd92421dfd2531e0198460b8f19 1697 situcarpetas-gtk_0.0.35-2.tar.gz
+ 0fc40d025ca60621b86ada97a57cf0de5053c556 2200 situcarpetas-gtk_0.0.35-2_all.deb
+ d2c205162b13be2cf6ddb41c8549f2cde675f6fe 13453 situcarpetas-gtk_0.0.35-2_amd64.buildinfo
+Checksums-Sha256:
+ 03e44c95041e1b908d9471e024a7430a8f216250f6b5cb9ccd7f6f22a2c901cf 577 situcarpetas-gtk_0.0.35-2.dsc
+ 5eced3dfb10cf8a0a6abba9fa11d6e4ac40666e1275acdd6b8fbed5522badcb8 1697 situcarpetas-gtk_0.0.35-2.tar.gz
+ 1b2faa077f79441daa3a38dcc1d33356fc61414071e60fd056ca572e27d00a7a 2200 situcarpetas-gtk_0.0.35-2_all.deb
+ 523eb08c07322f68f3afb3eea09b846f287d406ef9c2b46d9d499cfa1a771518 13453 situcarpetas-gtk_0.0.35-2_amd64.buildinfo
+Files:
+ 1e13b961d97faee80e75aca4f19853ad 577 contrib/admin optional situcarpetas-gtk_0.0.35-2.dsc
+ 3bb551441a29303281775cd8db5dfa4f 1697 contrib/admin optional situcarpetas-gtk_0.0.35-2.tar.gz
+ d1092f032c68209ed5c19f217921012c 2200 contrib/admin optional situcarpetas-gtk_0.0.35-2_all.deb
+ b6478f6ec6d57056dff7c2e35ac829a5 13453 contrib/admin optional situcarpetas-gtk_0.0.35-2_amd64.buildinfo

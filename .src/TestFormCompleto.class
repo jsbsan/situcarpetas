@@ -47,6 +47,8 @@ Public Sub Form_Open()
   AmoverLista.Add("NadaQueMover")
   Acopiarlista.Add("NadaQueCopiar")
 
+  ColorButtonNote.Value = Settings["colornota", Color.Green]
+
 End
 
 Public Sub Obj_ConseguirFoco(tag As Variant)
@@ -143,7 +145,15 @@ Public Sub ButtonGuardar_Click()
     FicheroDatos.agregar("dir3", tres.DirectorioActual)
     FicheroDatos.agregar("dir4", cuatro.DirectorioActual)
     FicheroDatos.agregar("TextoCorto", textboxCorto.text)
-    FicheroDatos.agregar("TextoLargo", Replace(TextAreaLargo.text, gb.NewLine, "|"))
+    FicheroDatos.agregar("colornota", TextAreaLargo.Background)
+
+    If Frame1.Visible = True Then
+      FicheroDatos.agregar("TextoLargo", Replace(TextAreaLargo.text, gb.NewLine, "|"))
+    Else
+      FicheroDatos.agregar("TextoLargo", Replace(TextAreaLargo2.text, gb.NewLine, "|"))
+
+    Endif
+
     FicheroDatos.agregar("panelesActivos", panelesActivos)
     FicheroDatos.agregar("HSplit1", convertirAcadenaArray(HSplit1.Layout))
     FicheroDatos.agregar("HSplit2", convertirAcadenaArray(HSplit2.Layout))
@@ -183,7 +193,14 @@ Public Sub ButtonAbrir_Click()
           cuatro.DirectorioActual = FicheroDatos.buscar("dir4")
 
           textboxCorto.text = FicheroDatos.buscar("TextoCorto")
-          TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+          TextAreaLargo.Background = Val(FicheroDatos.buscar("colornota", Str$(Color.green)))
+          ColorButtonNote.Color = TextAreaLargo.Background
+
+          If Frame1.Visible = True Then
+            TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+          Else
+            TextAreaLargo2.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+          Endif
 
           panelesActivos = FicheroDatos.buscar("panelesActivos", "4")
 
@@ -292,6 +309,7 @@ Public Sub Form_Close()
   Settings["HSplit1"] = HSplit1.Layout
   Settings["HSplit2"] = HSplit2.Layout
   Settings["PanalesActivos"] = panelesActivos
+  Settings["colornota"] = ColorButtonNote.Value
   Settings.write(Me)
 
 End
@@ -362,5 +380,29 @@ Public Sub Form_KeyPress()
       Obj_ConseguirFoco(4)
 
   End Select
+
+End
+
+Public Sub ButtonNotaSituacion_Click()
+
+  If Frame1.Visible = True Then
+    Frame1.Visible = False
+    Splitter1.Layout = [30, 70]
+    TextAreaLargo2.Visible = True
+    textAreaLargo2.Text = TextAreaLargo.Text
+  Else
+
+    Frame1.Visible = True
+    '  Splitter1.Layout = [1]
+    TextAreaLargo2.Visible = False
+    TextAreaLargo.Text = textAreaLargo2.Text
+  Endif
+
+End
+
+Public Sub ColorButtonNote_Click()
+
+  TextAreaLargo2.Background = ColorButtonNote.Value
+  TextAreaLargo.Background = ColorButtonNote.Value
 
 End
