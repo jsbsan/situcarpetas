@@ -1,0 +1,19 @@
+' Gambas class file
+
+Public parar As Boolean = False
+
+Public Sub Form_Open()
+
+  Me.Title = ("Espere por favor...")
+  Me.center
+
+End
+
+Public Sub Timer1_Timer()
+
+  If parar = True Then
+    Timer1.delay = False
+    Me.close
+  Endif
+
+End

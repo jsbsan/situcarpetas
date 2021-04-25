@@ -1,54 +1,67 @@
 ' Gambas class file
 
 Public Sub Form_Open()
-  
+
   Me.Center
   Labelversion.text = "Versión " & Application.Version
   LabelNombre.text = Application.Title
-  
+
   TextBoxEXP.Text = Settings["explorador", "caja"]
   TextBoxPARAEXP.Text = Settings["paraexplorador", "--working-directory="]
   TextBoxTERM.Text = Settings["terminal", "xfce4-terminal"]
   ColorButton1.Value = Settings["ColorFondo", Color.cyan]
+
+  TextAreadirviewroot.Text = Settings["directorioinicial", "/"]
+
 End
 
 Public Sub ButtonTdefecto_Click()
-  
+
   TextBoxTERM.text = "xfce4-terminal"
-  
+
 End
 
 Public Sub ButtonExpDefecto_Click()
   '"xfce4-terminal", "--working-directory="
-  
+
   TextBoxEXP.text = "caja"
-  
+
 End
 
 Public Sub ButtonParaExpDefecto_Click()
-  
+
   TextBoxPARAEXP.text = "--working-directory="
-  
+
 End
 
 Public Sub ButtonACEPTAR_Click()
-  
+
   Settings["explorador"] = TextBoxEXP.Text
   Settings["paraexplorador"] = TextBoxPARAEXP.Text
   Settings["terminal"] = TextBoxTERM.Text
- Settings["ColorFondo"] = ColorButton1.value
+  Settings["ColorFondo"] = ColorButton1.value
+
+  Settings["directorioinicial"] = TextAreadirviewroot.text
+
   Me.Close()
-  
+
 End
 
 Public Sub ButtonComprobarVersionGithub_Click()
-  
+
   ComprobarVersionGit.TestComprobacion("https://raw.githubusercontent.com/jsbsan/situcarpetas/master/.project")
-  
+
 End
 
 Public Sub ButtonColorSeleccionPanel_Click()
 
-   Settings["ColorFondo"] = Color.cyan
+  Settings["ColorFondo"] = Color.cyan
+
+End
+
+Public Sub ButtonDirviewRoot_Click()
+  'valor por defecto
+
+  TextAreadirviewroot.text = "/"
 
 End

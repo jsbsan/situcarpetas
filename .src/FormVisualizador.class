@@ -3,51 +3,51 @@
 Public nombrefichero As String
 
 Public Sub Button1_Click()
-  
+
   Dialog.Filter = ["*.png;*.jpg;*.jpeg;*.bmp", "Picture files"]
-  If Not Dialog.OpenFile() Then 
+  If Not Dialog.OpenFile() Then
     asignaimagen(Dialog.Path)
   Endif
-  
+
 End
 
 Public Sub asignaimagen(ruta As String)
-  
+
   Dim p As New Picture
-  
+
   P = picture.Load(ruta)
-  
-  If p.w > p.h Then 
+
+  If p.w > p.h Then
     'es mas ancho que alto
     PictureBox1.w = Me.W
-    
+
     PictureBox1.h = p.h * PictureBox1.w / P.W
   Else
-    
+
     PictureBox1.h = Me.h
-    
+
     PictureBox1.w = p.w * PictureBox1.h / P.h
-    
+
   Endif
   PictureBox1.Picture = p.Load(ruta)
-  
+
 End
 
 Public Sub Form_Open()
-  
+
   Button1.Visible = False
   asignaimagen(nombrefichero)
-  
+
 End
 
 Public Sub ButtonClose_Click()
-  
+
   Me.close
-  
+
 End
 
 Public Sub Form_Resize()
-  
+
   asignaimagen(nombrefichero)
-  
+
 End

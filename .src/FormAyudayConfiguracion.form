@@ -1,10 +1,10 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,64,83)
+  MoveScaled(0,0,64,91)
   Icon = Picture["icon:/24/help"]
   { ButtonACEPTAR Button
-    MoveScaled(46,54,13,6)
+    MoveScaled(46,63,13,6)
     Text = ("Apply")
     Picture = Picture["icon:/24/apply"]
   }
@@ -66,12 +66,12 @@
     Text = ("Default")
   }
   { ButtonComprobarVersionGithub Button
-    MoveScaled(6,54,27,6)
+    MoveScaled(4,63,27,6)
     Text = ("Version Github")
     Picture = Picture["iconos/github_icon.png"]
   }
   { TextLabel2 TextLabel
-    MoveScaled(4,62,54,19)
+    MoveScaled(3,70,54,19)
     Text = ("<u>Quick Keys:</u><br>\nf5: switch to panel 1<br>\nf6: switch to panel 2<br>\nf7: switch to panel 3<br>\nf8: switch to panel 4<br>\n\nCtrl + C: copy selected files<br>\nCtrl + X: move selected files<br>\nCtrl + V: paste files<br>")
   }
   { Label4 Label
@@ -84,6 +84,25 @@
   }
   { ButtonColorSeleccionPanel Button
     MoveScaled(53,48,10,4)
+    Font = Font["-1"]
+    Text = ("Default")
+  }
+  { Label5 Label
+    MoveScaled(3,54,21,4)
+    Visible = False
+    Enabled = False
+    Alignment = Align.Right
+    Text = ("dirview root:")
+  }
+  { TextAreadirviewroot TextArea
+    MoveScaled(25,54,28,4)
+    Visible = False
+    Enabled = False
+  }
+  { ButtonDirviewRoot Button
+    MoveScaled(53,54,10,4)
+    Visible = False
+    Enabled = False
     Font = Font["-1"]
     Text = ("Default")
   }

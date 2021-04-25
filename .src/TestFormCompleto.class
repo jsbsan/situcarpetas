@@ -48,6 +48,8 @@ Public Sub Form_Open()
   Acopiarlista.Add("NadaQueCopiar")
 
   ColorButtonNote.Value = Settings["colornota", Color.Green]
+  TextAreaLargo2.Background = ColorButtonNote.Value
+  TextAreaLargo.Background = ColorButtonNote.Value
 
 End
 
@@ -179,6 +181,9 @@ Public Sub ButtonAbrir_Click()
   Dialog.path = User.home & "/" & "VistaCarpetas"
 
   If Not Dialog.OpenFile() Then
+    Dim fpensando As New FormPensando
+    fpensando.Show()
+    Wait 0.01
     FicheroDatos.load(Dialog.path)
 
     If IsNull(FicheroDatos.buscar("version")) Then
@@ -195,6 +200,8 @@ Public Sub ButtonAbrir_Click()
           textboxCorto.text = FicheroDatos.buscar("TextoCorto")
           TextAreaLargo.Background = Val(FicheroDatos.buscar("colornota", Str$(Color.green)))
           ColorButtonNote.Color = TextAreaLargo.Background
+          TextAreaLargo2.Background = ColorButtonNote.Color
+          TextAreaLargo.Background = ColorButtonNote.Color
 
           If Frame1.Visible = True Then
             TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
@@ -210,7 +217,8 @@ Public Sub ButtonAbrir_Click()
 
           activarPaneles()
       End Select
-
+      fpensando.parar = True
+      fpensando.Delete()
     Endif
   Endif
 

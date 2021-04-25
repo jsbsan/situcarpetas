@@ -1,0 +1,16 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,53,14)
+  Border = False
+  { Timer1 #Timer
+    #MoveScaled(1,5)
+    Enabled = True
+    Delay = 100
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(0,0,53,16)
+    Picture = Picture["pensando.png"]
+    Stretch = True
+  }
+}

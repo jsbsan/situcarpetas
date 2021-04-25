@@ -389,4 +389,6 @@ End
 
 Public Sub Form_Open()
 
+  DirView1.Root = Settings["directorioinicial", "/"]
+
 End
