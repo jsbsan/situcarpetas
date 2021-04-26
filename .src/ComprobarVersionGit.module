@@ -1,31 +1,31 @@
 ' Gambas module file
 
 Public Function TestComprobacion(ruta As String) As String
-  
+
   Dim vChk As String
-  
+
   vChk = GitVersion(ruta)
-  
+
   If Application.Version <> vChk Then
     Message.info(("New version found") & ": " & vchk)
   Else
     Message.info(("You have the same version as the one hosted on Github"))
   Endif
-  
+
 End
 
 Public Function GitVersion(raw As String) As String
-  
+
   Dim s As String
   Dim stx As String[]
   Dim r As String
   Dim v As String
-  
+
   v = ""
   If Exist("/tmp/project.txt") Then
     Shell "rm /tmp/project.txt" Wait
   Endif
-  
+
   Shell "wget -O '/tmp/project.txt' '" & raw & "'" Wait
   If Exist("/tmp/project.txt") Then
     s = File.Load("/tmp/project.txt")
@@ -40,5 +40,5 @@ Public Function GitVersion(raw As String) As String
     Next
   Endif
   Return v
-  
+
 End

@@ -1,0 +1,31 @@
+' Gambas class file
+
+Property tag As String
+Private htag As String
+
+Property colortag As Integer
+Private hcolortag As Integer
+
+Private Function tag_Read() As String
+
+  Return htag
+
+End
+
+Private Sub tag_Write(Value As String)
+
+  htag = value
+
+End
+
+Private Function colortag_Read() As Integer
+
+  Return hcolortag
+
+End
+
+Private Sub colortag_Write(Value As Integer)
+
+  hcolortag = value
+
+End

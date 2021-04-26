@@ -1,0 +1,93 @@
+' Gambas class file
+
+Public ListaTag As New ClassTag[]
+Public ListaFichero As New ClassFichero[]
+
+Public RutaTagFicheros As String = User.home & "/.config/situcarpetasTAG.txt"
+
+Public Sub iniciar()
+
+  'leer fichero de datos -> si no existe crearlo
+  If Exist(RutaTagFicheros) Then
+    'existe fichero de configuracion
+    'leerlo
+    leerdatos()
+    'cargarlo en  memoria los datos en listaTag y listaFichero
+  Else
+    'no existe
+    ListaTag = New ClassTag[]
+    ListaFichero = New ClassFichero[]
+    guardardatos()
+  Endif
+
+End
+
+Public Sub guardardatos()
+
+  Dim contenido As String = ""
+  Dim tmptag As ClassTag
+  Dim tmpfichero As ClassFichero
+  'genera texto de lines listatag
+  For Each tmptag In ListaTag
+    contenido &= tmptag.tag & "#" & Str$(tmptag.colortag) & "|"
+  Next
+
+  contenido &= gb.NewLine
+  'genera texto de lineas listafichero
+
+  For Each tmpfichero In ListaFichero
+    contenido &= tmpfichero.Nombrefichero & "#" & tmpfichero.FechaArchivo & "#" & tmpfichero.ListaTag.Join("@") & "$$"
+  Next
+
+  'guardar datos en ruta definido
+  File.Save(RutaTagFicheros, contenido)
+
+End
+
+Public Sub leerdatos()
+
+  Dim contenido As String
+  Dim tramoTAG As String
+  Dim tramoFichero As String
+  Dim partes As String[]
+  Dim tagtmp As ClassTag
+  Dim ficherotmp As ClassFichero
+  Dim divide As String[]
+  Dim divide2 As String[]
+  Dim partetags As String[]
+  Dim partefichero As String[]
+  Dim a, b As Integer
+
+  contenido = File.Load(RutaTagFicheros)
+
+  partes = Split(contenido, gb.NewLine)
+
+  'cargo partes tag
+  partetags = Split(partes[0], "|")
+
+  For a = 0 To partetags.count - 2
+    tagtmp = New ClassTag
+    divide = Split(partetags[a], "#")
+    tagtmp.tag = divide[0]
+    tagtmp.colortag = Val(divide[1])
+
+    ListaTag.Add(tagtmp)
+  Next
+
+  'cargo parte de fichero
+  partefichero = Split(partes[1], "$$")
+  For a = 0 To partefichero.count - 2
+    divide = Split(partefichero[a], "#")
+    ficherotmp.Nombrefichero = divide[0]
+    ficherotmp.FechaArchivo = divide[1]
+
+    divide2 = Split(divide[2], "@")
+
+    For b = 0 To divide2.count - 1
+      tagtmp = divide2[b]
+      ficherotmp.ListaTag.Add(tagtmp)
+    Next
+
+  Next
+
+End

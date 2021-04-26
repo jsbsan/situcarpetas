@@ -10,7 +10,7 @@
     Padding = 2
     { Label1 Label
       MoveScaled(0,0,16,4)
-      Alignment = Align.Center
+      Alignment = Align.Right
       Text = ("Work Session:")
     }
     { textboxCorto TextBox
@@ -47,47 +47,57 @@
     { Spring1 Spring
       MoveScaled(93,0,3,4)
     }
+    { ButtonTAG Button
+      MoveScaled(95,0,9,4)
+      Enabled = False
+      ToolTip = ("TAG")
+      Picture = Picture["TAG.png"]
+    }
+    { Spring5 Spring
+      MoveScaled(104,0,3,4)
+    }
     { HBox1 HBox
-      MoveScaled(96,0,25,4)
+      MoveScaled(107,0,20,4)
       Spacing = True
+      Margin = True
       Padding = 2
       { ButtonDobleH Button
-        MoveScaled(2,0,4,4)
+        MoveScaled(0,0,4,4)
         Tag = "1"
         ToolTip = ("double panel horizontal")
         Picture = Picture["iconos/dobleH.png"]
       }
       { ButtonDoble Button
-        MoveScaled(7,0,5,4)
+        MoveScaled(4,0,5,4)
         Tag = "1"
         ToolTip = ("double panel vertical")
         Picture = Picture["iconos/doble.png"]
       }
       { ButtonTripe Button
-        MoveScaled(13,0,5,4)
+        MoveScaled(9,0,5,4)
         Tag = "1"
         ToolTip = ("three panel")
         Picture = Picture["iconos/triple.png"]
       }
       { ButtonCuatro Button
-        MoveScaled(19,0,5,4)
+        MoveScaled(14,0,5,4)
         ToolTip = ("four panels")
         Picture = Picture["iconos/cuatro.png"]
       }
     }
     { Spring2 Spring
-      MoveScaled(120,1,4,3)
+      MoveScaled(127,1,4,3)
     }
     { ButtonIra Button
-      MoveScaled(125,0,10,4)
+      MoveScaled(129,0,10,4)
       Text = ("Go to..")
       Picture = Picture["icon:/24/directory"]
     }
     { Spring3 Spring
-      MoveScaled(133,1,5,2)
+      MoveScaled(139,1,3,2)
     }
     { ButtonaYUDA Button
-      MoveScaled(139,0,11,4)
+      MoveScaled(141,0,11,4)
       ToolTip = ("Help")
       Text = ("Help")
       Picture = Picture["icon:/24/help"]

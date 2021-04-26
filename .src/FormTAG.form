@@ -1,0 +1,70 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,132,80)
+  { ButtonFILTRAR Button
+    MoveScaled(121,1,9,6)
+    ToolTip = ("Filter Tag")
+    Picture = Picture["icon:/32/filter"]
+  }
+  { ButtonNewTAG Button
+    MoveScaled(3,1,11,5)
+    Text = ("New Tag")
+  }
+  { TextBoxTAG TextBox
+    MoveScaled(15,1,17,5)
+  }
+  { ColorButtonTAG ColorButton
+    MoveScaled(33,1,8,5)
+    Value = &H7FFF00&
+  }
+  { ButtonSAVETAG Button
+    MoveScaled(48,1,7,5)
+    Picture = Picture["iconos/saveblue.jpg"]
+  }
+  { ScrollViewTAG ScrollView
+    MoveScaled(2,9,34,68)
+    Arrangement = Arrange.Row
+    Margin = True
+    Padding = 1
+  }
+  { Label1 Label
+    MoveScaled(43,12,15,2)
+  }
+  { ScrollViewFicheros ScrollView
+    MoveScaled(37,16,93,49)
+    Arrangement = Arrange.Row
+    Margin = True
+    Padding = 1
+  }
+  { Frame1 Frame
+    MoveScaled(38,66,91,11)
+    Text = ("File")
+    { TextBox1 TextBox
+      MoveScaled(17,2,63,4)
+    }
+    { TextBox2 TextBox
+      MoveScaled(1,7,89,4)
+    }
+    { ButtonAbrir Button
+      MoveScaled(1,2,7,4)
+      ToolTip = ("Open")
+      Picture = Picture["icon:/24/open"]
+    }
+    { Button2 Button
+      MoveScaled(82,2,8,4)
+      Picture = Picture["icon:/24/delete"]
+    }
+    { ButtonAbrir2 Button
+      MoveScaled(9,2,7,4)
+      ToolTip = ("Open")
+      Picture = Picture["icon:/24/edit"]
+    }
+  }
+  { ScrollViewtabbusqueda ScrollView
+    MoveScaled(62,1,58,13)
+    Arrangement = Arrange.Row
+    Margin = True
+    Padding = 1
+  }
+}

@@ -462,3 +462,9 @@ Public Sub ButtonGuardarActual_Click()
   Endif
 
 End
+
+Public Sub ButtonTAG_Click()
+
+  FormTAG.Show()
+
+End

@@ -1,0 +1,91 @@
+' Gambas class file
+
+Private GESTOR As New GestorTAG
+
+Private ListaTag As New ClassTag[]
+
+Public Sub Form_Open()
+
+  Dim tagtmp As ClassTag
+  Dim labeltmp As Label
+  'CARGAR TAG
+  'GARGAR FICHERO
+
+  GESTOR.iniciar()
+
+  For Each tagtmp In GESTOR.ListaTag
+
+    'crear label
+    labeltmp = New Label(ScrollViewTAG) As "obs"
+
+    labeltmp.Text = tagtmp.tag
+    labeltmp.Background = tagtmp.colortag
+    labeltmp.Border = Border.Plain
+    labeltmp.Alignment = Align.Center
+
+    labeltmp.Tag = tagtmp
+    labeltmp.W = Len(labeltmp.Text) * 8 + 16
+    labeltmp.H = 25
+
+    ListaTag.add(tagtmp)
+
+  Next
+  Settings.Read(Me)
+
+  'temporal
+
+  Dim n As FormFichero
+
+  n = New FormFichero(ScrollViewFicheros)
+
+  n = New FormFichero(ScrollViewFicheros)
+  n = New FormFichero(ScrollViewFicheros)
+
+  n = New FormFichero(ScrollViewFicheros)
+
+  n = New FormFichero(ScrollViewFicheros)
+
+  n = New FormFichero(ScrollViewFicheros)
+
+  n = New FormFichero(ScrollViewFicheros)
+
+  n = New FormFichero(ScrollViewFicheros)
+
+  n = New FormFichero(ScrollViewFicheros)
+
+End
+
+Public Sub ButtonNewTAG_Click()
+
+  Dim tagtmp As New ClassTag
+  Dim labeltmp As Label
+
+  tagtmp.colortag = ColorButtonTAG.Value
+  tagtmp.tag = TextBoxTAG.Text
+  labeltmp = New Label(ScrollViewTAG) As "obs"
+
+  labeltmp.Text = tagtmp.tag
+  labeltmp.Background = tagtmp.colortag
+  labeltmp.Tag = tagtmp
+  labeltmp.Border = Border.Plain
+  labeltmp.W = Len(labeltmp.Text) * 8 + 16
+  labeltmp.Alignment = Align.Center
+  labeltmp.H = 25
+
+  ListaTag.add(tagtmp)
+  GESTOR.ListaTag = ListaTag
+
+End
+
+Public Sub Form_Close()
+
+  GESTOR.guardardatos()
+  Settings.write(Me)
+
+End
+
+Public Sub obs_DblClick()
+
+  Message.Info(Last.tag.tag)
+
+End

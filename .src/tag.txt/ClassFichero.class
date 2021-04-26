@@ -35,22 +35,26 @@ Private Sub Ruta_Write(Value As String)
 
 End
 
-
 Public Function EliminarTag(t As String)
 
-ListaTag.Extract(t)
+  ListaTag.Extract(t)
 
 End
 
 Public Function AgregaTag(t As String)
-  
+
   ListaTag.Add(t)
-  
-  End 
-  
- Public Function BuscaTag(t As String) As Boolean
-   Return ListaTag.Exist(t)
-  
+
 End
 
+Public Function ComprobarSiTienesTag(t As String) As Boolean
 
+  Return ListaTag.Exist(t)
+
+End
+
+Public Function contenido() As String
+
+  'nombre, fecha y lista de tag...
+
+End

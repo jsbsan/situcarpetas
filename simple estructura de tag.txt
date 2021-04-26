@@ -5,21 +5,23 @@ ruta||tagREF {,,,,}
 
 --------------------- clase fichero
 
-nombre fichero
-array de tags
-fecha fichero -> para crear timeline de un tag concreto
+nombre fichero -> Nombrefichero
+array de tags  -> ListaTag
+FechaArchivo   -> para crear timeline de un tag concreto
 
-funciones
+Ruta: solo ruta del fichero
+
+**** funciones *******
 'eliminar en array tag
 'añadir en array tag
-'buscar en array tag
+'ComprobarSiTienesTag: comprobar si tiene ese tag en array tag del fichero
 
 'Funcion para: generar linea de informacion de la clase fichero:
 retornar nombre del fichero || lista de tag
 
 --------------------------clase tag
 tag is string
-color is isnteger 
+color is isnteger
 
 -------------------------gestor tag y fichero
 
@@ -31,4 +33,3 @@ funcion: leerfichero de datos devuelve array de clase fichero y array de clase t
 Funcion: Guardar: guarda fichero txt con lista de tag y lista fichero
 
 buscarFicheros(tag as string,listafichero[]) as string [] 'para busqueda opcional en una lista dada (si no hay lista, se supone que son todos los fichero)
-

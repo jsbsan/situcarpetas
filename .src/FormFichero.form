@@ -1,0 +1,29 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,92,12)
+  { Frame1 Frame
+    MoveScaled(0,0,91,11)
+    Text = ("File")
+    { TextBox1 TextBox
+      MoveScaled(17,2,63,4)
+    }
+    { TextBox2 TextBox
+      MoveScaled(1,7,89,4)
+    }
+    { ButtonAbrir Button
+      MoveScaled(1,2,7,4)
+      ToolTip = ("Open")
+      Picture = Picture["icon:/24/open"]
+    }
+    { Button2 Button
+      MoveScaled(82,2,8,4)
+      Picture = Picture["icon:/24/delete"]
+    }
+    { ButtonAbrir2 Button
+      MoveScaled(9,2,7,4)
+      ToolTip = ("Open")
+      Picture = Picture["icon:/24/edit"]
+    }
+  }
+}
