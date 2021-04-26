@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: situcarpetas 3.16.0\n"
-"PO-Revision-Date: 2021-04-23 06:07 UTC\n"
+"PO-Revision-Date: 2021-04-26 08:01 UTC\n"
 "Last-Translator: minino <minino@minino-ThinkCentre-M82>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
@@ -25,37 +25,45 @@ msgstr "Nueva version encontrada alojada en github"
 msgid "You have the same version as the one hosted on Github"
 msgstr "Tienes la misma version que la alojada en Github"
 
-#: FormAyudayConfiguracion.form:27 FormMarcar.form:47
+#: FormAyudayConfiguracion.form:33 FormMarcar.form:47
 msgid "Apply"
 msgstr "Aceptar"
 
-#: FormAyudayConfiguracion.form:39
+#: FormAyudayConfiguracion.form:45
 msgid "System to save the situation of work folders.<br>\nAuthor: Julio Sánchez Berro<br>\nLicense: GPL 3.0<br>\nMade in Gambas3 for linux mint xfce<br>\n2021"
 msgstr "Sistema para guadar rutas de directorios de trabajo.<br>\nAuthor: Julio Sánchez Berro<br>\nLicense: GPL 3.0<br>\nMade in Gambas3 for linux mint xfce<br>\n2021"
 
-#: FormAyudayConfiguracion.form:56
+#: FormAyudayConfiguracion.form:63
 msgid "File Explorer:"
 msgstr "Explorador de Ficheros:"
 
-#: FormAyudayConfiguracion.form:62
+#: FormAyudayConfiguracion.form:69
 msgid "Terminal:"
 msgstr "Terminal:"
 
-#: FormAyudayConfiguracion.form:76
+#: FormAyudayConfiguracion.form:82
 msgid "File Explorer parameters:"
 msgstr "Parametros Explorador:"
 
-#: FormAyudayConfiguracion.form:85
+#: FormAyudayConfiguracion.form:92
 msgid "Default"
 msgstr "Por defecto"
 
-#: FormAyudayConfiguracion.form:100
+#: FormAyudayConfiguracion.form:109
 msgid "Version Github"
 msgstr "Versión Github"
 
-#: FormAyudayConfiguracion.form:106
+#: FormAyudayConfiguracion.form:115
 msgid "<u>Quick Keys:</u><br>\nf5: switch to panel 1<br>\nf6: switch to panel 2<br>\nf7: switch to panel 3<br>\nf8: switch to panel 4<br>\n\nCtrl + C: copy selected files<br>\nCtrl + X: move selected files<br>\nCtrl + V: paste files<br>"
 msgstr "<u>Teclas Rapidas:</u><br>\nf5: cambiar a panel 1<br>\nf6: cambiar a panel 2<br>\nf7: cambiar a panel 3<br>\nf8: cambiar a panel 4<br>\n\nCtrl+C: copia ficheros seleccionados<br>\nCtrl+X: mover ficheros seleccionados<br>\nCtrl+V: pega ficheros<br>"
+
+#: FormAyudayConfiguracion.form:121
+msgid "Selected panel color:"
+msgstr "Seleccinal color de panel:"
+
+#: FormAyudayConfiguracion.form:139
+msgid "dirview root:"
+msgstr "ruta directorio raiz"
 
 #: FormMarcar.form:25
 msgid "Name File:"
@@ -108,6 +116,10 @@ msgstr "📌"
 #: FormMarcar.form:99
 msgid "remove marks"
 msgstr "Borrar Marcas"
+
+#: FormPensando.class:7
+msgid "Please wait..."
+msgstr "Espere por favor..."
 
 #: FormVisualizador.form:13
 msgid "Select file"
@@ -177,75 +189,99 @@ msgstr "Pegar"
 msgid "Delete file"
 msgstr "Borrar"
 
-#: TestForm.form:178 TestFormCompleto.form:99
+#: TestForm.form:180 TestFormCompleto.form:128
 msgid "Go to.."
 msgstr "Ir a.."
 
-#: TestForm.form:184
+#: TestForm.form:185
 msgid "Path:"
 msgstr "Ruta:"
 
-#: TestForm.form:198
+#: TestForm.form:200
 msgid "show directories"
 msgstr "mostrar alborl de directorios"
 
-#: TestForm.form:209
+#: TestForm.form:210
 msgid "Filter:"
 msgstr "Filtro:"
 
-#: TestForm.form:218
+#: TestForm.form:220
 msgid "Apply filter"
 msgstr "Aplicar filtro"
 
-#: TestForm.form:234
+#: TestForm.form:236
 msgid "view hidden"
 msgstr "ver ocultos"
 
-#: TestForm.form:240
+#: TestForm.form:242
 msgid "view directory"
 msgstr "ver directorios"
 
-#: TestForm.form:246
+#: TestForm.form:248
 msgid "view details"
 msgstr "ver detalles"
 
-#: TestForm.form:252
+#: TestForm.form:254
 msgid "refresh files/dir"
 msgstr "refrescar ficheros/directorios"
 
-#: TestFormCompleto.form:37
+#: TestFormCompleto.class:459
+msgid "Save Ok"
+msgstr "Guardado Realizado OK"
+
+#: TestFormCompleto.class:461
+msgid "the current section open is the default"
+msgstr "La sección actual es la de por defecto"
+
+#: TestFormCompleto.form:33
+msgid "Save"
+msgstr "Guardar"
+
+#: TestFormCompleto.form:44
 msgid "Work Session:"
 msgstr "Sesión de trabajo:"
 
-#: TestFormCompleto.form:46
+#: TestFormCompleto.form:54
 msgid "Open"
 msgstr "Abrir"
 
-#: TestFormCompleto.form:52
-msgid "Save"
-msgstr "Guadar"
+#: TestFormCompleto.form:65
+msgid "Save As"
+msgstr "Guardar como..."
 
-#: TestFormCompleto.form:68
+#: TestFormCompleto.form:66
+msgid "Save As "
+msgstr "Guardar como..."
+
+#: TestFormCompleto.form:76
+msgid "Vertical/Horizontal Note"
+msgstr "Vertical/Horizontal Nota"
+
+#: TestFormCompleto.form:82
+msgid "Color Note"
+msgstr "Color Nota"
+
+#: TestFormCompleto.form:97
 msgid "double panel horizontal"
 msgstr "doble panel horizontal"
 
-#: TestFormCompleto.form:75
+#: TestFormCompleto.form:104
 msgid "double panel vertical"
 msgstr "doble panel vertical"
 
-#: TestFormCompleto.form:82
+#: TestFormCompleto.form:111
 msgid "three panel"
 msgstr "tres paneles"
 
-#: TestFormCompleto.form:88
+#: TestFormCompleto.form:117
 msgid "four panels"
 msgstr "cuatro paneles"
 
-#: TestFormCompleto.form:109
+#: TestFormCompleto.form:138
 msgid "Help"
 msgstr "Ayuda"
 
-#: TestFormCompleto.form:119
+#: TestFormCompleto.form:149
 msgid "Note:"
 msgstr "Notas:"
 

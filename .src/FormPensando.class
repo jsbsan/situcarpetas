@@ -4,7 +4,7 @@ Public parar As Boolean = False
 
 Public Sub Form_Open()
 
-  Me.Title = ("Espere por favor...")
+  Me.Title = ("Please wait...")
   Me.center
 
 End
