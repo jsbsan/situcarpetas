@@ -3,16 +3,16 @@
 { Form Form
   MoveScaled(0,0,92,12)
   { Frame1 Frame
-    MoveScaled(0,0,91,11)
+    MoveScaled(1,0,91,11)
     Text = ("File")
     { TextBox1 TextBox
-      MoveScaled(17,2,63,4)
+      MoveScaled(22,2,58,4)
     }
     { TextBox2 TextBox
-      MoveScaled(1,7,89,4)
+      MoveScaled(9,7,81,4)
     }
     { ButtonAbrir Button
-      MoveScaled(1,2,7,4)
+      MoveScaled(9,2,6,4)
       ToolTip = ("Open")
       Picture = Picture["icon:/24/open"]
     }
@@ -21,9 +21,28 @@
       Picture = Picture["icon:/24/delete"]
     }
     { ButtonAbrir2 Button
-      MoveScaled(9,2,7,4)
+      MoveScaled(16,2,6,4)
       ToolTip = ("Open")
       Picture = Picture["icon:/24/edit"]
+    }
+    { Labeldd Label
+      MoveScaled(1,1,7,4)
+      Background = &HFFFFFF&
+      Alignment = Align.Center
+      Border = Border.Plain
+    }
+    { Labelmm Label
+      MoveScaled(1,5,7,3)
+      Background = &HFF0000&
+      Foreground = &HFFFFFF&
+      Alignment = Align.Center
+      Border = Border.Plain
+    }
+    { Labelyy Label
+      MoveScaled(1,8,7,3)
+      Background = &HFFFFFF&
+      Alignment = Align.Center
+      Border = Border.Plain
     }
   }
 }

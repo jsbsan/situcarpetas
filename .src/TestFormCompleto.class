@@ -453,6 +453,8 @@ Public Sub ButtonGuardarActual_Click()
 
     If File.Ext(SeccionActual) <> "vistacarpetas" Then
       ruta = SeccionActual & ".vistacarpetas" 'para guardar por defecto esta extension
+    Else
+      ruta = seccionactual
     Endif
 
     FicheroDatos.save(ruta)

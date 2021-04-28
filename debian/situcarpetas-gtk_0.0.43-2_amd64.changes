@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 28 Apr 2021 12:00:00 +0000
+Source: situcarpetas-gtk
+Binary: situcarpetas-gtk
+Architecture: source all
+Version: 0.0.43-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-gtk - gtk package for situcarpetas
+Changes:
+ situcarpetas-gtk (0.0.43-2) unstable; urgency=low
+ .
+   * bug en guardar corregido
+Checksums-Sha1:
+ 3b937ea7cf48b8416c5dae2efc66093df412fe61 577 situcarpetas-gtk_0.0.43-2.dsc
+ 8e0d5e8c2c4c410706a4fbae9b43d27bd76522bd 1754 situcarpetas-gtk_0.0.43-2.tar.gz
+ da18767e7dcfca9db9969467c42aad407c665f24 2268 situcarpetas-gtk_0.0.43-2_all.deb
+ 758f44e2a8db32d442c9c9fbf9d44714d21b53b8 13453 situcarpetas-gtk_0.0.43-2_amd64.buildinfo
+Checksums-Sha256:
+ 0e85670de44fab0fe8e50b5b45ade1ccdfd21cc0d352a49991614ac526cd28d7 577 situcarpetas-gtk_0.0.43-2.dsc
+ cbdd8ae2b2b622db86053cd3e1b5790d146dac94c94c3f977fec12d6c610dba3 1754 situcarpetas-gtk_0.0.43-2.tar.gz
+ 665ab1ed647de6bbd27675778e631940d1dc8b17ab4313f54be0e14e855d222d 2268 situcarpetas-gtk_0.0.43-2_all.deb
+ 0ee2847bbcf9c75076349551f177c382fd2a1908fcf1d1559bccd7e1c5797c24 13453 situcarpetas-gtk_0.0.43-2_amd64.buildinfo
+Files:
+ f4fe90e7baf65e9e1d6801d8af5dc0bc 577 contrib/admin optional situcarpetas-gtk_0.0.43-2.dsc
+ 7192ece15e125998a3992e2ad5338d35 1754 contrib/admin optional situcarpetas-gtk_0.0.43-2.tar.gz
+ 58a86aff48ea0347209a8b4e5ca191f0 2268 contrib/admin optional situcarpetas-gtk_0.0.43-2_all.deb
+ b1477d480e615d5d2157b25767733305 13453 contrib/admin optional situcarpetas-gtk_0.0.43-2_amd64.buildinfo
