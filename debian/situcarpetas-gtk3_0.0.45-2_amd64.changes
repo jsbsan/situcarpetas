@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Wed, 28 Apr 2021 12:00:00 +0000
+Source: situcarpetas-gtk3
+Binary: situcarpetas-gtk3
+Architecture: source all
+Version: 0.0.45-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-gtk3 - gtk3 package for situcarpetas
+Changes:
+ situcarpetas-gtk3 (0.0.45-2) unstable; urgency=low
+ .
+   * bug al iniciar seccion. Ahora solo inicia seccion de una seccion conocido y
+     no de como se haya grabado por defecto
+Checksums-Sha1:
+ 49ec901a84c753bdc8c05a9a11a321fb29dcb6ba 583 situcarpetas-gtk3_0.0.45-2.dsc
+ 344def23dcfcb62e1a6fcc586c4f661153d71a16 1809 situcarpetas-gtk3_0.0.45-2.tar.gz
+ 67d89229fdd33f484379aabe6bd3f4faecf7fbfe 2312 situcarpetas-gtk3_0.0.45-2_all.deb
+ 774fb6a004cfa6381e5f816a9204f18acf9fe435 13461 situcarpetas-gtk3_0.0.45-2_amd64.buildinfo
+Checksums-Sha256:
+ 7d66197ff919ae6abcc89c0a27a91affd27fa934105e2845685975595f6822fc 583 situcarpetas-gtk3_0.0.45-2.dsc
+ 6bb1a95dc88b053387ee74d79d835b98dd37f1cf206a1e02f006e456e6ddc515 1809 situcarpetas-gtk3_0.0.45-2.tar.gz
+ 39100eb3cfe72aa89a27ea8c3df911836085e3584cede3aec252576a69ae8b70 2312 situcarpetas-gtk3_0.0.45-2_all.deb
+ 87f5e46ce3f769e74f2f5f73c5beeb649d3884a9d6a498c7688359c40e0696b1 13461 situcarpetas-gtk3_0.0.45-2_amd64.buildinfo
+Files:
+ 14da609278c794469d74f3807f191fe1 583 contrib/admin optional situcarpetas-gtk3_0.0.45-2.dsc
+ 13dac212a5d9125bdd7cd93c8c1b1d39 1809 contrib/admin optional situcarpetas-gtk3_0.0.45-2.tar.gz
+ 40f8473cb18527edb1cea5f78375a029 2312 contrib/admin optional situcarpetas-gtk3_0.0.45-2_all.deb
+ 33e9108fcf253f3060c7040776b686c2 13461 contrib/admin optional situcarpetas-gtk3_0.0.45-2_amd64.buildinfo

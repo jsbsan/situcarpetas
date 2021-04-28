@@ -107,8 +107,8 @@
         }
         { Label1 Label
           MoveScaled(10,0,7,3)
-          Text = ("Path:")
           Alignment = Align.Center
+          Text = ("Path:")
         }
         { TextBoxRuta TextBox
           MoveScaled(17,0,73,3)
@@ -127,8 +127,8 @@
         }
         { Label2 Label
           MoveScaled(5,0,8,4)
-          Text = ("Filter:")
           Alignment = Align.Center
+          Text = ("Filter:")
         }
         { TextBoxFiltro TextBox
           MoveScaled(11,0,10,4)

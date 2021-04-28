@@ -37,15 +37,18 @@ Public Sub Form_Open()
   cuatro.inicia()
   Settings.Read(Me)
 
-  uno.DirectorioActual = settings["dir1"]
-  dos.DirectorioActual = settings["dir2"]
-  tres.DirectorioActual = settings["dir3"]
-  cuatro.DirectorioActual = settings["dir4"]
-  TextAreaLargo.text = Settings["texto"]
-  textboxCorto.Text = Settings["sesion"]
-  HSplit1.Layout = Settings["HSplit1", [1, 1]]
-  HSplit2.Layout = Settings["HSplit2", [1, 1]]
-  panelesActivos = Settings["PanalesActivos"]
+  ' uno.DirectorioActual = settings["dir1"]
+  ' dos.DirectorioActual = settings["dir2"]
+  ' tres.DirectorioActual = settings["dir3"]
+  ' cuatro.DirectorioActual = settings["dir4"]
+  ' TextAreaLargo.text = Settings["texto"]
+  ' textboxCorto.Text = Settings["sesion"]
+  ' HSplit1.Layout = Settings["HSplit1", [1, 1]]
+  ' HSplit2.Layout = Settings["HSplit2", [1, 1]]
+  ' panelesActivos = Settings["PanalesActivos"]
+
+  abrirSeccion(Settings["seccionactual"])
+
   AmoverLista.Add("NadaQueMover")
   Acopiarlista.Add("NadaQueCopiar")
 
@@ -177,6 +180,52 @@ Public Sub ButtonGuardar_Click()
 
 End
 
+Public Sub abrirSeccion(seccion As String)
+
+  Dim fpensando As New FormPensando
+
+  FicheroDatos.load(seccion)
+  Me.Title = seccion
+  SeccionActual = seccion
+  If IsNull(FicheroDatos.buscar("version")) Then
+    'version no colocida cargo como fichero antiguos..
+    LeerVersionAntigua(seccion)
+
+  Else
+    Select Case FicheroDatos.buscar("version")
+      Case "1.01"
+        uno.DirectorioActual = FicheroDatos.buscar("dir1")
+        dos.DirectorioActual = FicheroDatos.buscar("dir2")
+        tres.DirectorioActual = FicheroDatos.buscar("dir3")
+        cuatro.DirectorioActual = FicheroDatos.buscar("dir4")
+
+        textboxCorto.text = FicheroDatos.buscar("TextoCorto")
+        TextAreaLargo.Background = Val(FicheroDatos.buscar("colornota", Str$(Color.green)))
+        ColorButtonNote.Color = TextAreaLargo.Background
+        TextAreaLargo2.Background = ColorButtonNote.Color
+        TextAreaLargo.Background = ColorButtonNote.Color
+
+        If Frame1.Visible = True Then
+          TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+        Else
+          TextAreaLargo2.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+        Endif
+
+        panelesActivos = FicheroDatos.buscar("panelesActivos", "4")
+
+        HSplit1.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit1", "1|1"))
+
+        HSplit2.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit2", "1|1"))
+
+        activarPaneles()
+
+    End Select
+    fpensando.parar = True
+    fpensando.Delete()
+  Endif
+
+End
+
 Public Sub ButtonAbrir_Click()
 
   If Not Exist(User.home & "/" & "VistaCarpetas") Then
@@ -188,48 +237,49 @@ Public Sub ButtonAbrir_Click()
   Dialog.path = User.home & "/" & "VistaCarpetas"
 
   If Not Dialog.OpenFile() Then
-    Dim fpensando As New FormPensando
-    fpensando.Show()
-    Wait 0.02
-    FicheroDatos.load(Dialog.path)
-    Me.Title = Dialog.path
-    SeccionActual = Dialog.path
-    If IsNull(FicheroDatos.buscar("version")) Then
-      'version no colocida cargo como fichero antiguos..
-      LeerVersionAntigua(Dialog.path)
+    abrirSeccion(Dialog.Path)
+    ' Dim fpensando As New FormPensando
+    ' fpensando.Show()
+    ' Wait 0.02
+    ' FicheroDatos.load(Dialog.path)
+    ' Me.Title = Dialog.path
+    ' SeccionActual = Dialog.path
+    ' If IsNull(FicheroDatos.buscar("version")) Then
+    '   'version no colocida cargo como fichero antiguos..
+    '   LeerVersionAntigua(Dialog.path)
+    '
+    ' Else
+    '   Select Case FicheroDatos.buscar("version")
+    '     Case "1.01"
+    '       uno.DirectorioActual = FicheroDatos.buscar("dir1")
+    '       dos.DirectorioActual = FicheroDatos.buscar("dir2")
+    '       tres.DirectorioActual = FicheroDatos.buscar("dir3")
+    '       cuatro.DirectorioActual = FicheroDatos.buscar("dir4")
+    '
+    '       textboxCorto.text = FicheroDatos.buscar("TextoCorto")
+    '       TextAreaLargo.Background = Val(FicheroDatos.buscar("colornota", Str$(Color.green)))
+    '       ColorButtonNote.Color = TextAreaLargo.Background
+    '       TextAreaLargo2.Background = ColorButtonNote.Color
+    '       TextAreaLargo.Background = ColorButtonNote.Color
+    '
+    '       If Frame1.Visible = True Then
+    '         TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+    '       Else
+    '         TextAreaLargo2.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
+    '       Endif
+    '
+    '       panelesActivos = FicheroDatos.buscar("panelesActivos", "4")
+    '
+    '       HSplit1.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit1", "1|1"))
+    '
+    '       HSplit2.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit2", "1|1"))
+    '
+    '       activarPaneles()
+    '
+    '   End Select
+    '   fpensando.parar = True
+    '   fpensando.Delete()
 
-    Else
-      Select Case FicheroDatos.buscar("version")
-        Case "1.01"
-          uno.DirectorioActual = FicheroDatos.buscar("dir1")
-          dos.DirectorioActual = FicheroDatos.buscar("dir2")
-          tres.DirectorioActual = FicheroDatos.buscar("dir3")
-          cuatro.DirectorioActual = FicheroDatos.buscar("dir4")
-
-          textboxCorto.text = FicheroDatos.buscar("TextoCorto")
-          TextAreaLargo.Background = Val(FicheroDatos.buscar("colornota", Str$(Color.green)))
-          ColorButtonNote.Color = TextAreaLargo.Background
-          TextAreaLargo2.Background = ColorButtonNote.Color
-          TextAreaLargo.Background = ColorButtonNote.Color
-
-          If Frame1.Visible = True Then
-            TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
-          Else
-            TextAreaLargo2.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
-          Endif
-
-          panelesActivos = FicheroDatos.buscar("panelesActivos", "4")
-
-          HSplit1.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit1", "1|1"))
-
-          HSplit2.Layout = convertirAintergerArray(FicheroDatos.buscar("HSplit2", "1|1"))
-
-          activarPaneles()
-
-      End Select
-      fpensando.parar = True
-      fpensando.Delete()
-    Endif
   Endif
 
 End
@@ -318,16 +368,17 @@ End
 
 Public Sub Form_Close()
 
-  settings["dir1"] = uno.DirectorioActual
-  settings["dir2"] = dos.DirectorioActual
-  settings["dir3"] = tres.DirectorioActual
-  settings["dir4"] = cuatro.DirectorioActual
-  Settings["texto"] = TextAreaLargo.text
-  Settings["sesion"] = textboxCorto.Text
-  Settings["HSplit1"] = HSplit1.Layout
-  Settings["HSplit2"] = HSplit2.Layout
-  Settings["PanalesActivos"] = panelesActivos
-  Settings["colornota"] = ColorButtonNote.Value
+  ' settings["dir1"] = uno.DirectorioActual
+  ' settings["dir2"] = dos.DirectorioActual
+  ' settings["dir3"] = tres.DirectorioActual
+  ' settings["dir4"] = cuatro.DirectorioActual
+  ' Settings["texto"] = TextAreaLargo.text
+  ' If
+  ' Settings["sesion"] = textboxCorto.Text
+  ' Settings["HSplit1"] = HSplit1.Layout
+  ' Settings["HSplit2"] = HSplit2.Layout
+  ' Settings["PanalesActivos"] = panelesActivos
+  ' Settings["colornota"] = ColorButtonNote.Value
   Settings["seccionactual"] = SeccionActual
   Settings.write(Me)
 
