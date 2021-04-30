@@ -57,10 +57,6 @@ Public Sub Form_Open()
     Me.Title = SeccionActual
   Endif
 
-  ColorButtonNote.Value = Settings["colornota", Color.Green]
-  TextAreaLargo2.Background = ColorButtonNote.Value
-  TextAreaLargo.Background = ColorButtonNote.Value
-
 End
 
 Public Sub Obj_ConseguirFoco(tag As Variant)
@@ -201,9 +197,8 @@ Public Sub abrirSeccion(seccion As String)
 
         textboxCorto.text = FicheroDatos.buscar("TextoCorto")
         TextAreaLargo.Background = Val(FicheroDatos.buscar("colornota", Str$(Color.green)))
-        ColorButtonNote.Color = TextAreaLargo.Background
-        TextAreaLargo2.Background = ColorButtonNote.Color
-        TextAreaLargo.Background = ColorButtonNote.Color
+        ColorButtonNote.value = TextAreaLargo.Background
+        TextAreaLargo2.Background = ColorButtonNote.value
 
         If Frame1.Visible = True Then
           TextAreaLargo.text = Replace(FicheroDatos.buscar("TextoLargo"), "|", gb.NewLine)
@@ -509,7 +504,7 @@ Public Sub ButtonGuardarActual_Click()
     Endif
 
     FicheroDatos.save(ruta)
-    Message.Info(("Save Ok"))
+    Message.Info(("Save Ok") & "\n" & SeccionActual)
   Else
     Message.Info(("the current section open is the default"))
   Endif

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 30 Apr 2021 12:00:00 +0000
+Source: situcarpetas
+Binary: situcarpetas
+Architecture: source all
+Version: 0.0.53-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas - Para guardar la situación de varias carpetas abiertas
+Changes:
+ situcarpetas (0.0.53-2) unstable; urgency=low
+ .
+   * corregido almacenamiento en directorio debian
+Checksums-Sha1:
+ 85e01261cc9d4ea3dd0f2bca6e68d74699b5f96d 1125 situcarpetas_0.0.53-2.dsc
+ 09e9e8d276046a1665ab30e7afde76bd695a124f 2342 situcarpetas_0.0.53-2.diff.gz
+ 6ea274f71e42c4b24e312eb12dd24eacfe67f5d9 428132 situcarpetas_0.0.53-2_all.deb
+ 29f01e8125a227d79d0e125d33cb9c707fe0742f 19443 situcarpetas_0.0.53-2_amd64.buildinfo
+Checksums-Sha256:
+ 9cde07917ce0b0be3a6291de46db8fa66f3b824eabef7651bead6d3f36e1c064 1125 situcarpetas_0.0.53-2.dsc
+ 31257b348abd894af6ab22ee5019193fde11862a68da4d6712f786a411b04638 2342 situcarpetas_0.0.53-2.diff.gz
+ e5acf478570ace1945ede0af96d6c9654638d229c69c18e551ca8982b5bf1730 428132 situcarpetas_0.0.53-2_all.deb
+ 239b63e8f36d3e4f6c2d1cecf3aaae45469bf4e27f169cb19a193917319c6efa 19443 situcarpetas_0.0.53-2_amd64.buildinfo
+Files:
+ 010e90ce9a15f4229ae43e81bcc42cc6 1125 contrib/admin optional situcarpetas_0.0.53-2.dsc
+ f63a4eb7fe84115bbac3f11bf0e36a75 2342 contrib/admin optional situcarpetas_0.0.53-2.diff.gz
+ 6b0463e1fe655fb6cf57f4d742d01d5c 428132 contrib/admin optional situcarpetas_0.0.53-2_all.deb
+ 6374e2e1376ef2c0f50e1e2cf6ec3828 19443 contrib/admin optional situcarpetas_0.0.53-2_amd64.buildinfo

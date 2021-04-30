@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 30 Apr 2021 12:00:00 +0000
+Source: situcarpetas-qt5
+Binary: situcarpetas-qt5
+Architecture: source all
+Version: 0.0.53-2
+Distribution: unstable
+Urgency: low
+Maintainer: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Changed-By: JULIO SANCHEZ BERRO <jusabejusabe@gmail.com>
+Description:
+ situcarpetas-qt5 - qt5 package for situcarpetas
+Changes:
+ situcarpetas-qt5 (0.0.53-2) unstable; urgency=low
+ .
+   * corregido almacenamiento en directorio debian
+Checksums-Sha1:
+ 486ea79f4eb2865066e1aca22170fbd5b83c8daf 577 situcarpetas-qt5_0.0.53-2.dsc
+ 0827e934f982b54eba9eafcfad5959555f701642 1851 situcarpetas-qt5_0.0.53-2.tar.gz
+ 7a9292ce145a5eea3174511c652e3da5fdd52e4d 2360 situcarpetas-qt5_0.0.53-2_all.deb
+ d1d8e9616ccfeb37bde3af1d228ae07ff0971559 13453 situcarpetas-qt5_0.0.53-2_amd64.buildinfo
+Checksums-Sha256:
+ 02854f8187a4fdddecf2e34d795a3b86f5449c1858bd6357584ba5793580ddb1 577 situcarpetas-qt5_0.0.53-2.dsc
+ 1691716199ed066b663629f42448c9eea7ea760522dbb435ec983877921c6f2e 1851 situcarpetas-qt5_0.0.53-2.tar.gz
+ 04b88605e3d647b38ff31da60f01ead11c2a1e924a21dd548269b3678e2763c6 2360 situcarpetas-qt5_0.0.53-2_all.deb
+ b05d2f20e6898f2309400fba5fb4c915dae844257c706fb1af8c46ba335ddd78 13453 situcarpetas-qt5_0.0.53-2_amd64.buildinfo
+Files:
+ c385337fc84c3d70c8556880ac49fc78 577 contrib/admin optional situcarpetas-qt5_0.0.53-2.dsc
+ 63a45735f37c4b207aa70e7930880987 1851 contrib/admin optional situcarpetas-qt5_0.0.53-2.tar.gz
+ 96f0ca0bde22341837b7db603afb5378 2360 contrib/admin optional situcarpetas-qt5_0.0.53-2_all.deb
+ 39a88989277251006595e47d65dda480 13453 contrib/admin optional situcarpetas-qt5_0.0.53-2_amd64.buildinfo
