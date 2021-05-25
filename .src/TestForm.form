@@ -97,7 +97,7 @@
       Root = "/"
     }
     { VPanel1 VBox
-      MoveScaled(41,4,64,33)
+      MoveScaled(41,4,65,33)
       { HBox1 HBox
         MoveScaled(0,0,101,3)
         { ButtonIrA Button
@@ -121,6 +121,11 @@
           MoveScaled(0,0,4,4)
           ToolTip = ("show directories")
           Picture = Picture["arboldirectorio.png"]
+        }
+        { ButtonAbrirNavegador Button
+          MoveScaled(0,0,7,4)
+          ToolTip = ("open file explorer")
+          Picture = Picture["icon:/24/exec"]
         }
         { Spring2 Spring
           MoveScaled(4,0,2,3)
@@ -154,7 +159,7 @@
         { ButtonDirectorioFileview Button
           MoveScaled(40,0,6,4)
           ToolTip = ("view directory")
-          Picture = Picture["icon:/24/directory"]
+          Picture = Picture["directorios visibles.png"]
         }
         { ButtonDetalles Button
           MoveScaled(46,0,7,4)

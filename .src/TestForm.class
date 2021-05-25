@@ -398,3 +398,9 @@ Public Sub Form_Show()
   DirView1.Root = Settings["directorioinicial", "/"]
 
 End
+
+Public Sub ButtonAbrirNavegador_Click()
+
+  abrirnavegador_Click()
+
+End
