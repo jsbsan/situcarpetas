@@ -26,6 +26,7 @@ Function DirectorioActual_write(valor As String)
 
   TextBoxRuta.text = valor
   DirView1.current = valor
+  FileView1.tooltip = file.Name(TextBoxRuta.text)
 
 End
 
@@ -34,6 +35,7 @@ Public Sub DirView1_Click()
   FileView1.dir = DirView1.Current
   TextBoxRuta.text = DirView1.Current
   hDirectorioActual = DirView1.Current
+  FileView1.tooltip = file.Name(TextBoxRuta.text)
 
 End
 
@@ -44,6 +46,7 @@ Public Sub inicia()
 
   MenuDir.Visible = False
   MenuFile.visible = False
+  FileView1.tooltip = file.Name(TextBoxRuta.text)
 
 End
 
