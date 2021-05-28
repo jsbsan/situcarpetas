@@ -171,7 +171,7 @@ Public Sub ButtonGuardar_Click()
     Endif
 
     FicheroDatos.save(Dialog.path)
-
+    Me.Title = Dialog.Path
   Endif
 
 End
@@ -502,7 +502,7 @@ Public Sub ButtonGuardarActual_Click()
     Else
       ruta = seccionactual
     Endif
-
+    Me.Title = ruta
     FicheroDatos.save(ruta)
     Message.Info(("Save Ok") & "\n" & SeccionActual)
   Else
