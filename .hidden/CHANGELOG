@@ -1,3 +1,6 @@
+* Tue Jun 29 2021 JULIO SANCHEZ BERRO <jusabejusabe@gmail.com> 0.0.55
+- corregido bug al guardar como y guardar al no guardarse correctamente la ruta del fichero actual
+
 * Fri May 28 2021 JULIO SANCHEZ BERRO <jusabejusabe@gmail.com> 0.0.54
 - pone correctamente el titulo de la ventana guardado
 

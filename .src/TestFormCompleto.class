@@ -172,6 +172,7 @@ Public Sub ButtonGuardar_Click()
 
     FicheroDatos.save(Dialog.path)
     Me.Title = Dialog.Path
+    SeccionActual = Dialog.Path
   Endif
 
 End
