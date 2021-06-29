@@ -48,10 +48,15 @@
       MoveScaled(93,0,3,4)
     }
     { ButtonTAG Button
-      MoveScaled(95,0,9,4)
+      MoveScaled(95,0,4,4)
       Enabled = False
       ToolTip = ("TAG")
       Picture = Picture["TAG.png"]
+    }
+    { ButtonNUEVO Button
+      MoveScaled(99,0,5,4)
+      ToolTip = ("NEW")
+      Picture = Picture["icon:/16/new"]
     }
     { Spring5 Spring
       MoveScaled(104,0,3,4)

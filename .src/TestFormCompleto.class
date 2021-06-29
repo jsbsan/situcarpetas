@@ -47,12 +47,21 @@ Public Sub Form_Open()
   ' HSplit2.Layout = Settings["HSplit2", [1, 1]]
   ' panelesActivos = Settings["PanalesActivos"]
 
-  abrirSeccion(Settings["seccionactual"])
+  If Exist(Settings["seccionactual"]) Then
 
-  AmoverLista.Add("NadaQueMover")
-  Acopiarlista.Add("NadaQueCopiar")
+    abrirSeccion(Settings["seccionactual"])
 
-  SeccionActual = Settings["seccionactual", ""]
+    AmoverLista.Add("NadaQueMover")
+    Acopiarlista.Add("NadaQueCopiar")
+
+    SeccionActual = Settings["seccionactual", ""]
+
+  Else
+
+    ButtonNUEVO_Click()
+
+  Endif
+
   If SeccionActual <> "" Then
     Me.Title = SeccionActual
   Endif
@@ -515,5 +524,20 @@ End
 Public Sub ButtonTAG_Click()
 
   FormTAG.Show()
+
+End
+
+Public Sub ButtonNUEVO_Click()
+
+  uno.DirectorioActual = User.home
+  dos.DirectorioActual = User.home
+  tres.DirectorioActual = User.home
+  cuatro.DirectorioActual = User.home
+  TextAreaLargo.Text = ""
+  textboxCorto.Text = ""
+  HSplit1.Layout = [1, 1]
+  HSplit2.Layout = [1, 1]
+  panelesActivos = 4
+  seccionactual = User.Home
 
 End
