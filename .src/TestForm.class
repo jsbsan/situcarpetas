@@ -10,6 +10,8 @@ Event mover(lista As String[], directorio As String)
 
 Event actualizarInformacionDirectorios()
 
+Event nuevoSlot(fichero As String)
+
 Property DirectorioActual As String
 Private hdirectorioActual As String
 
@@ -394,16 +396,40 @@ Public Sub Form_Open()
 
   DirView1.Root = Settings["directorioinicial", "/"]
 
+  HSplit1.Layout = [1, 3]
+
 End
 
 Public Sub Form_Show()
 
   DirView1.Root = Settings["directorioinicial", "/"]
+  HSplit1.Layout = [1, 3]
 
 End
 
 Public Sub ButtonAbrirNavegador_Click()
 
   abrirnavegador_Click()
+
+End
+
+Public Sub MenuSlotFichero_Click()
+  'nombre del fichero seleccionado
+
+  Dim nombrefichero As String
+
+  nombrefichero = hDirectorioActual & "/" & FileView1.Selection[0]
+
+  Raise nuevoSlot(nombrefichero)
+
+End
+
+Public Sub MenuAgregaSlotDirectorio_Click()
+
+  Dim nombrefichero As String
+
+  nombrefichero = DirView1.Current
+
+  Raise nuevoSlot(nombrefichero)
 
 End

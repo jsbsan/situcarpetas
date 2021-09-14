@@ -20,6 +20,12 @@
       Text = ("Refresh")
       Picture = Picture["icon:/24/refresh"]
     }
+    { Menu7 Menu
+    }
+    { MenuAgregaSlotDirectorio Menu
+      Text = ("Add to Slot")
+      Picture = Picture["iconos/slot1.png"]
+    }
   }
   { MenuFile Menu
     Text = ("MenuFile")
@@ -40,6 +46,10 @@
       Picture = Picture["icon:/24/terminal"]
     }
     { Menu2 Menu
+    }
+    { MenuSlotFichero Menu
+      Text = ("Add to Slot")
+      Picture = Picture["iconos/slot1.png"]
     }
     { MenuMarcarFichero Menu
       Text = ("Mark file")
@@ -86,18 +96,20 @@
       Picture = Picture["icon:/24/refresh"]
     }
   }
-  { HSplit1 HSplit
-    MoveScaled(1,3,107,38)
+  { HSplit1 Splitter
+    MoveScaled(7,2,107,38)
     Expand = True
     Spacing = True
     { DirView1 DirView
-      MoveScaled(3,7,37,29)
+      MoveScaled(3,7,18,29)
+      Font = Font["-1"]
       PopupMenu = "MenuDir"
       Border = False
       Root = "/"
     }
     { VPanel1 VBox
-      MoveScaled(41,4,65,33)
+      MoveScaled(25,2,79,33)
+      Expand = True
       { HBox1 HBox
         MoveScaled(0,0,101,3)
         { ButtonIrA Button
@@ -177,6 +189,7 @@
       }
       { FileView1 FileView
         MoveScaled(5,9,51,22)
+        Font = Font["-1"]
         Drop = True
         Expand = True
         PopupMenu = "MenuFile"

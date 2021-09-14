@@ -5,8 +5,13 @@ Public rutainicial As String = ""
 
 Public Sub load(ruta As String) '' leer el fichero de la ruta determina y lo asigna a la variable contenido
 
-  contenido = File.Load(ruta)
-  rutainicial = ruta
+  If IsDir(ruta) Then
+    rutainicial = ruta
+  Else
+    contenido = File.Load(ruta)
+    rutainicial = ruta
+
+  Endif
 
 End
 

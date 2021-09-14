@@ -163,6 +163,22 @@ Public Sub ButtonGuardar_Click()
     FicheroDatos.agregar("dir4", cuatro.DirectorioActual)
     FicheroDatos.agregar("TextoCorto", textboxCorto.text)
     FicheroDatos.agregar("colornota", TextAreaLargo.Background)
+    '-----------------------
+    FicheroDatos.agregar("slot1", TextBox1.text)
+    FicheroDatos.agregar("slot2", TextBox2.text)
+    FicheroDatos.agregar("slot3", TextBox3.text)
+    FicheroDatos.agregar("slot4", TextBox4.text)
+    FicheroDatos.agregar("slot5", TextBox5.text)
+    FicheroDatos.agregar("slot6", TextBox6.text)
+    FicheroDatos.agregar("slot7", TextBox7.text)
+    FicheroDatos.agregar("slot8", TextBox8.text)
+    FicheroDatos.agregar("slot9", TextBox9.text)
+    FicheroDatos.agregar("slot10", TextBox10.text)
+    FicheroDatos.agregar("slot11", TextBox11.text)
+    FicheroDatos.agregar("slot12", TextBox12.text)
+    FicheroDatos.agregar("slot13", TextBox13.text)
+    FicheroDatos.agregar("slot14", TextBox14.text)
+    FicheroDatos.agregar("slot15", TextBox15.text)
 
     If Frame1.Visible = True Then
       FicheroDatos.agregar("TextoLargo", Replace(TextAreaLargo.text, gb.NewLine, "|"))
@@ -224,6 +240,22 @@ Public Sub abrirSeccion(seccion As String)
 
         activarPaneles()
 
+        'añado slot de ficheros
+        TextBox1.text = FicheroDatos.buscar("slot1", "")
+        TextBox2.text = FicheroDatos.buscar("slot2", "")
+        TextBox3.text = FicheroDatos.buscar("slot3", "")
+        TextBox4.text = FicheroDatos.buscar("slot4", "")
+        TextBox5.text = FicheroDatos.buscar("slot5", "")
+        TextBox6.text = FicheroDatos.buscar("slot6", "")
+        TextBox7.text = FicheroDatos.buscar("slot7", "")
+        TextBox8.text = FicheroDatos.buscar("slot8", "")
+        TextBox9.text = FicheroDatos.buscar("slot9", "")
+        TextBox10.text = FicheroDatos.buscar("slot10", "")
+        TextBox11.text = FicheroDatos.buscar("slot11", "")
+        TextBox12.text = FicheroDatos.buscar("slot12", "")
+        TextBox13.text = FicheroDatos.buscar("slot13", "")
+        TextBox14.text = FicheroDatos.buscar("slot14", "")
+        TextBox15.text = FicheroDatos.buscar("slot15", "")
     End Select
     fpensando.parar = True
     fpensando.Delete()
@@ -496,6 +528,22 @@ Public Sub ButtonGuardarActual_Click()
     FicheroDatos.agregar("TextoCorto", textboxCorto.text)
     FicheroDatos.agregar("colornota", TextAreaLargo.Background)
 
+    FicheroDatos.agregar("slot1", TextBox1.text)
+    FicheroDatos.agregar("slot2", TextBox2.text)
+    FicheroDatos.agregar("slot3", TextBox3.text)
+    FicheroDatos.agregar("slot4", TextBox4.text)
+    FicheroDatos.agregar("slot5", TextBox5.text)
+    FicheroDatos.agregar("slot6", TextBox6.text)
+    FicheroDatos.agregar("slot7", TextBox7.text)
+    FicheroDatos.agregar("slot8", TextBox8.text)
+    FicheroDatos.agregar("slot9", TextBox9.text)
+    FicheroDatos.agregar("slot10", TextBox10.text)
+    FicheroDatos.agregar("slot11", TextBox11.text)
+    FicheroDatos.agregar("slot12", TextBox12.text)
+    FicheroDatos.agregar("slot13", TextBox13.text)
+    FicheroDatos.agregar("slot14", TextBox14.text)
+    FicheroDatos.agregar("slot15", TextBox15.text)
+
     If Frame1.Visible = True Then
       FicheroDatos.agregar("TextoLargo", Replace(TextAreaLargo.text, gb.NewLine, "|"))
     Else
@@ -539,5 +587,45 @@ Public Sub ButtonNUEVO_Click()
   HSplit2.Layout = [1, 1]
   panelesActivos = 4
   seccionactual = User.Home
+  TextBox1.text = ""
+  TextBox2.text = ""
+  TextBox3.text = ""
+  TextBox4.text = ""
+  TextBox5.text = ""
+  TextBox6.text = ""
+  TextBox7.text = ""
+  TextBox8.text = ""
+  TextBox9.text = ""
+  TextBox10.text = ""
+  TextBox11.text = ""
+  TextBox12.text = ""
+  TextBox13.text = ""
+  TextBox14.text = ""
+  TextBox15.text = ""
+
+End
+
+Public Sub slotAccesos_DblClick()
+
+  Desktop.Open(Last.text)
+
+End
+
+Public Sub Obj_nuevoSlot(fichero As String)
+
+  Dim c As Object
+  'busca un slot vacio y lo pone en el...
+
+  For Each c In Me.Controls
+
+    If c Is Textbox Then
+      If c.tag = "slotAccesos" Then
+        If c.text = "" Then
+          c.text = fichero
+          Break
+        Endif
+      Endif
+    Endif
+  Next
 
 End
