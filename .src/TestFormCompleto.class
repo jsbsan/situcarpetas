@@ -47,18 +47,30 @@ Public Sub Form_Open()
   ' HSplit2.Layout = Settings["HSplit2", [1, 1]]
   ' panelesActivos = Settings["PanalesActivos"]
 
-  If Exist(Settings["seccionactual"]) Then
+  If Args.Count > 1 Then
+    'analizo parametros
+    Dim ParametroNombreFichero As String[]
+    ParametroNombreFichero = Args.All
+    ParametroNombreFichero.Delete(0)
 
-    abrirSeccion(Settings["seccionactual"])
-
-    AmoverLista.Add("NadaQueMover")
-    Acopiarlista.Add("NadaQueCopiar")
-
-    SeccionActual = Settings["seccionactual", ""]
+    abrirSeccion(ParametroNombreFichero.join(" "))
 
   Else
 
-    ButtonNUEVO_Click()
+    If Exist(Settings["seccionactual"]) Then
+
+      abrirSeccion(Settings["seccionactual"])
+
+      AmoverLista.Add("NadaQueMover")
+      Acopiarlista.Add("NadaQueCopiar")
+
+      SeccionActual = Settings["seccionactual", ""]
+
+    Else
+
+      ButtonNUEVO_Click()
+
+    Endif
 
   Endif
 

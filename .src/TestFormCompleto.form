@@ -49,12 +49,13 @@
     }
     { ButtonTAG Button
       MoveScaled(95,0,4,4)
+      Visible = False
       Enabled = False
       ToolTip = ("TAG")
       Picture = Picture["TAG.png"]
     }
     { ButtonNUEVO Button
-      MoveScaled(93,0,20,4)
+      MoveScaled(94,0,20,4)
       ToolTip = ("NEW")
       Text = (".vistacarpetas")
       Picture = Picture["icon:/16/new"]
