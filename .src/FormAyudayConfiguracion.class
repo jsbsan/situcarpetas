@@ -10,6 +10,8 @@ Public Sub Form_Open()
   TextBoxPARAEXP.Text = Settings["paraexplorador", "--working-directory="]
   TextBoxTERM.Text = Settings["terminal", "xfce4-terminal"]
   ColorButton1.Value = Settings["ColorFondo", Color.cyan]
+  ColorSlotDir.Value = Settings["colorSlotDirectorio", Color.green]
+  ColorSlotfile.value = Settings["colorSlotFichero", Color.Cyan]
 
   TextAreadirviewroot.Text = Settings["directorioinicial", "/"]
 
@@ -42,7 +44,8 @@ Public Sub ButtonACEPTAR_Click()
   Settings["ColorFondo"] = ColorButton1.value
 
   Settings["directorioinicial"] = TextAreadirviewroot.text
-
+  Settings["colorSlotDirectorio"] = ColorSlotDir.Value
+  Settings["colorSlotFichero"] = ColorSlotfile.value
   Me.Close()
 
 End
@@ -63,5 +66,17 @@ Public Sub ButtonDirviewRoot_Click()
   'valor por defecto
 
   TextAreadirviewroot.text = "/"
+
+End
+
+Public Sub ButtonColorSeleccionSlotDir_Click()
+
+  ColorSlotDir.value = Color.green
+
+End
+
+Public Sub ButtonColorSeleccionSlotFile_Click()
+
+  ColorSlotfile.value = Color.Cyan
 
 End

@@ -268,10 +268,12 @@ Public Sub abrirSeccion(seccion As String)
         TextBox13.text = FicheroDatos.buscar("slot13", "")
         TextBox14.text = FicheroDatos.buscar("slot14", "")
         TextBox15.text = FicheroDatos.buscar("slot15", "")
+
     End Select
     fpensando.parar = True
     fpensando.Delete()
   Endif
+  colorearSlot()
 
 End
 
@@ -337,7 +339,10 @@ Public Sub LeerVersionAntigua(ruta As String)
 
   Dim datos As String[]
 
-  datos = Split(File.Load(RUTA), gb.CrLf)
+  Try datos = Split(File.Load(RUTA), gb.CrLf)
+
+  If Error Then Return
+
   textboxCorto.Text = File.BaseName(RUTA)
 
   uno.DirectorioActual = datos[0]
@@ -634,7 +639,32 @@ Public Sub Obj_nuevoSlot(fichero As String)
       If c.tag = "slotAccesos" Then
         If c.text = "" Then
           c.text = fichero
+
           Break
+        Endif
+      Endif
+    Endif
+  Next
+  colorearSlot()
+
+End
+
+Public Sub colorearSlot()
+
+  Dim c As Object
+  'busca un slot vacio y lo pone en el...
+
+  For Each c In Me.Controls
+
+    If c Is Textbox Then
+      If c.tag = "slotAccesos" Then
+        If c.text <> "" Then
+          If IsDir(c.text) Then
+            c.Background = Settings["colorSlotDirectorio", Color.green]
+          Else
+            c.Background = Settings["colorSlotFichero", Color.Cyan]
+          Endif
+
         Endif
       Endif
     Endif

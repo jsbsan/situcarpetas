@@ -8,9 +8,11 @@ Public Sub load(ruta As String) '' leer el fichero de la ruta determina y lo asi
   If IsDir(ruta) Then
     rutainicial = ruta
   Else
-    contenido = File.Load(ruta)
+    Try contenido = File.Load(ruta)
     rutainicial = ruta
-
+    If Error Then
+      Message.Error("Error al leer la ruta:" & gb.CrLf & ruta)
+    Endif
   Endif
 
 End

@@ -9,59 +9,59 @@
     Picture = Picture["icon:/24/apply"]
   }
   { PictureBox1 PictureBox
-    MoveScaled(7,1,14,15)
+    MoveScaled(6,0,14,15)
     Picture = Picture["iconos/carpeta.png"]
     Stretch = True
   }
   { TextLabel1 TextLabel
-    MoveScaled(6,17,51,11)
+    MoveScaled(7,16,51,11)
     Text = ("System to save the situation of work folders.<br>\nAuthor: Julio Sánchez Berro<br>\nLicense: GPL 3.0<br>\nMade in Gambas3 for linux mint xfce<br>\n2021")
     Alignment = Align.Center
   }
   { Labelversion Label
-    MoveScaled(26,10,30,5)
+    MoveScaled(26,9,30,5)
     Alignment = Align.Center
   }
   { LabelNombre Label
-    MoveScaled(26,2,29,8)
+    MoveScaled(26,0,29,8)
     Font = Font["Bold,Italic,+5"]
     Alignment = Align.Center
   }
   { Label1 Label
-    MoveScaled(2,33,21,5)
+    MoveScaled(2,29,21,5)
     Alignment = Align.Right
     Text = ("File Explorer:")
   }
   { Label2 Label
-    MoveScaled(4,43,20,3)
+    MoveScaled(4,39,20,3)
     Alignment = Align.Right
     Text = ("Terminal:")
   }
   { TextBoxEXP TextBox
-    MoveScaled(25,33,28,4)
+    MoveScaled(25,29,28,4)
   }
   { TextBoxTERM TextBox
-    MoveScaled(25,43,28,4)
+    MoveScaled(25,39,28,4)
   }
   { Label3 Label
-    MoveScaled(2,38,22,5)
+    MoveScaled(2,34,22,5)
     Text = ("File Explorer parameters:")
   }
   { TextBoxPARAEXP TextBox
-    MoveScaled(25,38,28,4)
+    MoveScaled(25,34,28,4)
   }
   { ButtonTdefecto Button
-    MoveScaled(53,43,10,4)
+    MoveScaled(53,39,10,4)
     Font = Font["-1"]
     Text = ("Default")
   }
   { ButtonExpDefecto Button
-    MoveScaled(53,33,10,4)
+    MoveScaled(53,29,10,4)
     Font = Font["-1"]
     Text = ("Default")
   }
   { ButtonParaExpDefecto Button
-    MoveScaled(53,38,10,4)
+    MoveScaled(53,34,10,4)
     Font = Font["-1"]
     Text = ("Default")
   }
@@ -75,34 +75,60 @@
     Text = ("<u>Quick Keys:</u><br>\nf5: switch to panel 1<br>\nf6: switch to panel 2<br>\nf7: switch to panel 3<br>\nf8: switch to panel 4<br>\n\nCtrl + C: copy selected files<br>\nCtrl + X: move selected files<br>\nCtrl + V: paste files<br>")
   }
   { Label4 Label
-    MoveScaled(3,48,21,4)
+    MoveScaled(3,44,21,4)
     Alignment = Align.Right
     Text = ("Selected panel color:")
   }
   { ColorButton1 ColorButton
-    MoveScaled(25,48,28,4)
+    MoveScaled(25,44,28,4)
   }
   { ButtonColorSeleccionPanel Button
-    MoveScaled(53,48,10,4)
+    MoveScaled(53,44,10,4)
     Font = Font["-1"]
     Text = ("Default")
   }
   { Label5 Label
-    MoveScaled(3,54,21,4)
+    MoveScaled(3,58,21,4)
     Visible = False
     Enabled = False
     Alignment = Align.Right
     Text = ("dirview root:")
   }
   { TextAreadirviewroot TextArea
-    MoveScaled(25,54,28,4)
+    MoveScaled(25,58,28,4)
     Visible = False
     Enabled = False
   }
   { ButtonDirviewRoot Button
-    MoveScaled(53,54,10,4)
+    MoveScaled(53,58,10,4)
     Visible = False
     Enabled = False
+    Font = Font["-1"]
+    Text = ("Default")
+  }
+  { Label6 Label
+    MoveScaled(3,48,21,4)
+    Alignment = Align.Right
+    Text = ("Selected color slot dir:")
+  }
+  { Label7 Label
+    MoveScaled(3,52,21,4)
+    Alignment = Align.Right
+    Text = ("Selected color slot file:")
+  }
+  { ColorSlotDir ColorButton
+    MoveScaled(25,48,28,4)
+  }
+  { ColorSlotfile ColorButton
+    MoveScaled(25,52,28,4)
+  }
+  { ButtonColorSeleccionSlotDir Button
+    MoveScaled(53,48,10,4)
+    Font = Font["-1"]
+    Text = ("Default")
+  }
+  { ButtonColorSeleccionSlotFile Button
+    MoveScaled(53,52,10,4)
     Font = Font["-1"]
     Text = ("Default")
   }

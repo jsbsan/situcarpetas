@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: situcarpetas 3.16.0\n"
-"PO-Revision-Date: 2021-04-26 08:01 UTC\n"
-"Last-Translator: minino <minino@minino-ThinkCentre-M82>\n"
+"Project-Id-Version: situcarpetas 3.16.3\n"
+"PO-Revision-Date: 2021-10-03 17:17 UTC\n"
+"Last-Translator: jsbsan <jusabejusabe@gmail.com>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,45 +25,61 @@ msgstr "Nueva version encontrada alojada en github"
 msgid "You have the same version as the one hosted on Github"
 msgstr "Tienes la misma version que la alojada en Github"
 
-#: FormAyudayConfiguracion.form:33 FormMarcar.form:47
+#: FormAyudayConfiguracion.form:39 FormMarcar.form:47
 msgid "Apply"
 msgstr "Aceptar"
 
-#: FormAyudayConfiguracion.form:45
+#: FormAyudayConfiguracion.form:51
 msgid "System to save the situation of work folders.<br>\nAuthor: Julio Sánchez Berro<br>\nLicense: GPL 3.0<br>\nMade in Gambas3 for linux mint xfce<br>\n2021"
 msgstr "Sistema para guadar rutas de directorios de trabajo.<br>\nAuthor: Julio Sánchez Berro<br>\nLicense: GPL 3.0<br>\nMade in Gambas3 for linux mint xfce<br>\n2021"
 
-#: FormAyudayConfiguracion.form:63
+#: FormAyudayConfiguracion.form:69
 msgid "File Explorer:"
 msgstr "Explorador de Ficheros:"
 
-#: FormAyudayConfiguracion.form:69
+#: FormAyudayConfiguracion.form:75
 msgid "Terminal:"
 msgstr "Terminal:"
 
-#: FormAyudayConfiguracion.form:82
+#: FormAyudayConfiguracion.form:88
 msgid "File Explorer parameters:"
 msgstr "Parametros Explorador:"
 
-#: FormAyudayConfiguracion.form:92
+#: FormAyudayConfiguracion.form:98
 msgid "Default"
 msgstr "Por defecto"
 
-#: FormAyudayConfiguracion.form:109
+#: FormAyudayConfiguracion.form:115
 msgid "Version Github"
 msgstr "Versión Github"
 
-#: FormAyudayConfiguracion.form:115
+#: FormAyudayConfiguracion.form:121
 msgid "<u>Quick Keys:</u><br>\nf5: switch to panel 1<br>\nf6: switch to panel 2<br>\nf7: switch to panel 3<br>\nf8: switch to panel 4<br>\n\nCtrl + C: copy selected files<br>\nCtrl + X: move selected files<br>\nCtrl + V: paste files<br>"
 msgstr "<u>Teclas Rapidas:</u><br>\nf5: cambiar a panel 1<br>\nf6: cambiar a panel 2<br>\nf7: cambiar a panel 3<br>\nf8: cambiar a panel 4<br>\n\nCtrl+C: copia ficheros seleccionados<br>\nCtrl+X: mover ficheros seleccionados<br>\nCtrl+V: pega ficheros<br>"
 
-#: FormAyudayConfiguracion.form:121
+#: FormAyudayConfiguracion.form:127
 msgid "Selected panel color:"
-msgstr "Seleccinal color de panel:"
+msgstr "color de panel:"
 
-#: FormAyudayConfiguracion.form:139
+#: FormAyudayConfiguracion.form:145
 msgid "dirview root:"
 msgstr "ruta directorio raiz"
+
+#: FormAyudayConfiguracion.form:165
+msgid "Selected color slot dir:"
+msgstr "color slot directorio:"
+
+#: FormAyudayConfiguracion.form:171
+msgid "Selected color slot file:"
+msgstr "color slot fichero:"
+
+#: FormFichero.form:19 FormTAG.form:68
+msgid "File"
+msgstr "Fichero"
+
+#: FormFichero.form:31 FormTAG.form:80 TestFormCompleto.form:76
+msgid "Open"
+msgstr "Abrir"
 
 #: FormMarcar.form:25
 msgid "Name File:"
@@ -121,167 +137,203 @@ msgstr "Borrar Marcas"
 msgid "Please wait..."
 msgstr "Espere por favor..."
 
+#: FormTAG.form:25
+msgid "Filter Tag"
+msgstr "Filtro Tag"
+
+#: FormTAG.form:31
+msgid "New Tag"
+msgstr "Nuevo Tag"
+
 #: FormVisualizador.form:13
 msgid "Select file"
 msgstr "Elegir fichero"
 
-#: TestForm.form:51
+#: TestForm.form:55
 msgid "Top directory"
 msgstr "subir en el directorio"
 
-#: TestForm.form:57
+#: TestForm.form:61
 msgid "MenuDir"
 msgstr "MenuDir"
 
-#: TestForm.form:60
+#: TestForm.form:64
 msgid "Create directory"
 msgstr "Crear Directorio"
 
-#: TestForm.form:65
+#: TestForm.form:69
 msgid "Open Terminal"
 msgstr "Abrir Terminal"
 
-#: TestForm.form:70
+#: TestForm.form:74
 msgid "Refresh"
 msgstr "Refrescar"
 
-#: TestForm.form:76
+#: TestForm.form:82
+msgid "Add to Slot"
+msgstr "Agrega a Slot"
+
+#: TestForm.form:88
 msgid "MenuFile"
 msgstr "MenuFile"
 
-#: TestForm.form:79
+#: TestForm.form:91
 msgid "Rename"
 msgstr "Renombrar"
 
-#: TestForm.form:84
+#: TestForm.form:96
 msgid "Open file explorer"
 msgstr "Abrir explorador de ficheros"
 
-#: TestForm.form:102
+#: TestForm.form:119
 msgid "Mark file"
 msgstr "Marcar Ficheros"
 
-#: TestForm.form:110
+#: TestForm.form:127
 msgid "Join PDFs"
 msgstr "Unir PDFs"
 
-#: TestForm.form:115
+#: TestForm.form:132
 msgid "Split Pdf"
 msgstr "Dividir Pdf"
 
-#: TestForm.form:120
+#: TestForm.form:137
 msgid "Edit Pdf with LibreOffice Draw"
 msgstr "Editar Pdf con LibreOffice Draw"
 
-#: TestForm.form:128
+#: TestForm.form:145
 msgid "Copy"
 msgstr "Copiar"
 
-#: TestForm.form:133
+#: TestForm.form:150
 msgid "Move"
 msgstr "Mover"
 
-#: TestForm.form:138
+#: TestForm.form:155
 msgid "Paste"
 msgstr "Pegar"
 
-#: TestForm.form:146
+#: TestForm.form:163
 msgid "Delete file"
 msgstr "Borrar"
 
-#: TestForm.form:180 TestFormCompleto.form:128
+#: TestForm.form:199 TestFormCompleto.form:170
 msgid "Go to.."
 msgstr "Ir a.."
 
-#: TestForm.form:185
+#: TestForm.form:205
 msgid "Path:"
 msgstr "Ruta:"
 
-#: TestForm.form:200
+#: TestForm.form:219
 msgid "show directories"
 msgstr "mostrar alborl de directorios"
 
-#: TestForm.form:210
+#: TestForm.form:225
+msgid "open file explorer"
+msgstr "abrir con el explorador de ficheros"
+
+#: TestForm.form:236
 msgid "Filter:"
 msgstr "Filtro:"
 
-#: TestForm.form:220
+#: TestForm.form:245
 msgid "Apply filter"
 msgstr "Aplicar filtro"
 
-#: TestForm.form:236
-msgid "view hidden"
-msgstr "ver ocultos"
-
-#: TestForm.form:242
-msgid "view directory"
-msgstr "ver directorios"
-
-#: TestForm.form:248
-msgid "view details"
-msgstr "ver detalles"
-
-#: TestForm.form:254
+#: TestForm.form:251
 msgid "refresh files/dir"
 msgstr "refrescar ficheros/directorios"
 
-#: TestFormCompleto.class:459
+#: TestForm.form:267
+msgid "view hidden"
+msgstr "ver ocultos"
+
+#: TestForm.form:273
+msgid "view directory"
+msgstr "ver directorios"
+
+#: TestForm.form:279
+msgid "view details"
+msgstr "ver detalles"
+
+#: TestFormCompleto.class:582
 msgid "Save Ok"
 msgstr "Guardado Realizado OK"
 
-#: TestFormCompleto.class:461
+#: TestFormCompleto.class:584
 msgid "the current section open is the default"
 msgstr "La sección actual es la de por defecto"
 
-#: TestFormCompleto.form:33
+#: TestFormCompleto.form:55
 msgid "Save"
 msgstr "Guardar"
 
-#: TestFormCompleto.form:44
+#: TestFormCompleto.form:66
 msgid "Work Session:"
 msgstr "Sesión de trabajo:"
 
-#: TestFormCompleto.form:54
-msgid "Open"
-msgstr "Abrir"
-
-#: TestFormCompleto.form:65
+#: TestFormCompleto.form:87
 msgid "Save As"
 msgstr "Guardar como..."
 
-#: TestFormCompleto.form:66
+#: TestFormCompleto.form:88
 msgid "Save As "
 msgstr "Guardar como..."
 
-#: TestFormCompleto.form:76
+#: TestFormCompleto.form:98
 msgid "Vertical/Horizontal Note"
 msgstr "Vertical/Horizontal Nota"
 
-#: TestFormCompleto.form:82
+#: TestFormCompleto.form:104
 msgid "Color Note"
 msgstr "Color Nota"
 
-#: TestFormCompleto.form:97
+#: TestFormCompleto.form:115
+msgid "TAG"
+msgstr "TAG"
+
+#: TestFormCompleto.form:121
+msgid "NEW"
+msgstr "Nuevo"
+
+#: TestFormCompleto.form:122
+msgid ".vistacarpetas"
+msgstr ".vistacarpetas"
+
+#: TestFormCompleto.form:139
 msgid "double panel horizontal"
 msgstr "doble panel horizontal"
 
-#: TestFormCompleto.form:104
+#: TestFormCompleto.form:146
 msgid "double panel vertical"
 msgstr "doble panel vertical"
 
-#: TestFormCompleto.form:111
+#: TestFormCompleto.form:153
 msgid "three panel"
 msgstr "tres paneles"
 
-#: TestFormCompleto.form:117
+#: TestFormCompleto.form:159
 msgid "four panels"
 msgstr "cuatro paneles"
 
-#: TestFormCompleto.form:138
+#: TestFormCompleto.form:180
 msgid "Help"
 msgstr "Ayuda"
 
-#: TestFormCompleto.form:149
+#: TestFormCompleto.form:191
 msgid "Note:"
 msgstr "Notas:"
+
+#: TestFormCompleto.form:209
+msgid "click right  for open file or directory"
+msgstr "click derecho para abrir fichero o directorio"
+
+#: TestFormCompleto.form:217
+msgid "haga click derecho y lo abre"
+msgstr "haga click derecho y lo abrirá con el programa por defecto de tu sistema"
+
+#: TestFormCompleto.form:337
+msgid "<b> SLOT of paths and files </b>\nDouble-clicking opens the file or path with the default program by default of the system."
+msgstr "<b> SLOT de rutas y ficheros </b>\nDoble-click para abrir ficheros o rutas con el programa por defecto de tu sistema."
 
