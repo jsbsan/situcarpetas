@@ -186,8 +186,7 @@ End
 
 Public Sub copiarfichero_Click()
 
-  ' Print FileView1.Selection
-
+  Clipboard.Copy(hDirectorioActual & "/" & FileView1.Selection[0])'copia al portapapeles el primer fichero seleccionado (y su ruta)
   Raise copia(FileView1.Selection, hDirectorioActual)
 
 End

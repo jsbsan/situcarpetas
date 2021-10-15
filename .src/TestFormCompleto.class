@@ -662,12 +662,26 @@ Public Sub colorearSlot()
           If IsDir(c.text) Then
             c.Background = Settings["colorSlotDirectorio", Color.green]
           Else
-            c.Background = Settings["colorSlotFichero", Color.Cyan]
-          Endif
+            If Exist(c.text) Then
+              c.Background = Settings["colorSlotFichero", Color.Cyan]
+            Else
+              c.Background = Settings["colorSlotTexto", Color.white]
+              c.Alignment = Align.center
+              c.Font = Font[",,Bold"]
+            Endif
 
+          Endif
+        Else
+          c.Background = Settings["colorSlotTexto", Color.white]
         Endif
       Endif
     Endif
   Next
+
+End
+
+Public Sub ButtonRefrescarSlot_Click()
+
+  colorearSlot()
 
 End

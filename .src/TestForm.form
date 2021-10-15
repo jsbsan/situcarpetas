@@ -2,7 +2,6 @@
 
 { Form Form
   MoveScaled(0,0,141,47)
-  ToolTip = ("Top directory")
   Expand = True
   Arrangement = Arrange.Vertical
   Padding = 2
@@ -124,6 +123,7 @@
         }
         { TextBoxRuta TextBox
           MoveScaled(17,0,73,3)
+          Font = Font["-1"]
           ReadOnly = True
         }
       }
