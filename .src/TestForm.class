@@ -15,6 +15,8 @@ Event nuevoSlot(fichero As String)
 Property DirectorioActual As String
 Private hdirectorioActual As String
 
+Public ayudaDir As String
+
 Function DirectorioActual_read() As String
 
   Return hdirectorioActual
@@ -49,6 +51,7 @@ Public Sub inicia()
   MenuDir.Visible = False
   MenuFile.visible = False
   FileView1.tooltip = file.Name(TextBoxRuta.text)
+  TextBoxAyuda.Text = ayudaDir
 
 End
 
@@ -391,6 +394,13 @@ Public Sub ButtonRefrestcar_Click()
 
 End
 
+Public Sub EscribirAyudaDir(t As String)
+
+  ayudaDir = t
+  TextBoxAyuda.Text = t
+
+End
+
 Public Sub Form_Open()
 
   DirView1.Root = Settings["directorioinicial", "/"]
@@ -430,5 +440,19 @@ Public Sub MenuAgregaSlotDirectorio_Click()
   nombrefichero = DirView1.Current
 
   Raise nuevoSlot(nombrefichero)
+
+End
+
+Public Sub TextBoxAyuda_KeyPress()
+
+  If Key.Code = Key.enter Or Key.return Then
+    ayudaDir = TextBoxAyuda.Text
+  Endif
+
+End
+
+Public Sub TextBoxAyuda_Leave()
+
+  ayudaDir = TextBoxAyuda.Text
 
 End

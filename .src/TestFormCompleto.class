@@ -176,6 +176,11 @@ Public Sub ButtonGuardar_Click()
     FicheroDatos.agregar("TextoCorto", textboxCorto.text)
     FicheroDatos.agregar("colornota", TextAreaLargo.Background)
     '-----------------------
+    FicheroDatos.agregar("ayudadir1", uno.ayudaDir)
+    FicheroDatos.agregar("ayudadir2", dos.ayudaDir)
+    FicheroDatos.agregar("ayudadir3", tres.ayudaDir)
+    FicheroDatos.agregar("ayudadir4", cuatro.ayudaDir)
+    ' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     FicheroDatos.agregar("slot1", TextBox1.text)
     FicheroDatos.agregar("slot2", TextBox2.text)
     FicheroDatos.agregar("slot3", TextBox3.text)
@@ -232,6 +237,11 @@ Public Sub abrirSeccion(seccion As String)
         dos.DirectorioActual = FicheroDatos.buscar("dir2")
         tres.DirectorioActual = FicheroDatos.buscar("dir3")
         cuatro.DirectorioActual = FicheroDatos.buscar("dir4")
+
+        uno.EscribirAyudaDir(FicheroDatos.buscar("ayudadir1", ""))
+        dos.EscribirAyudaDir(FicheroDatos.buscar("ayudadir2", ""))
+        tres.EscribirAyudaDir(FicheroDatos.buscar("ayudadir3", ""))
+        cuatro.EscribirAyudaDir(FicheroDatos.buscar("ayudadir4", ""))
 
         textboxCorto.text = FicheroDatos.buscar("TextoCorto")
         TextAreaLargo.Background = Val(FicheroDatos.buscar("colornota", Str$(Color.green)))
@@ -545,6 +555,12 @@ Public Sub ButtonGuardarActual_Click()
     FicheroDatos.agregar("TextoCorto", textboxCorto.text)
     FicheroDatos.agregar("colornota", TextAreaLargo.Background)
 
+    FicheroDatos.agregar("ayudadir1", uno.ayudaDir)
+    FicheroDatos.agregar("ayudadir2", dos.ayudaDir)
+    FicheroDatos.agregar("ayudadir3", tres.ayudaDir)
+
+    FicheroDatos.agregar("ayudadir4", cuatro.ayudaDir)
+
     FicheroDatos.agregar("slot1", TextBox1.text)
     FicheroDatos.agregar("slot2", TextBox2.text)
     FicheroDatos.agregar("slot3", TextBox3.text)
@@ -683,5 +699,12 @@ End
 Public Sub ButtonRefrescarSlot_Click()
 
   colorearSlot()
+
+End
+
+Public Sub ButtonEditorConfig_Click()
+
+  'abrir el ediotor de config...
+  Exec ["gedit", SeccionActual]
 
 End

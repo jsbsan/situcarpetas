@@ -95,8 +95,14 @@
       Picture = Picture["icon:/24/refresh"]
     }
   }
+  { TextBoxAyuda TextBox
+    MoveScaled(7,1,92,3)
+    Font = Font["-1"]
+    Background = &HE0E0E0&
+    Alignment = Align.Center
+  }
   { HSplit1 Splitter
-    MoveScaled(7,2,107,38)
+    MoveScaled(2,5,107,38)
     Expand = True
     Spacing = True
     { DirView1 DirView
@@ -137,7 +143,7 @@
         { ButtonAbrirNavegador Button
           MoveScaled(0,0,7,4)
           ToolTip = ("open file explorer")
-          Picture = Picture["icon:/24/exec"]
+          Picture = Picture["iconos/AbrirCarpeta.png"]
         }
         { Spring2 Spring
           MoveScaled(4,0,2,3)
