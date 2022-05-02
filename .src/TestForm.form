@@ -108,6 +108,7 @@
     { DirView1 DirView
       MoveScaled(3,7,18,29)
       Font = Font["-1"]
+      Background = Color.SelectedBackground
       PopupMenu = "MenuDir"
       Border = False
       Root = "/"
