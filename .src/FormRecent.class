@@ -1,0 +1,112 @@
+' Gambas class file
+
+Public principal As TestFormCompleto
+Private ruta As String = User.home & "/.config/reciente_situcarpetas.conf"
+Public RecientesficheroDatos As New FicheroDatos
+
+Public Sub asignarvalores()
+
+  Dim contenido As String
+  Dim lineas As String[]
+  Dim l As String
+
+  If Not Exist(ruta) Then Return
+
+  contenido = File.Load(ruta)
+
+  lineas = Split(contenido, "|")
+
+  Try Button1.Text = lineas[0]
+  Try Button2.Text = lineas[1]
+  Try Button3.Text = lineas[2]
+  Try Button4.Text = lineas[3]
+  Try Button5.Text = lineas[4]
+  Try Button6.Text = lineas[5]
+  Try Button7.Text = lineas[6]
+  Try Button8.Text = lineas[7]
+  Try Button9.Text = lineas[8]
+  Try Button10.Text = lineas[9]
+
+End
+
+Public Sub Form_show()
+
+  If Not Exist(ruta) Then
+    File.Save(ruta, "") 'lo creo vacio
+  Endif
+
+  asignarvalores()
+
+End
+
+Public Sub guardarDatos()
+
+  Dim contenido As String
+
+  contenido = Button1.text & "|"
+  contenido &= Button2.text & "|"
+  contenido &= Button3.text & "|"
+  contenido &= Button4.text & "|"
+  contenido &= Button5.text & "|"
+  contenido &= Button6.text & "|"
+  contenido &= Button7.text & "|"
+  contenido &= Button8.text & "|"
+  contenido &= Button9.text & "|"
+  contenido &= Button10.text
+
+  File.Save(ruta, contenido)
+
+End
+
+Public Sub ButtonSalir_Click()
+
+  guardarDatos()
+
+  Me.Close()
+
+End
+
+Public Sub recientes_Click()
+
+  'cargar ruta en el formulario
+  If Last.text <> "" Then principal.abrirSeccion(Last.text)
+
+End
+
+Public Sub agregarAbierto(ruta As String)
+  'controlar ruta si ya esta
+
+  If Button1.text = ruta Then Return 'no se añade
+  If Button2.text = ruta Then Return 'no se añade
+  If Button3.text = ruta Then Return 'no se añade
+  If Button4.text = ruta Then Return 'no se añade
+  If Button5.text = ruta Then Return 'no se añade
+  If Button6.text = ruta Then Return 'no se añade
+  If Button7.text = ruta Then Return 'no se añade
+  If Button8.text = ruta Then Return 'no se añade
+  If Button9.text = ruta Then Return 'no se añade
+  If Button10.text = ruta Then Return 'no se añade
+
+  Button10.Text = Button9.Text
+  Button9.Text = Button8.Text
+  Button8.Text = Button7.Text
+  Button7.Text = Button6.Text
+  Button6.Text = Button5.Text
+  Button5.Text = Button4.Text
+  Button4.Text = Button3.Text
+  Button3.Text = Button2.Text
+  Button2.Text = Button1.Text
+  Button1.Text = ruta
+  guardarDatos()
+
+End
+
+Public Sub Form_Open()
+
+  If Not Exist(ruta) Then
+    File.Save(ruta, "") 'lo creo vacio
+  Endif
+  Me.Title = ("Recient Files")
+  asignarvalores()
+
+End

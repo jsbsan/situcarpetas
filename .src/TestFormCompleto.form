@@ -7,23 +7,28 @@
     MoveScaled(0,1,172,4)
     Spacing = True
     Padding = 2
+    { ButtonRecientes Button
+      MoveScaled(0,0,8,4)
+      Text = ("") & "..."
+      Picture = Picture["icon:/24/recent"]
+    }
     { ButtonNUEVO Button
-      MoveScaled(1,0,15,4)
+      MoveScaled(8,0,15,4)
       ToolTip = ("NEW")
-      Text = (".vistacarpetas")
+      Text = ("New")
       Picture = Picture["icon:/16/new"]
     }
     { ButtonAbrir Button
-      MoveScaled(17,0,11,4)
+      MoveScaled(20,0,11,4)
       Text = ("Open")
       Picture = Picture["icon:/24/open"]
     }
     { ButtonGuardarActual Button
-      MoveScaled(29,0,6,4)
+      MoveScaled(30,0,6,4)
       Picture = Picture["iconos/saveblue.jpg"]
     }
     { ButtonGuardar Button
-      MoveScaled(34,0,17,4)
+      MoveScaled(37,0,19,4)
       ToolTip = ("Save As") & "..."
       Text = ("Save As ") & "..."
       Picture = Picture["icon:/24/save"]

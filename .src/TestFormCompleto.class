@@ -20,6 +20,7 @@ Public SeccionActual As String 'guarda la ruta de la seccion actual abierta...
 
 Public Sub Form_Open()
 
+  FormRecent.asignarvalores()
   uno = New TestForm(HSplit1) As "Obj"
   uno.tag = 1
   uno.inicia()
@@ -280,7 +281,9 @@ Public Sub abrirSeccion(seccion As String)
         TextBox15.text = FicheroDatos.buscar("slot15", "")
 
     End Select
+    FormRecent.agregarAbierto(seccion)
     fpensando.parar = True
+
     fpensando.Delete()
   Endif
   colorearSlot()
@@ -294,6 +297,8 @@ Public Sub ButtonAbrir_Click()
   Endif
 
   Dialog.Filter = ["*.vistacarpetas", "Fichero VistaCarpetas"]
+
+  Dialog.FilterIndex = 0 'a partir de la version 17
 
   Dialog.path = User.home & "/" & "VistaCarpetas"
 
@@ -443,8 +448,11 @@ Public Sub Form_Close()
   ' Settings["HSplit2"] = HSplit2.Layout
   ' Settings["PanalesActivos"] = panelesActivos
   ' Settings["colornota"] = ColorButtonNote.Value
-  Settings["seccionactual"] = SeccionActual
+
   Settings.write(Me)
+  Settings["seccionactual"] = SeccionActual
+
+  Settings.Save()
 
 End
 
@@ -706,5 +714,12 @@ Public Sub ButtonEditorConfig_Click()
 
   'abrir el ediotor de config...
   Exec ["gedit", SeccionActual]
+
+End
+
+Public Sub ButtonRecientes_Click()
+
+  FormRecent.principal = Me
+  FormRecent.Show()
 
 End

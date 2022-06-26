@@ -1,0 +1,63 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,113,49)
+  Arrangement = Arrange.Row
+  Spacing = True
+  Padding = 2
+  { Button1 Button recientes
+    Name = "Button1"
+    MoveScaled(0,0,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button2 Button recientes
+    Name = "Button2"
+    MoveScaled(0,4,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button3 Button recientes
+    Name = "Button3"
+    MoveScaled(0,8,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button4 Button recientes
+    Name = "Button4"
+    MoveScaled(0,12,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button5 Button recientes
+    Name = "Button5"
+    MoveScaled(0,16,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button6 Button recientes
+    Name = "Button6"
+    MoveScaled(0,20,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button7 Button recientes
+    Name = "Button7"
+    MoveScaled(0,24,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button8 Button recientes
+    Name = "Button8"
+    MoveScaled(0,28,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button9 Button recientes
+    Name = "Button9"
+    MoveScaled(0,32,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { Button10 Button recientes
+    Name = "Button10"
+    MoveScaled(0,36,112,4)
+    Direction = Direction.LeftToRight
+  }
+  { ButtonSalir Button
+    MoveScaled(42,40,17,5)
+    Text = ("Exit")
+    Picture = Picture["icon:/24/close"]
+  }
+}
