@@ -62,7 +62,7 @@ Public Sub cargaMarcadores()
 
   Dim lista As String[]
   Dim elemento As String
-  Dim linea As New String[]
+
   Dim listaRutas As New String[]
   Dim listaNombre As New String[]
   Dim toke1 As String
@@ -75,21 +75,19 @@ Public Sub cargaMarcadores()
     For Each elemento In lista
 
       If elemento = "" Then Continue
-      linea.Clear()
-      toke1 = Mid$(elemento, 1, InStr(elemento, " ") - 1)
-      toke2 = Mid$(elemento, InStr(elemento, " ") + 1, Len(elemento))
 
-      linea.Add(toke1)
-      linea.Add(toke2)
-      contador += 1
-      If linea.Count = 1 Then
-        listaNombre.Add(Str$(contador) & ":" & linea[0])
-        listaRutas.Add(linea[0])
+      If InStr(elemento, " ") <> 0 Then
+
+        toke1 = Mid$(elemento, 1, InStr(elemento, " ") - 1)
+        toke2 = Mid$(elemento, InStr(elemento, " ") + 1, Len(elemento))
       Else
-        listaNombre.Add(Str$(contador) & ":" & linea[1])
-        listaRutas.Add(linea[0])
-
+        toke1 = elemento
+        toke2 = elemento
       Endif
+
+      contador += 1
+      listaNombre.Add(Str$(contador) & ":" & toke2)
+      listaRutas.Add(toke1)
 
     Next
     ListBoxMarcadores.Tag = listaRutas
