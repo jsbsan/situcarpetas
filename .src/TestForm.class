@@ -52,8 +52,54 @@ Public Sub inicia()
   MenuFile.visible = False
   FileView1.tooltip = file.Name(TextBoxRuta.text)
   TextBoxAyuda.Text = ayudaDir
+  FileView1.ShowDirectory = True
+  'carga marcadores (solo una vez)
+  cargaMarcadores()
 
 End
+
+Public Sub cargaMarcadores()
+
+  Dim lista As String[]
+  Dim elemento As String
+  Dim linea As New String[]
+  Dim listaRutas As New String[]
+  Dim listaNombre As New String[]
+  Dim toke1 As String
+  Dim toke2 As String
+  Dim contador As Integer
+
+  If ListBoxMarcadores.List.Count = 0 Then
+    'no hay nada
+    lista = Split(File.load(User.home & "/.config/gtk-3.0/bookmarks"), "\n")
+    For Each elemento In lista
+
+      If elemento = "" Then Continue
+      linea.Clear()
+      toke1 = Mid$(elemento, 1, InStr(elemento, " ") - 1)
+      toke2 = Mid$(elemento, InStr(elemento, " ") + 1, Len(elemento))
+
+      linea.Add(toke1)
+      linea.Add(toke2)
+      contador += 1
+      If linea.Count = 1 Then
+        listaNombre.Add(Str$(contador) & ":" & linea[0])
+        listaRutas.Add(linea[0])
+      Else
+        listaNombre.Add(Str$(contador) & ":" & linea[1])
+        listaRutas.Add(linea[0])
+
+      Endif
+
+    Next
+    ListBoxMarcadores.Tag = listaRutas
+  Endif
+  ListBoxMarcadores.List = listaNombre
+  ListBoxMarcadores.Refresh()
+
+End
+
+'doble clib
 
 Public Sub FileView1_DblClick()
 
@@ -454,5 +500,22 @@ End
 Public Sub TextBoxAyuda_Leave()
 
   ayudaDir = TextBoxAyuda.Text
+
+End
+
+Public Sub ListBoxMarcadores_Click()
+
+  Dim elegido As String
+  Dim valor As Integer
+  Dim directorio As String
+
+  elegido = ListBoxMarcadores.Text
+  valor = Val(Mid$(elegido, 1, InStr(elegido, ":") - 1)) - 1
+  directorio = comun.validar(ListBoxMarcadores.Tag[valor])
+
+  FileView1.dir = directorio
+  TextBoxRuta.text = directorio
+  hDirectorioActual = directorio
+  FileView1.tooltip = file.Name(directorio)
 
 End

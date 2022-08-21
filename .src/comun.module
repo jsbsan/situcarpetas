@@ -1,0 +1,11 @@
+' Gambas module file
+
+Public Function validar(cadena As String) As String
+
+  cadena = Replace(cadena, "file://", "")
+  cadena = Replace(cadena, "%20", " ")
+  cadena = Replace(cadena, "%C3%B1", "ñ")
+
+  Return cadena
+
+End

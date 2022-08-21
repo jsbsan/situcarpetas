@@ -380,11 +380,20 @@ End
 
 Public Sub ButtonDoble_Click()
 
-  dos.visible = True
-  tres.visible = False
-  cuatro.visible = False
-  HSplit2.visible = False
-  panelesActivos = "2"
+  If panelesActivos = 2 Then
+    dos.visible = False
+    cuatro.visible = False
+    tres.visible = False
+    HSplit2.Visible = False
+    panelesActivos = "1"
+  Else
+
+    dos.visible = True
+    tres.visible = False
+    cuatro.visible = False
+    HSplit2.visible = False
+    panelesActivos = "2"
+  Endif
 
 End
 
@@ -520,7 +529,8 @@ Public Sub Form_KeyPress()
       Obj_ConseguirFoco(3)
     Case Key.F8
       Obj_ConseguirFoco(4)
-
+    Case key.f3
+      ButtonDoble_Click()
   End Select
 
 End

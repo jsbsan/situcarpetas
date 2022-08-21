@@ -105,13 +105,33 @@
     MoveScaled(2,5,107,38)
     Expand = True
     Spacing = True
-    { DirView1 DirView
-      MoveScaled(3,7,18,29)
-      Font = Font["-1"]
-      Background = Color.SelectedBackground
-      PopupMenu = "MenuDir"
-      Border = False
-      Root = "/"
+    { ToolPanel1 ToolPanel
+      MoveScaled(0,8,26,30)
+      Expand = True
+      Arrangement = Arrange.Fill
+      AutoResize = True
+      Count = 2
+      Animated = True
+      Border = True
+      Index = 0
+      Text = ("Directorios")
+      { DirView1 DirView
+        MoveScaled(3,0,18,29)
+        Font = Font["-1"]
+        Background = Color.SelectedBackground
+        Expand = True
+        PopupMenu = "MenuDir"
+        Border = False
+        Root = "/"
+      }
+      Index = 1
+      Text = ("Marcadores")
+      { ListBoxMarcadores ListBox
+        MoveScaled(2,1,15,17)
+        Background = &HFFCF9F&
+        Expand = True
+      }
+      Index = 0
     }
     { VPanel1 VBox
       MoveScaled(25,2,79,33)
