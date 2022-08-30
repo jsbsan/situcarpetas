@@ -161,13 +161,13 @@
           ToolTip = ("show directories")
           Picture = Picture["arboldirectorio.png"]
         }
-        { ButtonAbrirNavegador Button
-          MoveScaled(0,0,7,4)
-          ToolTip = ("open file explorer")
-          Picture = Picture["iconos/AbrirCarpeta.png"]
-        }
         { Spring2 Spring
           MoveScaled(4,0,2,3)
+        }
+        { ButtonAbrirNavegador Button
+          MoveScaled(3,0,7,4)
+          ToolTip = ("open file explorer")
+          Picture = Picture["iconos/AbrirCarpeta.png"]
         }
         { Label2 Label
           MoveScaled(5,0,8,4)

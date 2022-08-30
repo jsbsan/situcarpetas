@@ -358,10 +358,10 @@ End
 
 Public Sub ButtonArbolDirectorio_Click()
 
-  If DirView1.Visible Then
-    DirView1.Visible = False
+  If ToolPanel1.Visible Then
+    ToolPanel1.Visible = False
   Else
-    DirView1.Visible = True
+    ToolPanel1.Visible = True
   Endif
 
 End
