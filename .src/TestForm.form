@@ -118,11 +118,12 @@
       { DirView1 DirView
         MoveScaled(3,0,18,29)
         Font = Font["-1"]
-        Background = Color.SelectedBackground
+        Background = Color.SelectedForeground
+        Foreground = &H3B5660&
         Expand = True
         PopupMenu = "MenuDir"
         Border = False
-        Root = "/"
+        Root = "/home"
       }
       Index = 1
       Text = ("Marcadores")
@@ -215,7 +216,7 @@
         }
       }
       { FileView1 FileView
-        MoveScaled(5,9,51,22)
+        MoveScaled(4,11,51,22)
         Font = Font["-1"]
         Drop = True
         Expand = True
