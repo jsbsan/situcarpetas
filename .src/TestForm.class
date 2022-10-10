@@ -29,6 +29,8 @@ Function DirectorioActual_write(valor As String)
   FileView1.dir = valor
 
   TextBoxRuta.text = valor
+  TextBoxRuta.Tooltip = valor
+
   DirView1.current = valor
   FileView1.tooltip = file.Name(TextBoxRuta.text)
 
@@ -38,6 +40,7 @@ Public Sub DirView1_Click()
 
   FileView1.dir = DirView1.Current
   TextBoxRuta.text = DirView1.Current
+  TextBoxRuta.Tooltip = TextBoxRuta.text
   hDirectorioActual = DirView1.Current
   FileView1.tooltip = file.Name(TextBoxRuta.text)
 
@@ -46,6 +49,7 @@ End
 Public Sub inicia()
 
   TextBoxRuta.text = DirView1.Current
+  TextBoxRuta.Tooltip = TextBoxRuta.text
   hDirectorioActual = DirView1.Current
 
   MenuDir.Visible = False
@@ -341,12 +345,14 @@ Public Sub ButtonAbrirCarpetaContenedora_Click()
       FileView1.dir = "/"
 
       TextBoxRuta.text = "/"
+      TextBoxRuta.Tooltip = TextBoxRuta.text
       hdirectorioActual = "/"
       'DirView1.current = "/"
       DirView1.Root = "/"
     Else
       FileView1.dir = lista.Join("/")
       TextBoxRuta.text = lista.Join("/")
+      TextBoxRuta.Tooltip = TextBoxRuta.text
       hdirectorioActual = lista.Join("/")
       'DirView1.current = lista.Join("/")
       DirView1.Root = lista.Join("/")
@@ -513,7 +519,16 @@ Public Sub ListBoxMarcadores_Click()
 
   FileView1.dir = directorio
   TextBoxRuta.text = directorio
+  TextBoxRuta.Tooltip = directorio
   hDirectorioActual = directorio
   FileView1.tooltip = file.Name(directorio)
+
+End
+
+Public Sub NuevoDocumento_Click()
+
+  FormNuevoDocumento.RutaDirectorio = TextBoxRuta.text
+  FormNuevoDocumento.Showmodal()
+  refrescarfile_Click()
 
 End

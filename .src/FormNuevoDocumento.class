@@ -1,0 +1,40 @@
+' Gambas class file
+
+Public RutaDirectorio As String
+
+Public Sub ButtonSalir_Click()
+
+  Settings.write(Me)
+  Me.close
+
+End
+
+Public Sub Form_Open()
+
+  Settings.Read(Me)
+  FileView1.Dir = User.home & "/Plantillas"
+
+End
+
+Public Sub Form_Close()
+
+  Settings.write(Me)
+
+End
+
+Public Sub FileView1_DblClick()
+  '
+  ' Print FileView1.Current
+  ' ' copiar fichero desde fileview1 a la ruta actual
+
+  If Exist(RutaDirectorio & "/" & FileView1.Current) Then
+    Try Copy FileView1.Dir & "/" & FileView1.Current To RutaDirectorio & "/" & File.BaseName(FileView1.Current) & " (copia)" & "." & File.Ext(FileView1.Current)
+
+  Else
+    Copy FileView1.Dir & "/" & FileView1.Current To RutaDirectorio & "/" & FileView1.Current
+
+  Endif
+
+  Me.Close()
+
+End

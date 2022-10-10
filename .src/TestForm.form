@@ -36,9 +36,15 @@
       Text = ("Open file explorer")
       Picture = Picture["icon:/24/exec"]
     }
+    { Menu6 Menu
+    }
     { creardirectoriofile Menu
       Text = ("Create directory")
       Picture = Picture["icon:/24/directory"]
+    }
+    { NuevoDocumento Menu
+      Text = ("Nuenvo Documento")
+      Picture = Picture["icon:/32/new"]
     }
     { terminalFile Menu
       Text = ("Open Terminal")
@@ -184,7 +190,7 @@
           Picture = Picture["icon:/24/filter"]
         }
         { ButtonRefrestcar Button
-          MoveScaled(23,0,7,4)
+          MoveScaled(23,1,7,4)
           ToolTip = ("refresh files/dir")
           Picture = Picture["icon:/24/refresh"]
         }

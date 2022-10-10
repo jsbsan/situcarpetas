@@ -1,0 +1,13 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,86,64)
+  { ButtonSalir Button
+    MoveScaled(65,58,20,5)
+    Text = ("Cancelar")
+    Picture = Picture["icon:/32/cancel"]
+  }
+  { FileView1 FileView
+    MoveScaled(1,1,83,55)
+  }
+}
