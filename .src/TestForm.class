@@ -532,3 +532,30 @@ Public Sub NuevoDocumento_Click()
   refrescarfile_Click()
 
 End
+
+Public Sub ButtonIrA_Click()
+
+  Dim mensaje As String
+  Dim directoriotemporal As String
+  Dim ruta As String
+
+  directoriotemporal = Clipboard.Paste()
+
+  If Exist(directoriotemporal) Then
+    ruta = directoriotemporal
+  Else
+    ruta = ""
+  Endif
+
+  mensaje = InputBox("Ir a:", "Ir a un directorio concreto", ruta)
+
+  If mensaje <> "" Then
+    FileView1.dir = mensaje
+    TextBoxRuta.text = mensaje
+    TextBoxRuta.Tooltip = mensaje
+    hDirectorioActual = mensaje
+    FileView1.tooltip = file.Name(mensaje)
+    refrescar()
+  Endif
+
+End
