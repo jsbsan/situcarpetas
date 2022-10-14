@@ -114,6 +114,7 @@
     Spacing = True
     { ToolPanel1 ToolPanel
       MoveScaled(0,8,26,30)
+      Visible = False
       Expand = True
       Arrangement = Arrange.Fill
       AutoResize = True

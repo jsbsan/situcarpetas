@@ -114,14 +114,13 @@
       Picture = Picture["icon:/24/help"]
     }
   }
-  { Frame1 Frame
+  { Frame1 SidePanel
     MoveScaled(0,5,127,11)
     Arrangement = Arrange.Row
     AutoResize = True
     Margin = True
-    Text = ("Note:")
     { TextAreaLargo TextArea
-      MoveScaled(3,2,112,42)
+      MoveScaled(7,3,112,42)
       Background = &HCFFF9F&
       Expand = True
       Wrap = True

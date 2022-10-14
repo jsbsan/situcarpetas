@@ -1,0 +1,34 @@
+' Gambas class file
+
+Public respuesta As String[]
+Public tituloprompt As String
+
+Public Sub ButtonAceptar_Click()
+
+  respuesta.Add(TextBoxTexto.text)
+  Me.Close()
+
+End
+
+Public Sub ButtonCancelar_Click()
+
+  respuesta = []
+  Me.Close()
+
+End
+
+Public Sub Form_Show()
+
+  textboxtexto.text = respuesta[0]
+  respuesta.Clear()
+  Labelprompt.Text = tituloprompt
+
+End
+
+Public Sub TextBoxTexto_KeyPress()
+
+  If Key.Code = Key.enter Or Key.Code = Key.Return Then
+    ButtonAceptar_Click()
+  Endif
+
+End

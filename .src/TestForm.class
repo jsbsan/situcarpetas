@@ -287,15 +287,19 @@ End
 
 Public Sub renombrarfile_Click()
 
-  Dim resp As String
+  Dim resp As New String[]
+  Dim tmpMiInputBox As New MiImputbox
 
-  resp = InputBox("Fichero:", "Renombrar", FileView1.Current)
+  resp.Add(FileView1.Current)
+  tmpMiInputBox.tituloprompt = "Renombrar:"
+  tmpMiInputBox.respuesta = resp
+  tmpMiInputBox.Showmodal()
 
-  If resp = "" Then
+  If resp.Count = 0 Then
     'ha cancelado el usuario
     Return
   Else
-    Move hdirectorioActual &/ FileView1.current To hdirectorioActual &/ resp
+    Move hdirectorioActual &/ FileView1.current To hdirectorioActual &/ resp[0]
     reload()
   Endif
 
@@ -334,7 +338,7 @@ Public Sub ButtonAbrirCarpetaContenedora_Click()
   Dim lista As String[]
   'subo una ruta
   lista = Split(TextBoxRuta.text, "/")
-  If lista.count > 1 Then
+  If lista.count > 0 Then
 
     Try lista.Delete(lista.count - 1)
     If Error Then
@@ -347,15 +351,17 @@ Public Sub ButtonAbrirCarpetaContenedora_Click()
       TextBoxRuta.text = "/"
       TextBoxRuta.Tooltip = TextBoxRuta.text
       hdirectorioActual = "/"
-      'DirView1.current = "/"
-      DirView1.Root = "/"
+      DirView1.current = "/"
+      '  DirView1.Root = "/"
+      refrescar()
     Else
       FileView1.dir = lista.Join("/")
       TextBoxRuta.text = lista.Join("/")
       TextBoxRuta.Tooltip = TextBoxRuta.text
       hdirectorioActual = lista.Join("/")
-      'DirView1.current = lista.Join("/")
-      DirView1.Root = lista.Join("/")
+      DirView1.current = lista.Join("/")
+      'DirView1.Root = lista.Join("/")
+      refrescar()
     Endif
 
   Endif
@@ -455,7 +461,9 @@ Public Sub Form_Open()
 
   DirView1.Root = Settings["directorioinicial", "/"]
 
-  HSplit1.Layout = [1, 3]
+  '  HSplit1.Layout = [1, 3]
+
+  'no mostrar el directorio/marcador a priori
 
 End
 

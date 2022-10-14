@@ -1,0 +1,21 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,102,17)
+  { ButtonAceptar Button
+    MoveScaled(84,12,15,4)
+    Text = ("Aceptar")
+    Picture = Picture["icon:/24/ok"]
+  }
+  { ButtonCancelar Button
+    MoveScaled(64,12,18,4)
+    Text = ("Cancelar")
+    Picture = Picture["icon:/24/cancel"]
+  }
+  { TextBoxTexto TextBox
+    MoveScaled(2,6,96,4)
+  }
+  { Labelprompt Label
+    MoveScaled(3,1,29,4)
+  }
+}
