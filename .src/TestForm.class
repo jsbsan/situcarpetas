@@ -567,3 +567,15 @@ Public Sub ButtonIrA_Click()
   Endif
 
 End
+
+Public Sub ButtonCopiar_Click()
+
+  copiarfichero_Click()
+
+End
+
+Public Sub ButtonPegar_Click()
+
+  pegarfichero_Click()
+
+End

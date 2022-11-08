@@ -109,7 +109,7 @@
     Alignment = Align.Center
   }
   { HSplit1 Splitter
-    MoveScaled(2,5,107,38)
+    MoveScaled(2,5,144,38)
     Expand = True
     Spacing = True
     { ToolPanel1 ToolPanel
@@ -143,7 +143,7 @@
       Index = 0
     }
     { VPanel1 VBox
-      MoveScaled(25,2,79,33)
+      MoveScaled(25,2,111,33)
       Expand = True
       { HBox1 HBox
         MoveScaled(0,0,101,3)
@@ -221,8 +221,15 @@
         { Spring1 Spring
           MoveScaled(54,0,3,4)
         }
-        { Button1 Button
-          MoveScaled(62,1,9,3)
+        { ButtonCopiar Button
+          MoveScaled(62,0,9,4)
+          ToolTip = ("copy files select")
+          Picture = Picture["icon:/24/copy"]
+        }
+        { ButtonPegar Button
+          MoveScaled(71,0,9,4)
+          ToolTip = ("paste files")
+          Picture = Picture["icon:/24/paste"]
         }
       }
       { FileView1 FileView
