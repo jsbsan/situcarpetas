@@ -485,7 +485,13 @@ Public Sub MenuSlotFichero_Click()
 
   Dim nombrefichero As String
 
-  nombrefichero = hDirectorioActual & "/" & FileView1.Selection[0]
+  If FileView1.Selection.Count = 0 Then
+    'cuando le digo que lo añada el slot, si no hay nada elegido,añado el directorio actual
+    nombrefichero = hDirectorioActual
+  Else
+    nombrefichero = hDirectorioActual & "/" & FileView1.Selection[0]
+
+  Endif
 
   Raise nuevoSlot(nombrefichero)
 
