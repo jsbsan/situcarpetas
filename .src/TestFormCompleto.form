@@ -129,118 +129,8 @@
   }
   { SidePanel1 SidePanel
     MoveScaled(0,16,235,24)
+    Arrangement = Arrange.Row
     Border = True
-    { TextBox1 TextBox slotAccesos
-      Name = "TextBox1"
-      MoveScaled(25,1,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("click right  for open file or directory")
-      Alignment = Align.Right
-    }
-    { TextBox2 TextBox slotAccesos
-      Name = "TextBox2"
-      MoveScaled(25,5,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox3 TextBox slotAccesos
-      Name = "TextBox3"
-      MoveScaled(25,9,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox4 TextBox slotAccesos
-      Name = "TextBox4"
-      MoveScaled(25,13,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox5 TextBox slotAccesos
-      Name = "TextBox5"
-      MoveScaled(25,17,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { Separator1 Separator
-      MoveScaled(90,-2,1,23)
-    }
-    { TextBox6 TextBox slotAccesos
-      Name = "TextBox6"
-      MoveScaled(91,1,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox7 TextBox slotAccesos
-      Name = "TextBox7"
-      MoveScaled(91,5,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox8 TextBox slotAccesos
-      Name = "TextBox8"
-      MoveScaled(91,9,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox9 TextBox slotAccesos
-      Name = "TextBox9"
-      MoveScaled(91,13,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox10 TextBox slotAccesos
-      Name = "TextBox10"
-      MoveScaled(91,17,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { Separator2 Separator
-      MoveScaled(156,0,1,22)
-    }
-    { TextBox11 TextBox slotAccesos
-      Name = "TextBox11"
-      MoveScaled(157,1,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox12 TextBox slotAccesos
-      Name = "TextBox12"
-      MoveScaled(157,5,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox13 TextBox slotAccesos
-      Name = "TextBox13"
-      MoveScaled(157,9,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox14 TextBox slotAccesos
-      Name = "TextBox14"
-      MoveScaled(157,13,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
-    { TextBox15 TextBox slotAccesos
-      Name = "TextBox15"
-      MoveScaled(157,17,65,4)
-      Tag = "slotAccesos"
-      ToolTip = ("haga click derecho y lo abre")
-      Alignment = Align.Right
-    }
     { TextLabel1 TextLabel
       MoveScaled(0,1,24,21)
       Background = &H77ADC0&
@@ -249,8 +139,130 @@
       Alignment = Align.Center
     }
     { ButtonRefrescarSlot Button
-      MoveScaled(223,1,6,20)
+      MoveScaled(25,1,6,21)
       Picture = Picture["icon:/22/refresh"]
+    }
+    { HPanel1 HBox
+      MoveScaled(33,1,158,21)
+      Expand = True
+      AutoResize = True
+      { VBox1 VBox
+        MoveScaled(6,0,35,20)
+        Expand = True
+        { TextBox1 TextBox slotAccesos
+          Name = "TextBox1"
+          MoveScaled(0,0,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("click right  for open file or directory")
+          Alignment = Align.Right
+        }
+        { TextBox2 TextBox slotAccesos
+          Name = "TextBox2"
+          MoveScaled(0,4,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox3 TextBox slotAccesos
+          Name = "TextBox3"
+          MoveScaled(0,8,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox4 TextBox slotAccesos
+          Name = "TextBox4"
+          MoveScaled(0,12,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox5 TextBox slotAccesos
+          Name = "TextBox5"
+          MoveScaled(0,16,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+      }
+      { VBox2 VBox
+        MoveScaled(50,0,36,20)
+        Expand = True
+        { TextBox6 TextBox slotAccesos
+          Name = "TextBox6"
+          MoveScaled(0,0,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox7 TextBox slotAccesos
+          Name = "TextBox7"
+          MoveScaled(0,4,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox8 TextBox slotAccesos
+          Name = "TextBox8"
+          MoveScaled(0,8,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox9 TextBox slotAccesos
+          Name = "TextBox9"
+          MoveScaled(0,12,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox10 TextBox slotAccesos
+          Name = "TextBox10"
+          MoveScaled(0,16,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+      }
+      { VBox3 VBox
+        MoveScaled(93,0,21,20)
+        Expand = True
+        { TextBox11 TextBox slotAccesos
+          Name = "TextBox11"
+          MoveScaled(0,0,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox12 TextBox slotAccesos
+          Name = "TextBox12"
+          MoveScaled(0,4,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox13 TextBox slotAccesos
+          Name = "TextBox13"
+          MoveScaled(0,8,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox14 TextBox slotAccesos
+          Name = "TextBox14"
+          MoveScaled(0,12,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+        { TextBox15 TextBox slotAccesos
+          Name = "TextBox15"
+          MoveScaled(0,16,16.6667,4)
+          Tag = "slotAccesos"
+          ToolTip = ("haga click derecho y lo abre")
+          Alignment = Align.Right
+        }
+      }
     }
   }
   { Splitter1 Splitter
