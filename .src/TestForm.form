@@ -104,7 +104,7 @@
   { TextBoxAyuda TextBox
     MoveScaled(7,1,92,3)
     Font = Font["-1"]
-    Background = &HB6E1A8&
+    Background = &HB6E1A8
     ToolTip = ("Texto para poner comentarios sobre el directorio")
     Alignment = Align.Center
   }
@@ -127,7 +127,7 @@
         MoveScaled(3,0,18,29)
         Font = Font["-1"]
         Background = Color.SelectedForeground
-        Foreground = &H3B5660&
+        Foreground = &H3B5660
         Expand = True
         PopupMenu = "MenuDir"
         Border = False
@@ -137,7 +137,7 @@
       Text = ("Marcadores")
       { ListBoxMarcadores ListBox
         MoveScaled(2,1,15,17)
-        Background = &HFFCF9F&
+        Background = &HFFCF9F
         Expand = True
       }
       Index = 0
@@ -191,30 +191,30 @@
           Picture = Picture["icon:/24/filter"]
         }
         { ButtonRefrestcar Button
-          MoveScaled(23,1,7,4)
+          MoveScaled(27,1,7,4)
           ToolTip = ("refresh files/dir")
           Picture = Picture["icon:/24/refresh"]
         }
         { Spring3 Spring
-          MoveScaled(26,1,3,2)
+          MoveScaled(31,1,3,2)
         }
         { ButtonAbrirCarpetaContenedora Button
-          MoveScaled(30,0,4,4)
+          MoveScaled(36,0,4,4)
           ToolTip = ("Top directory")
           Picture = Picture["icon:/24/text-top"]
         }
         { ButtonOcultos Button
-          MoveScaled(34,0,6,4)
+          MoveScaled(39,0,6,4)
           ToolTip = ("view hidden")
           Picture = Picture["icon:/24/watch"]
         }
         { ButtonDirectorioFileview Button
-          MoveScaled(40,0,6,4)
+          MoveScaled(44,0,6,4)
           ToolTip = ("view directory")
           Picture = Picture["directorios visibles.png"]
         }
         { ButtonDetalles Button
-          MoveScaled(46,0,7,4)
+          MoveScaled(51,0,7,4)
           ToolTip = ("view details")
           Picture = Picture["icon:/24/view-detail"]
         }
@@ -250,8 +250,8 @@
         Expand = True
         PopupMenu = "MenuFile"
         Border = False
+        View = FileView.Detailed
         Mode = Select.Multiple
-        ShowDetailed = True
       }
     }
   }
